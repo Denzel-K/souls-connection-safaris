@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { ChevronDown, Menu, X } from "lucide-react"
 import { packageTiers } from "@/lib/experiences-data"
 import { destinations } from "@/lib/destinations-data"
@@ -49,6 +50,10 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const headerRef = useRef<HTMLElement>(null)
   const [headerHeight, setHeaderHeight] = useState(0)
+  const pathname = usePathname()
+  const isHome = pathname === "/"
+  const navTextClass = isHome && !isScrolled ? "text-white hover:text-gold" : "text-foreground hover:text-brown"
+  const navIconClass = isHome && !isScrolled ? "text-white" : "text-foreground"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -96,9 +101,7 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className={`font-serif text-lg md:text-2xl font-bold transition-colors whitespace-nowrap ${
-              isScrolled ? "text-foreground hover:text-brown" : "text-white hover:text-gold"
-            }`}
+            className={`font-serif text-lg md:text-2xl font-bold transition-colors whitespace-nowrap ${navTextClass}`}
           >
             Souls Connection Safaris
           </Link>
@@ -110,22 +113,16 @@ export function Header() {
                 {item.submenu ? (
                   <button
                     type="button"
-                    className={`flex items-center gap-2 transition-colors py-2 ${
-                      isScrolled ? "text-foreground hover:text-brown" : "text-white hover:text-gold"
-                    }`}
+                    className={`flex items-center gap-2 transition-colors py-2 ${navTextClass}`}
                   >
                     <span className="font-sans text-sm tracking-wide">{item.label}</span>
-                    <ChevronDown
-                      className={`w-4 h-4 transition-colors ${isScrolled ? "text-foreground" : "text-white"}`}
-                    />
+                    <ChevronDown className={`w-4 h-4 transition-colors ${navIconClass}`} />
                   </button>
                 ) : (
                   item.href && (
                     <Link
                       href={item.href}
-                      className={`font-sans text-sm tracking-wide transition-colors ${
-                        isScrolled ? "text-foreground hover:text-brown" : "text-white hover:text-gold"
-                      }`}
+                      className={`font-sans text-sm tracking-wide transition-colors ${navTextClass}`}
                     >
                       {item.label}
                     </Link>
@@ -174,7 +171,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`md:hidden transition-colors ${isScrolled ? "text-foreground hover:text-brown" : "text-white hover:text-gold"}`}
+            className={`md:hidden transition-colors ${navTextClass}`}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
