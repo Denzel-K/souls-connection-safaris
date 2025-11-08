@@ -8,10 +8,10 @@ import { getAllExperiences } from "@/lib/experiences-data"
 import { Star } from "lucide-react"
 
 const heroImages = [
-  "/african-safari-lions-at-sunset.jpg",
-  "/giraffe-herd-in-savanna-landscape.jpg",
+  "/Safari Lion Encounter.jpeg",
+  "/lounge-view.jpeg",
   "/zebra-migration-across-plains.jpg",
-  "/elephant-family-drinking-at-watering-hole.jpg",
+  "/Weekend Getaway in the Wild.jpeg",
   "/leopard-in-acacia-tree-at-dusk.jpg",
 ]
 
@@ -65,7 +65,7 @@ export default function Home() {
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-6">
           <div className="text-center max-w-2xl">
             <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-background font-bold mb-6 text-balance">
-              Souls Connection
+              Souls Connection Safaris
             </h1>
             <p className="font-sans text-lg md:text-xl text-background/95 mb-8 leading-relaxed">
               Journey into the heart of Africa. Experience wildlife like never before, where luxury meets nature.
