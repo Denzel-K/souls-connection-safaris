@@ -60,7 +60,10 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative w-full h-96 md:h-screen overflow-hidden">
+      <section
+        className="relative w-full h-96 md:h-screen overflow-hidden"
+        style={{ marginTop: "calc(var(--header-height, 96px) * -1)" }}
+      >
         <ImageSlideshow images={heroImages} duration={6000} autoplay={true} />
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-6">
           <div className="text-center max-w-2xl">

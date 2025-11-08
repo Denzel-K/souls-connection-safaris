@@ -55,10 +55,11 @@ export function ImageSlideshow({ images, duration = 5000, autoplay = true }: Ima
       </div>
 
       {/* Navigation Dots */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-30 pointer-events-auto">
         {images.map((_, index) => (
           <button
             key={index}
+            type="button"
             onClick={() => setCurrentIndex(index)}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
               index === currentIndex ? "bg-gold w-6" : "bg-background/50"
@@ -71,7 +72,8 @@ export function ImageSlideshow({ images, duration = 5000, autoplay = true }: Ima
       {/* Arrow Navigation */}
       <button
         onClick={prevSlide}
-        className="absolute left-6 top-1/2 -translate-y-1/2 z-10 p-2 text-background hover:text-gold transition-colors"
+        type="button"
+        className="absolute left-6 top-1/2 -translate-y-1/2 z-30 p-2 text-background hover:text-gold transition-colors pointer-events-auto"
         aria-label="Previous slide"
       >
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -81,7 +83,8 @@ export function ImageSlideshow({ images, duration = 5000, autoplay = true }: Ima
 
       <button
         onClick={nextSlide}
-        className="absolute right-6 top-1/2 -translate-y-1/2 z-10 p-2 text-background hover:text-gold transition-colors"
+        type="button"
+        className="absolute right-6 top-1/2 -translate-y-1/2 z-30 p-2 text-background hover:text-gold transition-colors pointer-events-auto"
         aria-label="Next slide"
       >
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
