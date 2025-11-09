@@ -42,6 +42,10 @@ const navigationItems: NavigationItem[] = [
     label: "About",
     href: "/about",
   },
+  {
+    label: "Founders' Story",
+    href: "/founders-story",
+  },
 ]
 
 export function Header() {
