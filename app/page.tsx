@@ -222,7 +222,7 @@ export default function Home() {
                 ))}
               </ul>
               <Link
-                href="/about"
+                href="/founders-story"
                 className="inline-block px-6 py-3 bg-brown text-background font-sans font-medium hover:bg-brown/90 transition-all duration-200"
               >
                 Learn Our Story
