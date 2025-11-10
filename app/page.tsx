@@ -66,19 +66,19 @@ export default function Home() {
       >
         <ImageSlideshow images={heroImages} duration={6000} autoplay={true} />
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-6">
-          <div className="text-center max-w-2xl">
+          <div className="text-center max-w-3xl">
             <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-background font-bold mb-6 text-balance">
-              Souls Connection Safaris
+              Come home to yourself.
             </h1>
             <p className="font-sans text-lg md:text-xl text-background/95 mb-8 leading-relaxed">
-              Journey into the heart of Africa. Experience wildlife like never before, where luxury meets nature.
+              A luxury safari for those who want to feel again—deeply, gently, intentionally.
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <Link
                 href="/booking"
                 className="px-8 py-3 bg-brown text-background font-sans font-medium hover:bg-brown/90 transition-all duration-200 text-center"
               >
-                Explore Packages
+                Begin your journey
               </Link>
               <Link
                 href="/about"
@@ -87,6 +87,50 @@ export default function Home() {
                 Learn Our Story
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Story Section */}
+      <section className="px-6 py-20 md:py-28 bg-[#F8F4EE] text-foreground">
+        <div className="max-w-5xl mx-auto text-center space-y-4">
+          <p className="font-serif text-3xl md:text-4xl lg:text-5xl text-balance">
+            The world moves fast. The soul moves slow.
+          </p>
+          <p className="font-sans text-base md:text-lg tracking-[0.3em] text-muted-foreground uppercase">
+            Somewhere between success and speed, presence became rare.
+          </p>
+          <p className="font-serif text-2xl md:text-3xl text-balance">
+            To yourself. To the people who matter. To a life that feels true again.
+          </p>
+          <p className="font-sans text-xs md:text-sm tracking-[0.4em] text-muted-foreground uppercase">
+            You will not be rushed. You will be understood.
+          </p>
+        </div>
+        <div className="max-w-6xl mx-auto mt-16 grid md:grid-cols-[1fr_1.1fr] gap-12 items-center">
+          <div className="relative w-full max-w-md mx-auto md:max-w-none">
+            <div className="hidden md:block absolute inset-0 translate-x-4 translate-y-4 rounded-[32px] bg-brown/20" aria-hidden />
+            <img
+              src="/safari-expert-portrait-.jpg"
+              alt="Souls Connection private guide"
+              className="relative rounded-[32px] w-full h-[420px] object-cover shadow-2xl"
+            />
+          </div>
+          <div className="space-y-6">
+            <p className="font-sans text-sm tracking-widest text-brown">GUIDES WITH HEART</p>
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight">
+              Guided by land. Led by heart.
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Born in East Africa, our hosts are shaped by the quiet rhythm of the bush. They listen first, understand
+              deeply, and design each day so you can breathe, reconnect, and feel the soul of the savannah.
+            </p>
+            <Link
+              href="/guides"
+              className="inline-flex items-center gap-2 text-brown font-semibold border-b-2 border-brown hover:text-brown/80 hover:border-brown/60 w-fit"
+            >
+              Meet Your Guides →
+            </Link>
           </div>
         </div>
       </section>
@@ -352,22 +396,50 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 md:py-32 px-6 bg-green/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="font-sans text-sm tracking-widest text-brown mb-6">READY TO EXPLORE</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground font-bold mb-6 text-balance">
-            Begin Your African Adventure
-          </h2>
-          <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
-            Connect with nature, discover yourself, and create memories that will last a lifetime on an authentic
-            African safari tailored to your dreams.
-          </p>
-          <Link
-            href="/booking"
-            className="inline-block px-8 py-4 bg-brown text-background font-sans font-medium hover:bg-brown/90 transition-all duration-200"
-          >
-            Schedule Your Journey
-          </Link>
+      <section className="py-24 px-6 bg-[#FDF9F3]">
+        <div className="max-w-5xl mx-auto text-center space-y-10">
+          <div className="space-y-4">
+            {/* <Link
+              href="/booking"
+              className="inline-block px-6 py-2 bg-foreground text-background font-serif text-lg tracking-tight rounded-full shadow-sm hover:bg-foreground/90 transition"
+            >
+              Design My Journey
+            </Link> */}
+            <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-tight text-balance">
+              You don't choose a trip. You choose a feeling that stays.
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            {[
+              { title: "Awakening", caption: "To Restore" },
+              { title: "Reconnection", caption: "To Bond" },
+              { title: "Meaning", caption: "To Leave a Legacy" },
+            ].map((card) => (
+              <div
+                key={card.title}
+                className="rounded-3xl border border-[#E8DCCB] bg-background/80 py-10 px-8 shadow-sm hover:shadow-lg transition-shadow"
+              >
+                <p className="font-serif text-2xl text-foreground mb-2">{card.title}</p>
+                <p className="font-sans text-brown tracking-wider uppercase">{card.caption}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-3">
+            <Link
+              href="/experiences"
+              className="inline-block px-7 py-3 bg-foreground text-background font-sans font-semibold rounded-full shadow-sm hover:bg-foreground/90 transition"
+            >
+              Explore the Journeys
+            </Link>
+            <div>
+              <p className="font-serif text-3xl md:text-4xl text-foreground">You return with more than stories.</p>
+              <p className="text-muted-foreground text-base md:text-lg">
+                A calmer spirit. A softer heart. A legacy just beginning.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
