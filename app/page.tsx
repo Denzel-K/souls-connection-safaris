@@ -1,7 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { useRef, useState } from "react"
+import { useRef, useState, type CSSProperties } from "react"
+import { motion, useReducedMotion } from "framer-motion"
 import { ArrowUpRight, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight, Quote, Shield } from "lucide-react"
 
 import { allExperiences } from "@/lib/experiences-data"
@@ -80,6 +81,251 @@ const planSteps = [
     micro: "Clarity and ease drive conversions—clear steps, clear CTAs.",
   },
 ]
+
+type PlanStepData = (typeof planSteps)[number]
+type StepAlignment = "left" | "right" | "mobile"
+const CONNECTOR_LENGTH = "clamp(160px, 24vw, 420px)"
+
+const PlanTimelineCard = ({
+  step,
+  alignment,
+  delay,
+  prefersReducedMotion,
+}: {
+  step: PlanStepData
+  alignment: StepAlignment
+  delay: number
+  prefersReducedMotion: boolean
+}) => {
+  const horizontalClass =
+    alignment === "left" ? "md:ml-auto" : alignment === "right" ? "md:mr-auto" : "md:mx-auto"
+
+  const initialX =
+    prefersReducedMotion || alignment === "mobile" ? 0 : alignment === "left" ? -40 : 40
+  const initialY = prefersReducedMotion || alignment !== "mobile" ? 0 : 24
+
+  return (
+    <motion.article
+      initial={{ opacity: 0, x: initialX, y: initialY }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.6, ease: "easeOut", delay: prefersReducedMotion ? 0 : delay }}
+      className={`rounded-[28px] border border-lux-sand/70 bg-white/95 p-8 shadow-[0_20px_60px_rgba(30,30,28,0.08)] backdrop-blur-sm flex flex-col gap-3 ${horizontalClass}`}
+    >
+      <p className="font-sans font-semibold text-[0.65rem] uppercase tracking-[0.3em] text-lux-accent">{step.label}</p>
+      <p className="font-serif font-semibold text-2xl text-lux-forest">{step.title}</p>
+      <p className="text-sm text-lux-ink opacity-80 leading-relaxed">{step.copy}</p>
+      <p className="text-xs text-lux-forest/70 mt-2">{step.micro}</p>
+    </motion.article>
+  )
+}
+
+const PlanTimelineConnector = ({
+  side,
+  delay,
+  prefersReducedMotion,
+}: {
+  side: Exclude<StepAlignment, "mobile">
+  delay: number
+  prefersReducedMotion: boolean
+}) => {
+  const gradient =
+    side === "left"
+      ? "linear-gradient(90deg, rgba(255,255,255,0) 0%, var(--gold) 30%, var(--lux-accent) 65%, var(--lux-forest) 100%)"
+      : "linear-gradient(270deg, rgba(255,255,255,0) 0%, var(--gold) 30%, var(--lux-accent) 65%, var(--lux-forest) 100%)"
+
+  const baseStyle: CSSProperties = {
+    width: CONNECTOR_LENGTH,
+    top: "50%",
+    marginTop: "-0.5px",
+    backgroundImage: gradient,
+    transformOrigin: side === "left" ? "left center" : "right center",
+    ...(side === "left" ? { left: "100%" } : { right: "100%" }),
+  }
+
+  const initialScale = prefersReducedMotion ? 1 : 0
+
+  return (
+    <motion.span
+      aria-hidden="true"
+      className="pointer-events-none absolute h-px rounded-full opacity-90"
+      style={baseStyle}
+      initial={{ opacity: 0, scaleX: initialScale }}
+      whileInView={{ opacity: 1, scaleX: 1 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.6, ease: "easeOut", delay: prefersReducedMotion ? 0 : delay }}
+    />
+  )
+}
+
+const PlanTimelineNode = ({
+  index,
+  total,
+  delay,
+  prefersReducedMotion,
+}: {
+  index: number
+  total: number
+  delay: number
+  prefersReducedMotion: boolean
+}) => {
+  const baseDelay = prefersReducedMotion ? 0 : delay
+
+  return (
+    <div className="order-1 md:order-none md:col-start-2 relative flex flex-col items-center gap-4 md:min-h-[220px]">
+      <motion.div
+        className="relative flex h-16 w-16 items-center justify-center rounded-full border border-lux-forest/40 bg-lux-bone font-sans text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-lux-forest shadow-[0_15px_40px_rgba(20,20,20,0.08)]"
+        initial={{ scale: 0.8, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: baseDelay + 0.05 }}
+      >
+        {String(index + 1).padStart(2, "0")}
+        <motion.span
+          aria-hidden="true"
+          className="absolute inset-0 rounded-full border border-lux-forest/20"
+          initial={{ opacity: 0, scale: 0.7 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: baseDelay + 0.15 }}
+        />
+        {!prefersReducedMotion && (
+          <motion.span
+            aria-hidden="true"
+            className="absolute -inset-1 rounded-full border border-lux-forest/10"
+            animate={{ opacity: [0, 0.6, 0], scale: [1, 1.15, 1.35] }}
+            transition={{ duration: 2, repeat: Infinity, repeatDelay: 1.2, ease: "easeInOut" }}
+          />
+        )}
+      </motion.div>
+      {index < total - 1 ? (
+        <>
+          <motion.span
+            aria-hidden="true"
+            className="hidden md:block w-px flex-1 rounded-full bg-gradient-to-b from-lux-sand/90 via-lux-stone/60 to-transparent"
+            style={{ transformOrigin: "top" }}
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: baseDelay + 0.1 }}
+          />
+          <motion.span
+            aria-hidden="true"
+            className="md:hidden block h-10 w-px rounded-full bg-gradient-to-b from-lux-sand/90 via-lux-stone/60 to-transparent"
+            style={{ transformOrigin: "top" }}
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: baseDelay + 0.1 }}
+          />
+        </>
+      ) : null}
+    </div>
+  )
+}
+
+const PlanTimeline = ({ steps }: { steps: PlanStepData[] }) => {
+  const prefersReducedMotion = useReducedMotion() ?? false
+  const baseDelay = prefersReducedMotion ? 0 : 0.1
+
+  return (
+    <div className="relative mt-12">
+      <motion.span
+        aria-hidden="true"
+        className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 h-full w-px rounded-full"
+        style={{
+          transformOrigin: "top",
+          backgroundImage: "linear-gradient(180deg, var(--gold), var(--lux-accent), var(--lux-forest))",
+          backgroundSize: "200% 200%",
+        }}
+        initial={{ scaleY: 0 }}
+        whileInView={{ scaleY: 1 }}
+        animate={
+          prefersReducedMotion
+            ? undefined
+            : { backgroundPosition: ["0% 0%", "0% 100%", "0% 0%"] }
+        }
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+          ...(prefersReducedMotion
+            ? {}
+            : { backgroundPosition: { duration: 6, repeat: Infinity, ease: "easeInOut" } }),
+        }}
+      />
+      <div className="space-y-12">
+        {steps.map((step, index) => {
+          const isLeft = index % 2 === 0
+          const delay = index * baseDelay
+
+          return (
+            <div
+              key={step.label}
+              className="relative grid items-center gap-6 md:grid-cols-[1fr_minmax(140px,180px)_1fr]"
+            >
+              <div className="hidden md:flex justify-end relative">
+                {isLeft ? (
+                  <>
+                    <PlanTimelineCard
+                      step={step}
+                      alignment="left"
+                      delay={delay}
+                      prefersReducedMotion={prefersReducedMotion}
+                    />
+                    <PlanTimelineConnector
+                      side="left"
+                      delay={delay + 0.05}
+                      prefersReducedMotion={prefersReducedMotion}
+                    />
+                  </>
+                ) : (
+                  <div aria-hidden="true" className="h-full w-full" />
+                )}
+              </div>
+
+              <PlanTimelineNode
+                index={index}
+                total={steps.length}
+                delay={delay}
+                prefersReducedMotion={prefersReducedMotion}
+              />
+
+              <div className="hidden md:flex justify-start relative">
+                {!isLeft ? (
+                  <>
+                    <PlanTimelineCard
+                      step={step}
+                      alignment="right"
+                      delay={delay}
+                      prefersReducedMotion={prefersReducedMotion}
+                    />
+                    <PlanTimelineConnector
+                      side="right"
+                      delay={delay + 0.05}
+                      prefersReducedMotion={prefersReducedMotion}
+                    />
+                  </>
+                ) : (
+                  <div aria-hidden="true" className="h-full w-full" />
+                )}
+              </div>
+
+              <div className="md:hidden">
+                <PlanTimelineCard
+                  step={step}
+                  alignment="mobile"
+                  delay={delay}
+                  prefersReducedMotion={prefersReducedMotion}
+                />
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
 
 const founderDetailStrips = [
   {
@@ -258,7 +504,7 @@ export default function Home() {
   const [plannerStatus, setPlannerStatus] = useState<"idle" | "success" | "error">("idle")
   const [activeLodgeIndex, setActiveLodgeIndex] = useState(0)
   const [accordionOpen, setAccordionOpen] = useState<Record<InclusionAccordionId, boolean>>({
-    included: true,
+    included: false,
     excluded: false,
   })
   const lodgeCarouselRef = useRef<HTMLDivElement>(null)
@@ -553,23 +799,11 @@ export default function Home() {
       <section className="px-6 py-24 bg-white" id="plan">
         <div className="max-w-6xl mx-auto space-y-10">
           <div className="text-center space-y-4">
-            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">The Plan</p>
+            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">The Plan</p>
             <h2 className="font-serif text-5xl text-lux-forest">How it works</h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {planSteps.map((step) => (
-              <article
-                key={step.label}
-                className="rounded-[28px] bg-lux-bone p-8 border border-lux-sand shadow-[0_20px_60px_rgba(30,30,28,0.08)] flex flex-col"
-              >
-                <p className="font-sans text-xs uppercase tracking-[0.3em] text-lux-accent mb-2">{step.label}</p>
-                <p className="font-serif text-2xl mb-3">{step.title}</p>
-                <p className="text-lux-ink opacity-80 flex-1">{step.copy}</p>
-                <p className="text-xs text-lux-forest opacity-60 mt-4">{step.micro}</p>
-              </article>
-            ))}
-          </div>
-          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-center">
+          <PlanTimeline steps={planSteps} />
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-center mt-6">
             <Link
               href="/booking"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-lux-forest text-white text-sm tracking-[0.3em]"
@@ -597,14 +831,14 @@ export default function Home() {
           </div>
 
           <div className="space-y-6">
-            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Founders & Hosts</p>
+            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">Founders & Hosts</p>
             <h2 className="font-serif text-4xl text-lux-forest">Guided by hosts who care.</h2>
             <p className="text-lg text-lux-ink opacity-80">
               Founded by George Mburu and Wambui Mburu—hospitality-trained hosts who design journeys around how you want
               to feel.
             </p>
             <div>
-              <p className="font-sans text-xs uppercase tracking-[0.3em] text-lux-accent mb-3">What guests rely on</p>
+              <p className="font-sans text-xs uppercase tracking-[0.3em] text-lux-accent mb-3" font-semibold>What guests rely on</p>
               <div className="flex flex-wrap gap-3">
                 {founderMicroCreds.map((cred) => (
                   <span
@@ -636,7 +870,7 @@ export default function Home() {
       {/* Impact & Community */}
       <section className="px-6 py-20 bg-white">
         <div className="max-w-4xl mx-auto text-center space-y-5">
-          <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Impact & Community</p>
+          <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">Impact & Community</p>
           <p className="text-lg text-lux-ink opacity-80">
             Every journey funds ranger training, Maasai women-led enterprises, and carbon
             positive restoration. Impact reporting mirrors Wilderness-level transparency so you know your luxury safari
@@ -652,7 +886,7 @@ export default function Home() {
       <section className="px-6 py-16 bg-lux-cream" id="experience-modes">
         <div className="max-w-6xl mx-auto space-y-8">
           <div className="text-center space-y-3">
-            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Choose your rhythm</p>
+            <p className="font-sans font-semibold text-xs uppercase tracking-[0.4em] text-lux-accent">Choose your rhythm</p>
             <h2 className="font-serif text-3xl text-lux-forest">Private vs Small Group</h2>
             <p className="text-base text-lux-ink opacity-80">Self-select smoothly without pressure.</p>
           </div>
@@ -800,7 +1034,7 @@ export default function Home() {
           <div className="flex flex-col items-center gap-6 mt-6">
             <div className="flex items-center gap-3 text-[0.65rem] md:text-xs uppercase tracking-[0.4em] text-lux-accent font-sans font-bold">
               <span className="h-px w-14 bg-lux-accent" aria-hidden="true" />
-              Preferred partners
+              Our partners
             </div>
             <div className="flex overflow-x-auto gap-5 pb-2" aria-label="Preferred partners">
               {partnerLogos.map((logo) => (
