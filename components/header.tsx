@@ -248,7 +248,7 @@ export function Header() {
                 className="block w-full py-3 bg-brown text-background text-center font-sans text-sm font-medium hover:bg-brown/90 transition-all duration-200 rounded"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Book Now
+                Begin your journey
               </Link>
             </nav>
           </div>

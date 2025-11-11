@@ -28,7 +28,7 @@
   --muted: #f3ece4;
   --muted-foreground: color-mix(in srgb, var(--lux-ink) 65%, transparent);
   --accent: var(--lux-accent);
-  --gold: var(--lux-accent);
+  --gold: oklch(0.674 0.117 92.45);
   --green: #4f6b57;
   --brown: var(--lux-accent);
   --destructive: #b9574b;
@@ -68,7 +68,7 @@
   --accent: oklch(0.65 0.18 60);
   --gold: oklch(0.674 0.117 92.45);
   --green: oklch(0.55 0.14 140);
-  --brown: var(--gold);
+  --brown: oklch(0.674 0.117 92.45);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: oklch(0.25 0.02 30);

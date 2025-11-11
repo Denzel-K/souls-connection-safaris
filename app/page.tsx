@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
-import { ArrowUpRight, CheckCircle2, Shield } from "lucide-react"
+import { useRef, useState } from "react"
+import { ArrowUpRight, CheckCircle2, ChevronLeft, ChevronRight, Shield } from "lucide-react"
 
 import { allExperiences } from "@/lib/experiences-data"
 import type { IndexedExperience } from "@/lib/experiences-data"
@@ -226,6 +226,8 @@ export default function Home() {
   const [plannerEmail, setPlannerEmail] = useState("")
   const [plannerConsent, setPlannerConsent] = useState(false)
   const [plannerStatus, setPlannerStatus] = useState<"idle" | "success" | "error">("idle")
+  const [activeLodgeIndex, setActiveLodgeIndex] = useState(0)
+  const lodgeCarouselRef = useRef<HTMLDivElement>(null)
 
   const handlePlannerSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -236,12 +238,44 @@ export default function Home() {
     setPlannerStatus("success")
   }
 
+  const getLodgeScrollAmount = () => {
+    if (!lodgeCarouselRef.current) return 0
+    const slide = lodgeCarouselRef.current.querySelector<HTMLElement>("[data-lodge-card]")
+    const gapValue =
+      typeof window !== "undefined" && lodgeCarouselRef.current
+        ? window.getComputedStyle(lodgeCarouselRef.current).columnGap || "0"
+        : "0"
+    const gap = parseFloat(gapValue) || 0
+    return (slide?.offsetWidth ?? lodgeCarouselRef.current.clientWidth * 0.8) + gap
+  }
+
+  const handleLodgeNav = (direction: "prev" | "next") => {
+    if (!lodgeCarouselRef.current) return
+    const scrollAmount = getLodgeScrollAmount()
+    if (!scrollAmount) return
+    const nextPosition =
+      direction === "next"
+        ? lodgeCarouselRef.current.scrollLeft + scrollAmount
+        : lodgeCarouselRef.current.scrollLeft - scrollAmount
+
+    lodgeCarouselRef.current.scrollTo({ left: nextPosition, behavior: "smooth" })
+  }
+
+  const handleLodgeScroll = () => {
+    if (!lodgeCarouselRef.current) return
+    const scrollAmount = getLodgeScrollAmount()
+    if (!scrollAmount) return
+    const rawIndex = Math.round(lodgeCarouselRef.current.scrollLeft / scrollAmount)
+    const clampedIndex = Math.min(lodgeTiles.length - 1, Math.max(0, rawIndex))
+    setActiveLodgeIndex(clampedIndex)
+  }
+
 
   return (
     <div className="flex flex-col min-h-screen bg-lux-bone text-lux-ink">
       <Header />
 
-      {/* Hero Section (unchanged) */}
+      {/* Hero Section */}
       <section
         className="relative w-full h-96 md:h-screen overflow-hidden"
         style={{ marginTop: "calc(var(--header-height, 96px) * -1)" }}
@@ -275,7 +309,7 @@ export default function Home() {
 
       {/* Rhythm + Pace Section */}
       <section className="px-6 py-24 bg-lux-bone" id="pace">
-        <p className="font-serif text-4xl text-lux-ink max-w-3xl mx-auto text-center mb-6">
+        <p className="font-serif text-4xl font-semibold text-lux-ink max-w-3xl mx-auto text-center mb-6">
           Connection can’t be scheduled to the minute. You deserve space, presence, and a host who knows when to
           slow down.
         </p>
@@ -283,7 +317,7 @@ export default function Home() {
           <div className="order-2 lg:order-1 space-y-10 relative">
             <div className="absolute -inset-6 bg-[url('/placeholder.svg')] opacity-[0.03] rounded-[40px] pointer-events-none" />
             <div className="relative space-y-8 bg-white/85 backdrop-blur-sm p-12 rounded-[40px] shadow-[0_35px_90px_rgba(30,30,28,0.08)]">
-              <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Tired of rushed, box-ticking tours?</p>
+              <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">Tired of rushed, box-ticking tours?</p>
               
               <div className="space-y-4">
                 {[
@@ -303,7 +337,7 @@ export default function Home() {
                   <div key={item.title} className="flex items-start gap-4">
                     <span className="text-sm font-semibold tracking-[0.3em] text-lux-accent mt-1">•</span>
                     <div>
-                      <p className="font-serif text-xl text-lux-forest">{item.title}</p>
+                      <p className="font-serif text-xl text-lux-forest font-bold">{item.title}</p>
                       <p className="text-sm text-lux-ink opacity-80">{item.description}</p>
                     </div>
                   </div>
@@ -343,7 +377,7 @@ export default function Home() {
       <section className="px-6 py-24 bg-white" id="pillars">
         <div className="mx-auto max-w-6xl space-y-12">
           <div className="text-center space-y-4">
-            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Why us?</p>
+            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">Why us?</p>
             <h2 className="font-serif text-4xl text-lux-forest">Our three value pillars</h2>
             <p className="text-lg text-lux-ink opacity-80">Human hosts, effortless pacing, and integrity in every detail.</p>
           </div>
@@ -366,7 +400,7 @@ export default function Home() {
                 <ul className="mt-6 space-y-2 text-sm text-lux-ink opacity-80">
                   {reason.highlights.map((point) => (
                     <li key={point} className="flex items-start gap-3">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-lux-accent" />
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-brown" />
                       <span>{point}</span>
                     </li>
                   ))}
@@ -396,7 +430,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto space-y-10">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent mb-3">Signature Journeys</p>
+              <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent mb-3 font-semibold">Signature Journeys</p>
               <h2 className="font-serif text-4xl md:text-5xl text-lux-forest">Host-led safaris</h2>
               <p className="text-lg text-lux-ink opacity-80">
                 Premium and ultra-premium itineraries pulled directly from our experiences library.
@@ -408,9 +442,9 @@ export default function Home() {
             {featuredJourneys.map((journey) => (
               <article
                 key={journey.id}
-                className="snap-start min-w-[320px] w-80 flex-shrink-0 rounded-[28px] border border-lux-sand bg-white shadow-[0_15px_45px_rgba(30,30,28,0.12)] overflow-hidden flex flex-col"
+                className="snap-start min-w-[320px] sm:min-w-[420px] w-80 flex-shrink-0 rounded-[14px] border border-lux-sand bg-white shadow-[0_15px_45px_rgba(30,30,28,0.12)] overflow-hidden flex flex-col"
               >
-                <div className="relative h-44">
+                <div className="relative h-44 sm:h-64">
                   <img
                     src={journey.image}
                     alt={`${journey.name} scene`}
@@ -421,27 +455,28 @@ export default function Home() {
                     {journey.tierName}
                   </div>
                 </div>
-                <div className="flex flex-1 flex-col gap-2.5 p-5">
-                  <p className="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-lux-accent">{journey.subcategoryName}</p>
-                  <p className="font-serif text-xl text-lux-forest leading-tight">{journey.name}</p>
-                  <p className="text-sm text-lux-ink opacity-80 flex-1">{journey.description}</p>
-                  <div className="flex flex-wrap gap-1.5 text-[0.7rem] text-lux-forest">
+                <div className="flex flex-col gap-2.5 p-5">
+                  <p className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-lux-accent">{journey.subcategoryName}</p>
+                  <p className="font-serif text-xl sm:text-2xl text-lux-forest leading-tight font-bold">{journey.name}</p>
+                  <p className="text-sm text-lux-ink opacity-80 flex-1 mt-2">{journey.description}</p>
+                  <div className="flex flex-wrap gap-1.5 text-[0.7rem] text-lux-forest mt-2">
                     <span className="rounded-full border border-lux-sand px-2.5 py-0.5">{journey.duration}</span>
                     <span className="rounded-full border border-lux-sand px-2.5 py-0.5">{journey.destination}</span>
                   </div>
-                  <div className="flex flex-col gap-1.5 pt-1">
-                    <Link
-                      href={`/booking?journey=${journey.id}`}
-                      className="inline-flex items-center justify-center rounded-full bg-lux-forest px-4 py-2 text-[0.75rem] uppercase tracking-[0.2em] text-white"
-                    >
-                      Request This Journey
-                    </Link>
+                  <div className="flex flex-row justify-between pt-6 w-full">
                     <Link
                       href={`/itinerary/${journey.itineraryId}`}
                       className="text-xs text-lux-forest border-b border-lux-accent w-fit"
                     >
                       View sample day →
                     </Link>
+                    <Link
+                      href={`/booking?journey=${journey.id}`}
+                      className="flex items-center justify-center rounded-[4px] bg-gold px-4 py-2 text-xs uppercase font-semibold font-sans text-white"
+                    >
+                      Request This Journey
+                    </Link>
+                    
                   </div>
                 </div>
               </article>
@@ -615,50 +650,124 @@ export default function Home() {
       </section>
 
       {/* Lodges & Stays */}
-      <section className="px-6 py-24 bg-white" id="lodges">
-        <div className="max-w-6xl mx-auto space-y-10">
-          <div className="text-center space-y-3">
-            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Lodges & Stays</p>
-            <h2 className="font-serif text-4xl text-lux-forest">Soulful places, quietly luxurious.</h2>
-            <p className="text-lg text-lux-ink opacity-80">
-              A handpicked circle of lodges where stillness, craft, and care make room for connection.
+      <section className="px-6 py-32 bg-gradient-to-b from-white via-lux-bone/60 to-white" id="lodges">
+        <div className="max-w-6xl mx-auto space-y-14">
+          <div className="text-center space-y-6">
+            <p className="font-sans text-xs uppercase tracking-[0.45em] text-lux-accent font-semibold">Lodges & Stays</p>
+            <h2 className="font-serif text-3xl md:text-5xl text-lux-forest leading-tight">
+              Soulful spaces, framed in light.
+            </h2>
+            <p className="font-serif text-lg md:text-2xl text-lux-ink/85 max-w-3xl mx-auto leading-relaxed">
+              A hand-curated circle of lodges where linen, timber, and horizon lines feel effortless—and every
+              suite is staged for unhurried ritual.
             </p>
           </div>
-          <div className="flex overflow-x-auto gap-6 pb-4 snap-x" aria-label="Preferred partners">
-            {partnerLogos.map((logo) => (
-              <div
-                key={logo.name}
-                className="snap-start shrink-0 px-6 py-3 border border-lux-sand rounded-full bg-white/60 flex items-center justify-center"
-                aria-label={logo.name}
-              >
-                <img src={logo.src} alt={logo.name} className="h-8 w-auto opacity-70" />
+
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-3 text-[0.65rem] md:text-xs uppercase tracking-[0.4em] text-lux-accent font-sans font-bold">
+              <span className="h-px w-14 bg-lux-accent" aria-hidden="true" />
+              Preferred partners
+            </div>
+            <div className="flex overflow-x-auto gap-5 pb-2" aria-label="Preferred partners">
+              {partnerLogos.map((logo) => (
+                <div
+                  key={logo.name}
+                  className="shrink-0 px-6 py-3 border border-lux-sand/70 rounded-full bg-white/70 flex items-center justify-center"
+                  aria-label={logo.name}
+                >
+                  <img src={logo.src} alt={logo.name} className="h-8 w-auto opacity-60" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="flex gap-3">
+                <button
+                  type="button"
+                  onClick={() => handleLodgeNav("prev")}
+                  aria-label="Show previous lodge"
+                  className="h-12 w-12 rounded-full border border-lux-sand text-lux-forest hover:bg-lux-forest hover:text-brown transition disabled:opacity-30 disabled:pointer-events-none"
+                  disabled={activeLodgeIndex === 0}
+                >
+                  <ChevronLeft className="w-5 h-5 mx-auto" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleLodgeNav("next")}
+                  aria-label="Show next lodge"
+                  className="h-12 w-12 rounded-full border border-lux-sand text-lux-forest hover:bg-lux-forest hover:text-brown transition disabled:opacity-30 disabled:pointer-events-none"
+                  disabled={activeLodgeIndex === lodgeTiles.length - 1}
+                >
+                  <ChevronRight className="w-5 h-5 mx-auto" />
+                </button>
               </div>
-            ))}
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {lodgeTiles.map((lodge) => (
-              <article key={lodge.title} className="space-y-4">
-                <div className="relative aspect-[4/5] rounded-[28px] overflow-hidden shadow-[0_20px_60px_rgba(30,30,28,0.1)]">
-                  <img src={lodge.image} alt={`${lodge.title} lodge`} className="w-full h-full object-cover" />
+            </div>
+
+            <div className="relative">
+              <div className="overflow-hidden">
+                <div
+                  ref={lodgeCarouselRef}
+                  onScroll={handleLodgeScroll}
+                  className="flex gap-10 snap-x snap-mandatory overflow-x-auto pb-6"
+                  aria-live="polite"
+                >
+                  {lodgeTiles.map((lodge, index) => (
+                    <article
+                      key={lodge.title}
+                      className="snap-start shrink-0 basis-[85%] md:basis-[70%] lg:basis-[60%]"
+                      data-lodge-card
+                    >
+                      <div className="relative h-[500px] md:h-[560px] rounded-[56px] overflow-hidden shadow-[0_45px_120px_rgba(30,30,28,0.18)]">
+                        <img
+                          src={lodge.image}
+                          alt={`${lodge.title} lodge`}
+                          className="absolute inset-0 h-full w-full object-cover"
+                        />
+                        <div className="absolute inset-x-0 bottom-0">
+                          <div className="bg-gradient-to-t from-[#F8F3ED] via-[#F8F3ED]/95 to-transparent px-10 pt-20 pb-12 text-lux-ink/90">
+                            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent mb-3">
+                              {String(index + 1).padStart(2, "0")} · {lodge.meta}
+                            </p>
+                            <h3 className="font-serif text-4xl md:text-5xl text-lux-forest mb-4">{lodge.title}</h3>
+                            <p className="text-base md:text-lg text-lux-ink/80 max-w-xl leading-relaxed mb-6">
+                              {lodge.line}
+                            </p>
+                            <Link
+                              href="/lodges"
+                              className="inline-flex items-center gap-2 text-sm md:text-base text-lux-forest font-semibold"
+                            >
+                              See Details
+                              <ArrowUpRight className="w-4 h-4" />
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
                 </div>
-                <div className="space-y-2">
-                  <p className="font-serif text-2xl text-lux-forest">{lodge.title}</p>
-                  <p className="font-sans text-xs uppercase tracking-[0.3em] text-lux-accent">{lodge.meta}</p>
-                  <p className="text-sm text-lux-ink opacity-80">{lodge.line}</p>
-                  <Link href="/lodges" className="text-sm text-lux-forest border-b border-lux-accent w-fit">
-                    See Details →
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="text-right">
-            <Link
-              href="/lodges"
-              className="inline-flex items-center gap-2 text-sm tracking-[0.2em] uppercase text-lux-forest"
-            >
-              View Our Preferred Lodges →
-            </Link>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-6">
+              <div className="flex items-center gap-3">
+                {lodgeTiles.map((_, index) => (
+                  <span
+                    key={index}
+                    className={`h-1 rounded-full transition-all duration-300 ${
+                      activeLodgeIndex === index ? "w-14 bg-lux-forest" : "w-8 bg-lux-sand"
+                    }`}
+                  />
+                ))}
+              </div>
+              <Link
+                href="/lodges"
+                className="inline-flex items-center gap-2 text-sm md:text-base tracking-[0.2em] uppercase text-lux-forest"
+              >
+                View Our Preferred Lodges →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
