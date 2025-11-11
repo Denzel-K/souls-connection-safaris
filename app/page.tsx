@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useRef, useState } from "react"
-import { ArrowUpRight, CheckCircle2, ChevronLeft, ChevronRight, Shield } from "lucide-react"
+import { ArrowUpRight, CheckCircle2, ChevronLeft, ChevronRight, Quote, Shield } from "lucide-react"
 
 import { allExperiences } from "@/lib/experiences-data"
 import type { IndexedExperience } from "@/lib/experiences-data"
@@ -175,16 +175,25 @@ const journalEntries = [
     title: "A Day in the Mara",
     excerpt: "From dawn lion calls to lantern-lit suppers, follow the sensory arc of our signature Mara immersion.",
     href: "/journal/a-day-in-the-mara",
+    issue: "Field Note 01",
+    season: "Mara Edition",
+    readingTime: "4 min read",
   },
   {
     title: "Designing Quiet Luxury in the Bush",
     excerpt: "How we pair tactile textures, slow dining, and intuitive hosting to keep the bush both wild and easeful.",
     href: "/journal/designing-quiet-luxury",
+    issue: "Field Note 02",
+    season: "Design Issue",
+    readingTime: "6 min read",
   },
   {
     title: "What 15 Guests Max Means",
     excerpt: "A look at intimacy, wildlife access, and why limited numbers protect habitat.",
     href: "/journal/fifteen-guests-max",
+    issue: "Field Note 03",
+    season: "Stewardship Perspective",
+    readingTime: "3 min read",
   },
 ]
 
@@ -682,35 +691,12 @@ export default function Home() {
           </div>
 
           <div className="space-y-8">
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <div className="flex gap-3">
-                <button
-                  type="button"
-                  onClick={() => handleLodgeNav("prev")}
-                  aria-label="Show previous lodge"
-                  className="h-12 w-12 rounded-full border border-lux-sand text-lux-forest hover:bg-lux-forest hover:text-brown transition disabled:opacity-30 disabled:pointer-events-none"
-                  disabled={activeLodgeIndex === 0}
-                >
-                  <ChevronLeft className="w-5 h-5 mx-auto" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleLodgeNav("next")}
-                  aria-label="Show next lodge"
-                  className="h-12 w-12 rounded-full border border-lux-sand text-lux-forest hover:bg-lux-forest hover:text-brown transition disabled:opacity-30 disabled:pointer-events-none"
-                  disabled={activeLodgeIndex === lodgeTiles.length - 1}
-                >
-                  <ChevronRight className="w-5 h-5 mx-auto" />
-                </button>
-              </div>
-            </div>
-
             <div className="relative">
               <div className="overflow-hidden">
                 <div
                   ref={lodgeCarouselRef}
                   onScroll={handleLodgeScroll}
-                  className="flex gap-10 snap-x snap-mandatory overflow-x-auto pb-6"
+                  className="flex gap-6 sm:gap-10 snap-x snap-mandatory overflow-x-auto p-6"
                   aria-live="polite"
                 >
                   {lodgeTiles.map((lodge, index) => (
@@ -719,7 +705,7 @@ export default function Home() {
                       className="snap-start shrink-0 basis-[85%] md:basis-[70%] lg:basis-[60%]"
                       data-lodge-card
                     >
-                      <div className="relative h-[500px] md:h-[560px] rounded-[56px] overflow-hidden shadow-[0_45px_120px_rgba(30,30,28,0.18)]">
+                      <div className="relative h-[500px] md:h-[560px] overflow-hidden shadow-[0_45px_120px_rgba(30,30,28,0.18)]">
                         <img
                           src={lodge.image}
                           alt={`${lodge.title} lodge`}
@@ -727,20 +713,23 @@ export default function Home() {
                         />
                         <div className="absolute inset-x-0 bottom-0">
                           <div className="bg-gradient-to-t from-[#F8F3ED] via-[#F8F3ED]/95 to-transparent px-10 pt-20 pb-12 text-lux-ink/90">
-                            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent mb-3">
-                              {String(index + 1).padStart(2, "0")} · {lodge.meta}
-                            </p>
                             <h3 className="font-serif text-4xl md:text-5xl text-lux-forest mb-4">{lodge.title}</h3>
                             <p className="text-base md:text-lg text-lux-ink/80 max-w-xl leading-relaxed mb-6">
                               {lodge.line}
                             </p>
-                            <Link
-                              href="/lodges"
-                              className="inline-flex items-center gap-2 text-sm md:text-base text-lux-forest font-semibold"
-                            >
-                              See Details
-                              <ArrowUpRight className="w-4 h-4" />
-                            </Link>
+                            <div className="flex flex-row items-center justify-between w-full">
+                              <p className="font-sans text-xs uppercase font-bold tracking-[0.4em] text-lux-accent">
+                                {String(index + 1).padStart(2, "0")} · {lodge.meta}
+                              </p>
+                              <Link
+                                href="/lodges"
+                                className="inline-flex items-center gap-2 text-sm md:text-base text-lux-forest font-semibold"
+                              >
+                                See Details
+                                <ArrowUpRight className="w-4 h-4" />
+                              </Link>
+                            </div>
+                            
                           </div>
                         </div>
                       </div>
@@ -755,19 +744,43 @@ export default function Home() {
                 {lodgeTiles.map((_, index) => (
                   <span
                     key={index}
-                    className={`h-1 rounded-full transition-all duration-300 ${
-                      activeLodgeIndex === index ? "w-14 bg-lux-forest" : "w-8 bg-lux-sand"
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      activeLodgeIndex === index ? "w-14 bg-lux-forest" : "w-4 bg-brown"
                     }`}
                   />
                 ))}
               </div>
-              <Link
+
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div className="flex gap-3">
+                  <button
+                    type="button"
+                    onClick={() => handleLodgeNav("prev")}
+                    aria-label="Show previous lodge"
+                    className="h-12 w-12 rounded-full border border-lux-sand text-lux-forest hover:bg-lux-forest hover:text-brown transition disabled:opacity-30 disabled:pointer-events-none"
+                    disabled={activeLodgeIndex === 0}
+                  >
+                    <ChevronLeft className="w-5 h-5 mx-auto" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleLodgeNav("next")}
+                    aria-label="Show next lodge"
+                    className="h-12 w-12 rounded-full border border-lux-sand text-lux-forest hover:bg-lux-forest hover:text-brown transition disabled:opacity-30 disabled:pointer-events-none"
+                    disabled={activeLodgeIndex === lodgeTiles.length - 1}
+                  >
+                    <ChevronRight className="w-5 h-5 mx-auto" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <Link
                 href="/lodges"
-                className="inline-flex items-center gap-2 text-sm md:text-base tracking-[0.2em] uppercase text-lux-forest"
+                className="flex items-center gap-2 text-sm md:text-base tracking-[0.2em] uppercase text-lux-forest rounded-full border border-lux-forest px-8 py-3 mx-auto w-fit"
               >
                 View Our Preferred Lodges →
               </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -777,18 +790,44 @@ export default function Home() {
         <div className="max-w-6xl mx-auto space-y-10">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent mb-3">Journal (Quarterly)</p>
+              <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent mb-3 font-semibold">Journal (Quarterly)</p>
               <h2 className="font-serif text-4xl text-lux-forest">Quiet field notes</h2>
             </div>
+
+            <p>Notes to help you stay connected</p>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-3">
             {journalEntries.map((entry) => (
-              <article key={entry.title} className="rounded-[28px] bg-white p-8 border border-lux-sand flex flex-col">
-                <p className="font-serif text-2xl text-lux-forest mb-4">{entry.title}</p>
-                <p className="text-lux-ink opacity-80 flex-1">{entry.excerpt}</p>
-                <Link href={entry.href} className="mt-8 text-sm text-lux-forest border-b border-lux-accent w-fit">
-                  Read entry →
-                </Link>
+              <article
+                key={entry.title}
+                className="group relative flex flex-col border border-lux-sand/80 bg-gradient-to-b from-white via-lux-shell to-lux-cream p-8 shadow-[0_35px_90px_rgba(30,30,28,0.08),15px_20px_0_rgba(255,255,255,0.7)] transition-transform duration-500 hover:-translate-y-1"
+              >
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 translate-x-4 translate-y-4 border border-lux-sand/70 bg-white/70 -z-10"
+                />
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-lux-accent/60 to-transparent"
+                />
+                <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.45em] text-lux-ink/50 font-sans">
+                  <span>{entry.issue}</span>
+                  <span className="tracking-[0.3em]">{entry.readingTime}</span>
+                </div>
+                <div className="flex flex-1 flex-col space-y-4 pt-6">
+                  <p className="font-serif text-3xl font-semibold leading-tight text-lux-forest">{entry.title}</p>
+                  <p className="text-lux-ink/70 text-sm">{entry.excerpt}</p>
+                </div>
+                <div className="mt-8 flex items-center justify-between border-t border-lux-sand/70 pt-5">
+                  <span className="text-[11px] uppercase tracking-[0.4em] text-lux-ink/50">{entry.season}</span>
+                  <Link
+                    href={entry.href}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-lux-forest transition-all group-hover:gap-3"
+                  >
+                    Read entry
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </article>
             ))}
           </div>
@@ -796,10 +835,10 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="px-6 py-24 bg-white" id="stories">
+      <section className="px-6 py-24 bg-gradient-to-b from-white via-lux-bone to-lux-shell" id="stories">
         <div className="max-w-6xl mx-auto space-y-10">
           <div className="text-center space-y-3">
-            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Quiet Echoes</p>
+            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">Quiet Echoes</p>
             <h2 className="font-serif text-4xl text-lux-forest">What guests feel after our safaris</h2>
             <p className="text-lux-ink opacity-80">In their words—moments of stillness, connection, and renewal.</p>
           </div>
@@ -807,11 +846,17 @@ export default function Home() {
             {testimonials.map((testimonial) => (
               <article
                 key={testimonial.feeling}
-                className="rounded-[24px] border border-lux-sand bg-lux-bone p-8 shadow-[0_20px_60px_rgba(30,30,28,0.08)]"
+                className="group relative overflow-hidden border border-lux-forest/30 bg-gradient-to-br from-lux-forest to-[#1b2a23] p-10 text-lux-shell shadow-[0_25px_75px_rgba(10,21,16,0.45)]"
               >
-                <p className="font-serif text-2xl text-lux-forest mb-3">{testimonial.feeling}</p>
-                <p className="text-lg text-lux-ink opacity-80 mb-6">“{testimonial.quote}”</p>
-                <p className="text-sm text-lux-forest opacity-70">— {testimonial.guest}</p>
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 opacity-40 [background:radial-gradient(circle_at_top,var(--lux-accent)/0.4,transparent_65%)]"
+                />
+                <Quote className="relative mb-6 h-10 w-10 text-lux-accent" />
+                <p className="relative text-xs uppercase tracking-[0.55em] text-lux-shell/60">Guest reflection</p>
+                <p className="relative font-serif text-3xl leading-tight text-white">{testimonial.feeling}</p>
+                <p className="relative mt-6 text-lg italic text-lux-shell/80">“{testimonial.quote}”</p>
+                <p className="relative mt-8 text-sm uppercase tracking-[0.2em] text-lux-shell/80 font-sans">{testimonial.guest}</p>
               </article>
             ))}
           </div>
