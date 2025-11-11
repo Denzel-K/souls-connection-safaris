@@ -105,7 +105,7 @@ const experienceModes = [
     subline: "Move when it feels right—with a host attuned to your pace.",
     bullets: ["Exclusive vehicles", "Flexible pacing", "Bespoke stays"],
     cta: { label: "Reserve Private Dates", href: "/booking" },
-    image: "/kenya-safari-landscape-with-masai-giraffes-and-aca.jpg",
+    image: "/couple-on-holiday.jpeg",
   },
   {
     eyebrow: "Small Group (≤15)",
@@ -113,7 +113,7 @@ const experienceModes = [
     subline: "Kindred travelers, fixed dates, and thoughtful value.",
     bullets: ["Intimate", "Fixed dates", "Exceptional value"],
     cta: { label: "View Small-Group Departures", href: "/departures" },
-    image: "/south-africa-kruger-national-park-sunset-with-big-.jpg",
+    image: "/group-on-holiday.jpeg",
   },
 ]
 
@@ -283,7 +283,7 @@ export default function Home() {
           <div className="order-2 lg:order-1 space-y-10 relative">
             <div className="absolute -inset-6 bg-[url('/placeholder.svg')] opacity-[0.03] rounded-[40px] pointer-events-none" />
             <div className="relative space-y-8 bg-white/85 backdrop-blur-sm p-12 rounded-[40px] shadow-[0_35px_90px_rgba(30,30,28,0.08)]">
-              <p className="text-xs uppercase tracking-[0.4em] text-lux-accent">Tired of rushed, box-ticking tours?</p>
+              <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Tired of rushed, box-ticking tours?</p>
               
               <div className="space-y-4">
                 {[
@@ -343,7 +343,7 @@ export default function Home() {
       <section className="px-6 py-24 bg-white" id="pillars">
         <div className="mx-auto max-w-6xl space-y-12">
           <div className="text-center space-y-4">
-            <p className="text-xs uppercase tracking-[0.4em] text-lux-accent">Why us?</p>
+            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Why us?</p>
             <h2 className="font-serif text-4xl text-lux-forest">Our three value pillars</h2>
             <p className="text-lg text-lux-ink opacity-80">Human hosts, effortless pacing, and integrity in every detail.</p>
           </div>
@@ -377,13 +377,13 @@ export default function Home() {
           <div className="flex flex-col items-center gap-3 md:flex-row md:justify-center">
             <Link
               href="/booking"
-              className="rounded-full bg-lux-forest px-6 py-3 text-sm uppercase tracking-[0.3em] text-white"
+              className="rounded-full bg-lux-forest px-6 py-3 font-sans text-sm uppercase tracking-[0.3em] text-white"
             >
               Plan My Journey
             </Link>
             <Link
               href="#signature-journeys"
-              className="text-sm uppercase tracking-[0.3em] text-lux-forest border-b border-lux-accent"
+              className="font-sans text-sm uppercase tracking-[0.3em] text-lux-forest border-b border-lux-accent"
             >
               Explore signature journeys
             </Link>
@@ -396,7 +396,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto space-y-10">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-lux-accent mb-3">Signature Journeys</p>
+              <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent mb-3">Signature Journeys</p>
               <h2 className="font-serif text-4xl md:text-5xl text-lux-forest">Host-led safaris</h2>
               <p className="text-lg text-lux-ink opacity-80">
                 Premium and ultra-premium itineraries pulled directly from our experiences library.
@@ -404,41 +404,41 @@ export default function Home() {
             </div>
 
           </div>
-          <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory" aria-label="Featured journeys">
+          <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory" aria-label="Featured journeys">
             {featuredJourneys.map((journey) => (
               <article
                 key={journey.id}
-                className="snap-start min-w-[260px] w-72 flex-shrink-0 rounded-[28px] border border-lux-sand bg-white shadow-[0_20px_60px_rgba(30,30,28,0.1)] overflow-hidden flex flex-col"
+                className="snap-start min-w-[320px] w-80 flex-shrink-0 rounded-[28px] border border-lux-sand bg-white shadow-[0_15px_45px_rgba(30,30,28,0.12)] overflow-hidden flex flex-col"
               >
-                <div className="relative h-48">
+                <div className="relative h-44">
                   <img
                     src={journey.image}
                     alt={`${journey.name} scene`}
                     className="h-full w-full object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute top-4 left-4 rounded-full bg-white/90 px-4 py-1 text-xs uppercase tracking-[0.3em] text-lux-forest">
+                  <div className="absolute top-3 left-3 rounded-full bg-white/90 px-3 py-0.5 font-sans text-[0.65rem] uppercase tracking-[0.25em] text-lux-forest">
                     {journey.tierName}
                   </div>
                 </div>
-                <div className="flex flex-1 flex-col gap-3 p-6">
-                  <p className="text-xs uppercase tracking-[0.3em] text-lux-accent">{journey.subcategoryName}</p>
-                  <p className="font-serif text-2xl text-lux-forest leading-tight">{journey.name}</p>
+                <div className="flex flex-1 flex-col gap-2.5 p-5">
+                  <p className="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-lux-accent">{journey.subcategoryName}</p>
+                  <p className="font-serif text-xl text-lux-forest leading-tight">{journey.name}</p>
                   <p className="text-sm text-lux-ink opacity-80 flex-1">{journey.description}</p>
-                  <div className="flex flex-wrap gap-2 text-xs text-lux-forest">
-                    <span className="rounded-full border border-lux-sand px-3 py-1">{journey.duration}</span>
-                    <span className="rounded-full border border-lux-sand px-3 py-1">{journey.destination}</span>
+                  <div className="flex flex-wrap gap-1.5 text-[0.7rem] text-lux-forest">
+                    <span className="rounded-full border border-lux-sand px-2.5 py-0.5">{journey.duration}</span>
+                    <span className="rounded-full border border-lux-sand px-2.5 py-0.5">{journey.destination}</span>
                   </div>
-                  <div className="flex flex-col gap-2 pt-2">
+                  <div className="flex flex-col gap-1.5 pt-1">
                     <Link
                       href={`/booking?journey=${journey.id}`}
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-lux-forest px-4 py-3 text-sm uppercase tracking-[0.3em] text-white"
+                      className="inline-flex items-center justify-center rounded-full bg-lux-forest px-4 py-2 text-[0.75rem] uppercase tracking-[0.2em] text-white"
                     >
                       Request This Journey
                     </Link>
                     <Link
                       href={`/itinerary/${journey.itineraryId}`}
-                      className="text-sm text-lux-forest border-b border-lux-accent w-fit"
+                      className="text-xs text-lux-forest border-b border-lux-accent w-fit"
                     >
                       View sample day →
                     </Link>
@@ -450,7 +450,7 @@ export default function Home() {
           <div className="text-center">
             <Link
               href="/experiences"
-              className="inline-flex items-center justify-center rounded-full border border-lux-forest px-8 py-3 text-sm uppercase tracking-[0.3em] text-lux-forest"
+              className="inline-flex items-center justify-center rounded-full border border-lux-forest px-8 py-3 font-sans text-sm uppercase tracking-[0.3em] text-lux-forest"
             >
               View all experiences
             </Link>
@@ -461,7 +461,7 @@ export default function Home() {
       {/* Destinations Strip */}
       <section className="py-12 bg-lux-ink text-white">
         <div className="max-w-5xl mx-auto text-center space-y-3">
-          <p className="text-xs uppercase tracking-[0.6em] text-lux-accent">Destinations</p>
+          <p className="font-sans text-xs uppercase tracking-[0.6em] text-lux-accent">Destinations</p>
           <p className="font-serif text-3xl md:text-4xl flex flex-wrap justify-center gap-y-2 gap-x-4">
             {destinations.map((destination, index) => (
               <span key={destination} className="whitespace-nowrap">
@@ -477,7 +477,7 @@ export default function Home() {
       <section className="px-6 py-24 bg-white" id="plan">
         <div className="max-w-6xl mx-auto space-y-10">
           <div className="text-center space-y-4">
-            <p className="text-xs uppercase tracking-[0.4em] text-lux-accent">The Plan</p>
+            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">The Plan</p>
             <h2 className="font-serif text-5xl text-lux-forest">How it works</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
@@ -486,7 +486,7 @@ export default function Home() {
                 key={step.label}
                 className="rounded-[28px] bg-lux-bone p-8 border border-lux-sand shadow-[0_20px_60px_rgba(30,30,28,0.08)] flex flex-col"
               >
-                <p className="text-xs uppercase tracking-[0.3em] text-lux-accent mb-2">{step.label}</p>
+                <p className="font-sans text-xs uppercase tracking-[0.3em] text-lux-accent mb-2">{step.label}</p>
                 <p className="font-serif text-2xl mb-3">{step.title}</p>
                 <p className="text-lux-ink opacity-80 flex-1">{step.copy}</p>
                 <p className="text-xs text-lux-forest opacity-60 mt-4">{step.micro}</p>
@@ -521,14 +521,14 @@ export default function Home() {
           </div>
 
           <div className="space-y-6">
-            <p className="text-xs uppercase tracking-[0.4em] text-lux-accent">Founders & Hosts</p>
+            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Founders & Hosts</p>
             <h2 className="font-serif text-4xl text-lux-forest">Guided by hosts who care.</h2>
             <p className="text-lg text-lux-ink opacity-80">
               Founded by George Mburu and Wambui Mburu—hospitality-trained hosts who design journeys around how you want
               to feel.
             </p>
             <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-lux-accent mb-3">What guests rely on</p>
+              <p className="font-sans text-xs uppercase tracking-[0.3em] text-lux-accent mb-3">What guests rely on</p>
               <div className="flex flex-wrap gap-3">
                 {founderMicroCreds.map((cred) => (
                   <span
@@ -548,7 +548,7 @@ export default function Home() {
               >
                 Talk to a Host
               </Link>
-              <Link href="/about" className="inline-flex items-center gap-2 text-lux-forest border-b border-lux-accent">
+              <Link href="/founders-story" className="inline-flex items-center gap-2 text-lux-forest border-b border-lux-accent">
                 Meet Your Hosts →
               </Link>
             </div>
@@ -560,7 +560,7 @@ export default function Home() {
       {/* Impact & Community */}
       <section className="px-6 py-20 bg-white">
         <div className="max-w-4xl mx-auto text-center space-y-5">
-          <p className="text-xs uppercase tracking-[0.4em] text-lux-accent">Impact & Community</p>
+          <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Impact & Community</p>
           <p className="text-lg text-lux-ink opacity-80">
             Every journey funds ranger training, Maasai women-led enterprises, and carbon
             positive restoration. Impact reporting mirrors Wilderness-level transparency so you know your luxury safari
@@ -573,25 +573,25 @@ export default function Home() {
       </section>
 
       {/* Experience Modes */}
-      <section className="px-6 py-24 bg-lux-cream" id="experience-modes">
-        <div className="max-w-6xl mx-auto space-y-10">
+      <section className="px-6 py-16 bg-lux-cream" id="experience-modes">
+        <div className="max-w-6xl mx-auto space-y-8">
           <div className="text-center space-y-3">
-            <p className="text-xs uppercase tracking-[0.4em] text-lux-accent">Choose your rhythm</p>
-            <h2 className="font-serif text-4xl text-lux-forest">Private vs Small Group</h2>
-            <p className="text-lg text-lux-ink opacity-80">Help guests self-select quickly without pressure.</p>
+            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Choose your rhythm</p>
+            <h2 className="font-serif text-3xl text-lux-forest">Private vs Small Group</h2>
+            <p className="text-base text-lux-ink opacity-80">Self-select smoothly without pressure.</p>
           </div>
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2">
             {experienceModes.map((mode) => (
               <article
                 key={mode.title}
-                className="rounded-[32px] overflow-hidden bg-white shadow-[0_30px_80px_rgba(30,30,28,0.1)] border border-lux-sand flex flex-col"
+                className="rounded-[18px] overflow-hidden bg-white shadow-[0_20px_50px_rgba(30,30,28,0.08)] border border-lux-sand flex flex-col"
               >
-                <img src={mode.image} alt={mode.title} className="h-64 w-full object-cover" loading="lazy" />
-                <div className="p-8 space-y-4 flex-1 flex flex-col">
-                  <p className="text-xs uppercase tracking-[0.4em] text-lux-accent">{mode.eyebrow}</p>
-                  <p className="font-serif text-3xl text-lux-forest">{mode.title}</p>
-                  <p className="text-lg text-lux-ink opacity-80">{mode.subline}</p>
-                  <ul className="space-y-2 text-lux-forest opacity-80">
+                <img src={mode.image} alt={mode.title} className="h-58 w-full object-cover rounded-[18px]" loading="lazy" />
+                <div className="p-6 space-y-3 flex-1 flex flex-col">
+                  <p className="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-lux-accent">{mode.eyebrow}</p>
+                  <p className="font-serif text-2xl text-lux-forest">{mode.title}</p>
+                  <p className="text-base text-lux-ink opacity-80">{mode.subline}</p>
+                  <ul className="space-y-1.5 text-sm text-lux-forest opacity-80">
                     {mode.bullets.map((bullet) => (
                       <li key={bullet} className="flex items-center gap-2">
                         <span className="h-2 w-2 rounded-full bg-[color:var(--lux-accent)]" aria-hidden />
@@ -599,10 +599,10 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <div className="pt-4">
+                  <div className="pt-2">
                     <Link
                       href={mode.cta.href}
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-lux-forest text-white text-sm"
+                      className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-lux-forest text-white font-sans text-xs uppercase tracking-[0.2em]"
                     >
                       {mode.cta.label}
                     </Link>
@@ -618,7 +618,7 @@ export default function Home() {
       <section className="px-6 py-24 bg-white" id="lodges">
         <div className="max-w-6xl mx-auto space-y-10">
           <div className="text-center space-y-3">
-            <p className="text-xs uppercase tracking-[0.4em] text-lux-accent">Lodges & Stays</p>
+            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Lodges & Stays</p>
             <h2 className="font-serif text-4xl text-lux-forest">Soulful places, quietly luxurious.</h2>
             <p className="text-lg text-lux-ink opacity-80">
               A handpicked circle of lodges where stillness, craft, and care make room for connection.
@@ -643,7 +643,7 @@ export default function Home() {
                 </div>
                 <div className="space-y-2">
                   <p className="font-serif text-2xl text-lux-forest">{lodge.title}</p>
-                  <p className="text-xs uppercase tracking-[0.3em] text-lux-accent">{lodge.meta}</p>
+                  <p className="font-sans text-xs uppercase tracking-[0.3em] text-lux-accent">{lodge.meta}</p>
                   <p className="text-sm text-lux-ink opacity-80">{lodge.line}</p>
                   <Link href="/lodges" className="text-sm text-lux-forest border-b border-lux-accent w-fit">
                     See Details →
@@ -668,13 +668,9 @@ export default function Home() {
         <div className="max-w-6xl mx-auto space-y-10">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-lux-accent mb-3">Journal (Quarterly)</p>
+              <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent mb-3">Journal (Quarterly)</p>
               <h2 className="font-serif text-4xl text-lux-forest">Quiet field notes</h2>
             </div>
-            <p className="text-lux-ink opacity-70 max-w-xl">
-              Editorial stories—not blog posts—that help guests feel the pace, texture, and ease of a Souls Connection
-              safari.
-            </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {journalEntries.map((entry) => (
@@ -694,7 +690,7 @@ export default function Home() {
       <section className="px-6 py-24 bg-white" id="stories">
         <div className="max-w-6xl mx-auto space-y-10">
           <div className="text-center space-y-3">
-            <p className="text-xs uppercase tracking-[0.4em] text-lux-accent">Quiet Echoes</p>
+            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Quiet Echoes</p>
             <h2 className="font-serif text-4xl text-lux-forest">What guests feel after our safaris</h2>
             <p className="text-lux-ink opacity-80">In their words—moments of stillness, connection, and renewal.</p>
           </div>
@@ -722,12 +718,12 @@ export default function Home() {
       <section className="px-6 py-24 bg-lux-shell" id="inclusions">
         <div className="max-w-6xl mx-auto space-y-10">
           <div className="text-center space-y-3">
-            <p className="text-xs uppercase tracking-[0.4em] text-lux-accent">What's Included</p>
+            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">What's Included</p>
             <h2 className="font-serif text-4xl text-lux-forest">Representative inclusions; itinerary specifics apply.</h2>
           </div>
           <div className="grid gap-10 md:grid-cols-2">
             <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-lux-forest opacity-70 mb-4">Included on Premium & Ultra-Premium Journeys</p>
+              <p className="font-sans text-sm uppercase tracking-[0.3em] text-lux-forest opacity-70 mb-4">Included on Premium & Ultra-Premium Journeys</p>
               <ul className="space-y-3">
                 {includedItems.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-lux-ink opacity-80">
@@ -738,7 +734,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-lux-forest opacity-70 mb-4">Not included (industry standard)</p>
+              <p className="font-sans text-sm uppercase tracking-[0.3em] text-lux-forest opacity-70 mb-4">Not included (industry standard)</p>
               <ul className="space-y-3">
                 {excludedItems.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-lux-ink opacity-80">
@@ -781,7 +777,7 @@ export default function Home() {
           ) : (
             <>
               <div className="space-y-3 text-center">
-                <p className="text-xs uppercase tracking-[0.4em] text-lux-accent">Lead Magnet</p>
+                <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">Lead Magnet</p>
                 <h3 className="font-serif text-4xl text-lux-forest">The Soulful Safari Planner</h3>
                 <p className="text-lg text-lux-ink opacity-80">
                   A 5-minute guide to a private, host-led journey—crafted for meaning, connection, and ease.
