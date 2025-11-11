@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useRef, useState } from "react"
-import { ArrowUpRight, CheckCircle2, ChevronLeft, ChevronRight, Quote, Shield } from "lucide-react"
+import { ArrowUpRight, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight, Quote, Shield } from "lucide-react"
 
 import { allExperiences } from "@/lib/experiences-data"
 import type { IndexedExperience } from "@/lib/experiences-data"
@@ -122,25 +122,25 @@ const lodgeTiles = [
     title: "Clifftop Calm",
     meta: "Mara · Contemporary · 15 suites",
     line: "Long, unhurried afternoons; linen and timber opening to endless grassland.",
-    image: "/lounge-view.jpeg",
+    image: "/clifftop-calmness.jpeg",
   },
   {
     title: "Riverine Light",
     meta: "Laikipia · Organic · 8 tents",
     line: "Firelit suppers beside the river; private drives at your pace.",
-    image: "/uganda-queen-elizabeth-national-park-with-tree-cli.jpg",
+    image: "/riverine.jpeg",
   },
   {
     title: "Savanna Stillness",
     meta: "Serengeti · Classic · 12 suites",
     line: "Floor-to-ceiling light, lantern paths, and dawn coffee with the plains.",
-    image: "/tanzania-serengeti-savanna-with-zebra-herd-and-mou.jpg",
+    image: "/savannah-stillness.jpeg",
   },
   {
     title: "Dune & Acacia",
     meta: "Namibia · Sculptural · 10 villas",
     line: "Hand-hewn timber, stone courtyards, and desert stargazing decks.",
-    image: "/botswana-okavango-delta-water-channels-with-elepha.jpg",
+    image: "/dune-lodge.jpeg",
   },
 ]
 
@@ -231,11 +231,36 @@ const excludedItems = [
   "Anything not expressly listed in inclusions",
 ]
 
+const inclusionAccordions = [
+  {
+    id: "included" as const,
+    eyebrow: "Included on Premium & Ultra-Premium journeys",
+    title: "Ease, privacy, and care—already handled.",
+    subcopy: "The essentials we weave into every hosted itinerary so you can just arrive.",
+    items: includedItems,
+    icon: CheckCircle2,
+  },
+  {
+    id: "excluded" as const,
+    eyebrow: "Not included (industry standard items)",
+    title: "Handled separately, transparently.",
+    subcopy: "We advise on these line items during planning so there are no surprises.",
+    items: excludedItems,
+    icon: Shield,
+  },
+]
+
+type InclusionAccordionId = (typeof inclusionAccordions)[number]["id"]
+
 export default function Home() {
   const [plannerEmail, setPlannerEmail] = useState("")
   const [plannerConsent, setPlannerConsent] = useState(false)
   const [plannerStatus, setPlannerStatus] = useState<"idle" | "success" | "error">("idle")
   const [activeLodgeIndex, setActiveLodgeIndex] = useState(0)
+  const [accordionOpen, setAccordionOpen] = useState<Record<InclusionAccordionId, boolean>>({
+    included: true,
+    excluded: false,
+  })
   const lodgeCarouselRef = useRef<HTMLDivElement>(null)
 
   const handlePlannerSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -277,6 +302,13 @@ export default function Home() {
     const rawIndex = Math.round(lodgeCarouselRef.current.scrollLeft / scrollAmount)
     const clampedIndex = Math.min(lodgeTiles.length - 1, Math.max(0, rawIndex))
     setActiveLodgeIndex(clampedIndex)
+  }
+
+  const toggleAccordion = (panel: InclusionAccordionId) => {
+    setAccordionOpen((prev) => ({
+      ...prev,
+      [panel]: !prev[panel],
+    }))
   }
 
 
@@ -869,35 +901,81 @@ export default function Home() {
       </section>
 
       {/* What's Included */}
-      <section className="px-6 py-24 bg-lux-shell" id="inclusions">
-        <div className="max-w-6xl mx-auto space-y-10">
+      <section className="px-6 py-24 bg-gradient-to-b from-lux-shell via-white to-lux-cream" id="inclusions">
+        <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-3">
-            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent">What's Included</p>
+            <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">What's Included</p>
             <h2 className="font-serif text-4xl text-lux-forest">Representative inclusions; itinerary specifics apply.</h2>
+            <p className="text-lux-ink/70 max-w-3xl mx-auto">
+              Expand each capsule to explore what we handle automatically—and which line items are typically arranged with our guidance.
+            </p>
           </div>
-          <div className="grid gap-10 md:grid-cols-2">
-            <div>
-              <p className="font-sans text-sm uppercase tracking-[0.3em] text-lux-forest opacity-70 mb-4">Included on Premium & Ultra-Premium Journeys</p>
-              <ul className="space-y-3">
-                {includedItems.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-lux-ink opacity-80">
-                    <CheckCircle2 className="w-5 h-5 text-lux-forest" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="font-sans text-sm uppercase tracking-[0.3em] text-lux-forest opacity-70 mb-4">Not included (industry standard)</p>
-              <ul className="space-y-3">
-                {excludedItems.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-lux-ink opacity-80">
-                    <Shield className="w-5 h-5 text-lux-accent" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="flex flex-col gap-8 md:flex-row md:items-start">
+            {inclusionAccordions.map((panel) => {
+              const Icon = panel.icon
+              const isOpen = accordionOpen[panel.id]
+              const wrapperClasses = "border-lux-forest/15 bg-gradient-to-br from-white/95 via-lux-shell to-lux-cream"
+              const innerClasses = "bg-white/85 text-lux-ink shadow-[0_45px_120px_rgba(15,15,10,0.18)]"
+              const chipClasses = "bg-lux-forest/10 text-lux-forest"
+              const listTextClasses = "text-lux-ink/80"
+              const contentId = `accordion-${panel.id}`
+
+              return (
+                <div
+                  key={panel.id}
+                  className={`relative w-full md:flex-1 overflow-hidden rounded-[46px] border p-[1.5px] backdrop-blur-xl ${wrapperClasses}`}
+                >
+                  <div className={`relative rounded-[44px] p-8 md:p-10 ${innerClasses}`}>
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-0 opacity-40 [background:radial-gradient(circle_at_top,var(--lux-accent)/0.25,transparent_65%)]"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => toggleAccordion(panel.id)}
+                      aria-expanded={isOpen}
+                      aria-controls={contentId}
+                      className="relative flex w-full flex-col gap-4 text-left"
+                    >
+                      <div className="flex items-start justify-between gap-6">
+                        <div className="space-y-3">
+                          <p className="text-[12px] font-sans font-bold uppercase tracking-[0.45em] text-lux-accent">{panel.eyebrow}</p>
+                          <p className="font-serif text-3xl text-current leading-tight">{panel.title}</p>
+                          <p className="text-sm md:text-base text-lux-ink/70">{panel.subcopy}</p>
+                        </div>
+                        <span
+                          className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full border border-lux-forest/20 bg-white/70 text-lux-forest backdrop-blur ${
+                            isOpen ? "rotate-180" : ""
+                          } transition-transform duration-300`}
+                        >
+                          <ChevronDown className="h-5 w-5" />
+                        </span>
+                      </div>
+                    </button>
+                    <div
+                      id={contentId}
+                      style={{ maxHeight: isOpen ? "900px" : "0px" }}
+                      className={`relative overflow-hidden transition-[max-height] duration-500 ease-out ${
+                        isOpen ? "mt-8" : "mt-0"
+                      }`}
+                    >
+                      <div className="space-y-5">
+                        <ul className="space-y-4">
+                          {panel.items.map((item) => (
+                            <li key={item} className={`flex items-start gap-4 ${listTextClasses}`}>
+                              <span className={`flex h-10 w-10 items-center justify-center rounded-full ${chipClasses}`}>
+                                <Icon className="h-5 w-5" />
+                              </span>
+                              <span className="flex-1 text-base leading-relaxed">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
           <div className="text-right space-y-2">
             <p className="text-sm text-lux-ink opacity-60">Note: Your proposal and confirmation will specify exact details.</p>
@@ -909,7 +987,7 @@ export default function Home() {
       </section>
 
       {/* Lead Magnet */}
-      <section className="px-6 py-24 bg-white" id="planner">
+      {/* <section className="px-6 py-24 bg-white" id="planner">
         <div className="max-w-4xl mx-auto rounded-[32px] border border-lux-sand bg-lux-bone p-10 space-y-6 shadow-[0_20px_60px_rgba(30,30,28,0.08)]">
           {plannerStatus === "success" ? (
             <div className="text-center space-y-4">
@@ -977,7 +1055,7 @@ export default function Home() {
             </>
           )}
         </div>
-      </section>
+      </section> */}
 
       {/* Closing CTA */}
       <section className="px-6 py-24 bg-lux-blush">

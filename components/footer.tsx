@@ -26,6 +26,19 @@ const footerReviews = [
   },
 ]
 
+const regulatoryPartners = [
+  {
+    name: "Ministry of Tourism",
+    logo: "/ministry-of-tourism.jpg",
+    alt: "Ministry of Tourism logo",
+  },
+  {
+    name: "Tourism Regulatory Authority",
+    logo: "/tourism-regulatory-authority.png",
+    alt: "Tourism Regulatory Authority logo",
+  },
+]
+
 type FooterColumnProps = {
   title: string
   links: { label: string; href: string }[]
@@ -65,7 +78,7 @@ export function Footer() {
 
       <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-[48px] border border-white/15 bg-white/5 px-6 sm:px-10 md:px-14 py-16 md:py-20 shadow-[0_50px_140px_rgba(0,0,0,0.6)]">
-          <div className="flex flex-col gap-12 xl:flex-row xl:justify-between">
+          <div className="flex flex-col gap-12 xl:flex-row xl:items-stretch xl:justify-between">
             <div className="max-w-4xl space-x-4 flex flex-row items-center">
               <SafariLogo size={126} />
               <div>
@@ -73,6 +86,21 @@ export function Footer() {
                 <p className="text-white/70 text-sm leading-relaxed mt-3">
                   Crafting bespoke experiences that renew the spirit and restore connection.
                 </p>
+              </div>
+            </div>
+            <div className="w-full rounded-[32px] border border-white/20 px-6 py-6 space-y-4 xl:max-w-md">
+              <p className="font-serif text-xl">Approved & Regulated By</p>
+              <div className="flex flex-wrap items-center gap-6">
+                {regulatoryPartners.map((partner) => (
+                  <div key={partner.name} className="flex flex-col items-center text-center gap-2">
+                    <img
+                      src={partner.logo}
+                      alt={partner.alt}
+                      className="h-16 w-auto rounded-lg object-contain"
+                    />
+                    <p className="text-xs text-white/80">{partner.name}</p>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="w-full xl:max-w-sm">
