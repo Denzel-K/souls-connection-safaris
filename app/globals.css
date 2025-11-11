@@ -5,27 +5,37 @@
 
 :root {
   /* Luxury Safari Color Palette */
-  --background: oklch(0.98 0 0);
-  --foreground: oklch(0.2 0.01 0);
-  --card: oklch(0.98 0 0);
-  --card-foreground: oklch(0.2 0.01 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.3 0.05 30);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.8 0.01 0);
-  --muted-foreground: oklch(0.5 0.01 0);
-  --accent: oklch(0.45 0.15 50);
-  --gold: oklch(0.674 0.117 92.45);
-  --green: oklch(0.35 0.12 140);
-  --brown: var(--gold);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --lux-bone: #faf8f4;
+  --lux-cream: #f4f0ea;
+  --lux-shell: #fdf9f3;
+  --lux-blush: #f0e6d8;
+  --lux-ink: #1e1e1c;
+  --lux-forest: #2e3b33;
+  --lux-accent: #8b6a3d;
+  --lux-sand: #e6ded0;
+  --lux-stone: #d9c9b3;
+  --lux-ink-soft: color-mix(in srgb, var(--lux-ink) 55%, transparent);
+  --background: var(--lux-bone);
+  --foreground: var(--lux-ink);
+  --card: var(--lux-bone);
+  --card-foreground: var(--lux-ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--lux-ink);
+  --primary: var(--lux-forest);
+  --primary-foreground: var(--lux-bone);
+  --secondary: var(--lux-cream);
+  --secondary-foreground: var(--lux-forest);
+  --muted: #f3ece4;
+  --muted-foreground: color-mix(in srgb, var(--lux-ink) 65%, transparent);
+  --accent: var(--lux-accent);
+  --gold: var(--lux-accent);
+  --green: #4f6b57;
+  --brown: var(--lux-accent);
+  --destructive: #b9574b;
+  --destructive-foreground: #ffffff;
+  --border: var(--lux-sand);
+  --input: var(--lux-sand);
+  --ring: var(--lux-forest);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -165,5 +175,59 @@
 
   .bg-overlay-dark {
     @apply bg-black/30;
+  }
+}
+
+@layer utilities {
+  .bg-lux-bone {
+    background-color: var(--lux-bone);
+  }
+
+  .bg-lux-cream {
+    background-color: var(--lux-cream);
+  }
+
+  .bg-lux-shell {
+    background-color: var(--lux-shell);
+  }
+
+  .bg-lux-blush {
+    background-color: var(--lux-blush);
+  }
+
+  .bg-lux-ink {
+    background-color: var(--lux-ink);
+  }
+
+  .bg-lux-forest {
+    background-color: var(--lux-forest);
+  }
+
+  .text-lux-ink {
+    color: var(--lux-ink);
+  }
+
+  .text-lux-forest {
+    color: var(--lux-forest);
+  }
+
+  .text-lux-accent {
+    color: var(--lux-accent);
+  }
+
+  .border-lux-sand {
+    border-color: var(--lux-sand);
+  }
+
+  .border-lux-stone {
+    border-color: var(--lux-stone);
+  }
+
+  .border-lux-forest {
+    border-color: var(--lux-forest);
+  }
+
+  .border-lux-accent {
+    border-color: var(--lux-accent);
   }
 }

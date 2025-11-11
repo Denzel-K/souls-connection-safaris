@@ -44,30 +44,36 @@ export const packageTiers: PackageTier[] = [
         experiences: [
           {
             id: "premium-sig-grand",
-            name: "The Grand Serengeti Journey",
-            duration: "12 Days",
-            price: "From $4,800 per person",
-            description: "Experience the best of East Africa with professional guides across multiple national parks",
+            name: "The Quiet Horizon",
+            duration: "8–10 Days",
+            price: "From $6,200 per guest",
+            description: "Coastal calm melting into Masai Mara stillness—private charters, dawn dhows, and savanna decks.",
             highlights: [
-              "Big Five encounters",
-              "Professional guides",
-              "Luxury lodges",
-              "Game drives",
-              "Cultural experiences",
+              "Private vehicle throughout",
+              "Lamu dhow sail & beach villas",
+              "Slow Mara mornings with host-led pacing",
+              "Lantern-lit dinners overlooking the plains",
+              "Spa rituals and reflective journaling moments",
             ],
-            image: "/african-safari-lions-at-sunset.jpg",
-            destination: "Kenya & Tanzania",
+            image: "/Weekend Getaway in the Wild.jpeg",
+            destination: "Kenya Coast & Masai Mara",
             itineraryId: "premium-sig-grand",
           },
           {
             id: "premium-sig-mara",
-            name: "Masai Mara Explorer",
+            name: "Elements of Connection",
             duration: "10 Days",
-            price: "From $3,900 per person",
-            description: "Focused adventure on Africa's most iconic wildlife reserve",
-            highlights: ["Migration viewing", "Hot air balloon", "Big Five", "Photography", "Expert naturalists"],
-            image: "/giraffe-herd-in-savanna-landscape.jpg",
-            destination: "Kenya",
+            price: "From $6,800 per guest",
+            description: "Classic Big Five country with unhurried mornings, sundowner salons, and soulful campfires.",
+            highlights: [
+              "Hot air balloon over the Mara",
+              "Host-led storytelling circles",
+              "Photographic support at golden hour",
+              "Private bush breakfasts",
+              "Access to conservancy-only sightings",
+            ],
+            image: "/african-safari-lions-at-sunset.jpg",
+            destination: "Masai Mara & Conservancies",
             itineraryId: "premium-sig-mara",
           },
         ],
@@ -80,30 +86,36 @@ export const packageTiers: PackageTier[] = [
         experiences: [
           {
             id: "premium-priv-golden",
-            name: "East Africa's Golden Savannahs",
-            duration: "14 Days",
-            price: "From $7,200 per person",
-            description: "Exclusive private group safari through Kenya and Tanzania with personalized itinerary",
+            name: "Legacy in the Wild",
+            duration: "10 Days",
+            price: "From $7,800 per party",
+            description: "Multi-generational adventure with villa buyouts, private guides, and intentional pacing.",
             highlights: [
-              "Exclusive access",
-              "Private vehicles",
-              "Flexible timing",
-              "Luxury camps",
-              "Personalized service",
+              "Exclusive-use camps & villas",
+              "Dedicated host + driver-guide team",
+              "Custom pacing for each generation",
+              "Heli add-ons for aerial game spotting",
+              "Private cellar dinners & stargazing guides",
             ],
-            image: "/zebra-migration-across-plains.jpg",
-            destination: "Kenya & Tanzania",
+            image: "/elephant-family-drinking-at-watering-hole.jpg",
+            destination: "Kenya & Northern Tanzania",
             itineraryId: "premium-priv-golden",
           },
           {
             id: "premium-priv-ngoro",
-            name: "Ngorongoro Crater Private Experience",
+            name: "Highland Reverie",
             duration: "9 Days",
-            price: "From $5,500 per person",
-            description: "Private safari focused on the world's largest intact caldera",
-            highlights: ["Crater descent", "Private lodge", "Walking safaris", "Photography focus", "Exclusive access"],
-            image: "/elephant-family-drinking-at-watering-hole.jpg",
-            destination: "Tanzania",
+            price: "From $6,400 per guest",
+            description: "Ngorongoro highlands, crater floor picnics, and private coffee-estate stays.",
+            highlights: [
+              "Exclusive crater rim lodge",
+              "Guided descent before public access",
+              "Walking safaris with rangers",
+              "Estate tastings & roasting workshops",
+              "Private flights into Serengeti extension",
+            ],
+            image: "/zebra-migration-across-plains.jpg",
+            destination: "Ngorongoro & Serengeti, Tanzania",
             itineraryId: "premium-priv-ngoro",
           },
         ],
@@ -118,17 +130,17 @@ export const packageTiers: PackageTier[] = [
             id: "premium-custom-bespoke",
             name: "Bespoke African Adventure",
             duration: "Custom Duration",
-            price: "From $6,500 per person",
-            description: "Completely customized safari designed exactly how you envision it",
+            price: "From $8,500 per journey",
+            description: "A blank canvas shaped around your rituals—villa buyouts, conservation suppers, heli add-ons.",
             highlights: [
-              "Full customization",
-              "Private guide",
-              "Custom lodges",
-              "Unique experiences",
-              "Flexible dates",
+              "Entirely guest-led pacing",
+              "Dedicated trip designer + host",
+              "Curated lodge + art provenance",
+              "Integrations with wellness & culinary teams",
+              "Flexible dates and private aviation options",
             ],
             image: "/leopard-in-acacia-tree-at-dusk.jpg",
-            destination: "Any African Destination",
+            destination: "Custom route across East & Southern Africa",
             itineraryId: "premium-custom-bespoke",
           },
         ],
@@ -180,30 +192,36 @@ export const packageTiers: PackageTier[] = [
         experiences: [
           {
             id: "ultra-sig-grand",
-            name: "The Ultimate Grand Safari",
-            duration: "15 Days",
-            price: "From $8,500 per person",
-            description: "Ultra-luxury multi-destination safari with five-star accommodations throughout",
+            name: "Grand Opus Safari",
+            duration: "12–14 Days",
+            price: "From $12,500 per guest",
+            description: "Heli-linked lodges from Laikipia plateaus to Serengeti plains with Michelin-trained chefs.",
             highlights: [
-              "Five-star lodges",
-              "Michelin-trained chefs",
-              "Premium wines",
-              "Concierge service",
-              "Private airstrip",
+              "Exclusive-use camps with private cellars",
+              "Heli hops between reserves",
+              "On-call wellness + spa team",
+              "Curated conservation encounters",
+              "Seamless private aviation & concierge",
             ],
-            image: "/african-sunset-landscape.jpg",
-            destination: "Kenya & Tanzania",
+            image: "/lounge-view.jpeg",
+            destination: "Kenya & Northern Tanzania",
             itineraryId: "ultra-sig-grand",
           },
           {
             id: "ultra-sig-splendor",
-            name: "African Splendour Ultra",
-            duration: "17 Days",
-            price: "From $9,800 per person",
-            description: "East and Southern Africa's most exclusive ultra-luxury experience",
-            highlights: ["Multiple countries", "Elite camps", "Private jets", "Premium everything", "Exclusive access"],
+            name: "Sable & Sand Ultra",
+            duration: "14–17 Days",
+            price: "From $13,800 per guest",
+            description: "East Africa to the Kalahari by private jet—villa suites, dune dinners, and riverine cruises.",
+            highlights: [
+              "Multi-country progression (Kenya, Tanzania, Botswana)",
+              "Private jet & customs handling",
+              "Desert dinners beneath bespoke canopies",
+              "Okavango mokoro with master guides",
+              "Collectors’ access to contemporary African art",
+            ],
             image: "/zebra-migration-across-plains.jpg",
-            destination: "Kenya, Tanzania & South Africa",
+            destination: "Kenya · Tanzania · Botswana",
             itineraryId: "ultra-sig-splendor",
           },
         ],
@@ -216,28 +234,34 @@ export const packageTiers: PackageTier[] = [
         experiences: [
           {
             id: "ultra-priv-ultimate",
-            name: "The Ultimate Private Experience",
-            duration: "14 Days",
-            price: "From $12,000 per person",
-            description: "Completely private ultra-luxury safari with exclusive lodge arrangements",
+            name: "Villa-to-Veld Ultra",
+            duration: "12 Days",
+            price: "From $15,000 per party",
+            description: "Exclusive-use villas linked to private concessions—helicopters, sommeliers, and security detail.",
             highlights: [
-              "Private everything",
-              "Elite guides",
-              "Unlimited activities",
-              "Private chef",
-              "Helicopter transfers",
+              "Full estate or camp buyouts",
+              "Helicopter & fixed-wing transfers",
+              "Private chef + sommelier pairing menus",
+              "Embedded security & medical team",
+              "On-demand experiences (night drives, star beds)",
             ],
             image: "/leopard-in-acacia-tree-at-dusk.jpg",
-            destination: "Kenya & Tanzania",
+            destination: "Laikipia · Mara · Serengeti",
             itineraryId: "ultra-priv-ultimate",
           },
           {
             id: "ultra-priv-hemingway",
-            name: "The Hemingway Wing Ultra",
-            duration: "16 Days",
-            price: "From $11,500 per person",
-            description: "Private ultra-luxury reinterpretation of the classic Hemingway safari",
-            highlights: ["Historic route", "Luxury camps", "Private vehicles", "Expert guides", "Exclusive lodges"],
+            name: "Hemingway Reimagined",
+            duration: "14–16 Days",
+            price: "From $13,200 per guest",
+            description: "Following the author’s route with today’s comforts—historic lodges, float planes, curated libraries.",
+            highlights: [
+              "Floatplane hops across Hemingway haunts",
+              "Heritage lodges with modern design updates",
+              "Private writers-in-residence salons",
+              "Exclusive access to archival collections",
+              "Tailored field excursions (fishing, tracking, aviation)",
+            ],
             image: "/giraffe-herd-in-savanna-landscape.jpg",
             destination: "Kenya & Tanzania",
             itineraryId: "ultra-priv-hemingway",
@@ -252,19 +276,19 @@ export const packageTiers: PackageTier[] = [
         experiences: [
           {
             id: "ultra-custom-elite",
-            name: "Elite Bespoke Safari",
+            name: "Elite Bespoke Collection",
             duration: "Custom Duration",
-            price: "From $10,000 per person",
-            description: "Bespoke ultra-luxury experience crafted to your exact specifications",
+            price: "From $18,000 per journey",
+            description: "White-glove design studio crafting villa buyouts, expedition yachts, and heli-supported safaris.",
             highlights: [
-              "Complete customization",
-              "Elite experiences",
-              "Exclusive access",
-              "Private teams",
-              "Ultimate luxury",
+              "Private design team + concierge desk",
+              "Villa, yacht, or reserve takeovers",
+              "On-call pilots and naturalists",
+              "Immersive artisan + philanthropy access",
+              "Digitally curated keepsake journal post-trip",
             ],
             image: "/african-safari-lions-at-sunset.jpg",
-            destination: "Any African Destination",
+            destination: "Pan-African",
             itineraryId: "ultra-custom-elite",
           },
         ],
@@ -303,6 +327,33 @@ export const packageTiers: PackageTier[] = [
   },
 ]
 
+export interface IndexedExperience extends SpecificExperience {
+  tierId: string
+  tierName: string
+  tierSlug: string
+  tierDescription: string
+  subcategoryId: string
+  subcategoryName: string
+  subcategorySlug: string
+  subcategoryDescription: string
+}
+
+export const allExperiences: IndexedExperience[] = packageTiers.flatMap((tier) =>
+  tier.subcategories.flatMap((subcategory) =>
+    subcategory.experiences.map((experience) => ({
+      ...experience,
+      tierId: tier.id,
+      tierName: tier.name,
+      tierSlug: tier.slug,
+      tierDescription: tier.description,
+      subcategoryId: subcategory.id,
+      subcategoryName: subcategory.name,
+      subcategorySlug: subcategory.slug,
+      subcategoryDescription: subcategory.description,
+    })),
+  ),
+)
+
 // Itinerary data for each specific experience
 export interface ItineraryDay {
   day: string
@@ -327,11 +378,11 @@ export const itineraries: Record<string, SafariItinerary> = {
   "premium-sig-grand": {
     id: "premium-sig-grand",
     experienceId: "premium-sig-grand",
-    title: "The Grand Serengeti Journey",
-    duration: "12 Days / 11 Nights",
-    destination: "Kenya & Tanzania",
+    title: "The Quiet Horizon",
+    duration: "8–10 Days / 7–9 Nights",
+    destination: "Kenya Coast & Masai Mara",
     overview:
-      "Embark on an unforgettable journey through East Africa's most iconic destinations. Experience the thrill of game drives, witness the majesty of the Big Five, and connect with the soul of Africa.",
+      "Begin with barefoot calm on the Lamu archipelago, then flow inland to private conservancies in the Mara with your host stewarding every moment.",
     days: [
       {
         day: "Day 1",
@@ -392,11 +443,11 @@ export const itineraries: Record<string, SafariItinerary> = {
   "premium-sig-mara": {
     id: "premium-sig-mara",
     experienceId: "premium-sig-mara",
-    title: "Masai Mara Explorer",
+    title: "Elements of Connection",
     duration: "10 Days / 9 Nights",
-    destination: "Kenya",
+    destination: "Masai Mara & Conservancies",
     overview:
-      "Focused adventure on Africa's most iconic wildlife reserve. Witness the Masai Mara at its finest with concentrated game viewing and cultural immersion.",
+      "Classic Big Five country with unhurried mornings, curated field salons, and host-led evenings focused on connection.",
     days: [
       {
         day: "Day 1",
@@ -440,11 +491,11 @@ export const itineraries: Record<string, SafariItinerary> = {
   "premium-priv-golden": {
     id: "premium-priv-golden",
     experienceId: "premium-priv-golden",
-    title: "East Africa's Golden Savannahs",
-    duration: "14 Days / 13 Nights",
-    destination: "Kenya & Tanzania",
+    title: "Legacy in the Wild",
+    duration: "10 Days / 9 Nights",
+    destination: "Kenya & Northern Tanzania",
     overview:
-      "Exclusive private group safari through Kenya and Tanzania with completely personalized itinerary adjustments based on real-time game viewing conditions and your preferences.",
+      "Multi-generational private journey with villa buyouts, intuitive pacing, and a host dedicated to each branch of the family.",
     days: [
       {
         day: "Day 1",
@@ -671,10 +722,10 @@ export const itineraries: Record<string, SafariItinerary> = {
   "ultra-priv-ultimate": {
     id: "ultra-priv-ultimate",
     experienceId: "ultra-priv-ultimate",
-    title: "The Ultimate Private Experience",
-    duration: "14 Days / 13 Nights",
-    destination: "Kenya & Tanzania",
-    overview: "Completely private ultra-luxury safari with exclusive lodge arrangements and unlimited customization.",
+    title: "Villa-to-Veld Ultra",
+    duration: "12 Days / 11 Nights",
+    destination: "Laikipia · Masai Mara · Serengeti",
+    overview: "Exclusive-use villas and private concessions linked by heli hops, private chefs, and on-call wellness teams.",
     days: [
       {
         day: "Day 1",
@@ -704,10 +755,10 @@ export const itineraries: Record<string, SafariItinerary> = {
   "ultra-priv-hemingway": {
     id: "ultra-priv-hemingway",
     experienceId: "ultra-priv-hemingway",
-    title: "The Hemingway Wing Ultra",
-    duration: "16 Days / 15 Nights",
+    title: "Hemingway Reimagined",
+    duration: "14–16 Days",
     destination: "Kenya & Tanzania",
-    overview: "Private ultra-luxury reinterpretation of the classic Hemingway safari route.",
+    overview: "Retrace Hemingway’s path with floatplanes, heritage lodges, and private libraries curated by local historians.",
     days: [
       {
         day: "Day 1",
