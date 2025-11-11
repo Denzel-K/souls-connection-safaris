@@ -145,11 +145,11 @@ const lodgeTiles = [
 ]
 
 const partnerLogos = [
-  { name: "Singita", src: "/placeholder-logo.png" },
-  { name: "Angama", src: "/placeholder-logo.png" },
-  { name: "Wilderness", src: "/placeholder-logo.png" },
-  { name: "Lengishu", src: "/placeholder-logo.png" },
-  { name: "Sasaab", src: "/placeholder-logo.png" },
+  { name: "Singita", src: "/singita.jpg" },
+  { name: "Angama", src: "/angama.jpeg" },
+  { name: "Wilderness", src: "/wilderness.jpeg" },
+  { name: "Lengishu", src: "/lengishu.png" },
+  { name: "Sasaab", src: "/sasaab.jpeg" },
 ]
 
 const testimonials = [
@@ -704,24 +704,6 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-3 text-[0.65rem] md:text-xs uppercase tracking-[0.4em] text-lux-accent font-sans font-bold">
-              <span className="h-px w-14 bg-lux-accent" aria-hidden="true" />
-              Preferred partners
-            </div>
-            <div className="flex overflow-x-auto gap-5 pb-2" aria-label="Preferred partners">
-              {partnerLogos.map((logo) => (
-                <div
-                  key={logo.name}
-                  className="shrink-0 px-6 py-3 border border-lux-sand/70 rounded-full bg-white/70 flex items-center justify-center"
-                  aria-label={logo.name}
-                >
-                  <img src={logo.src} alt={logo.name} className="h-8 w-auto opacity-60" />
-                </div>
-              ))}
-            </div>
-          </div>
-
           <div className="space-y-8">
             <div className="relative">
               <div className="overflow-hidden">
@@ -813,6 +795,25 @@ export default function Home() {
               >
                 View Our Preferred Lodges →
               </Link>
+          </div>
+
+          <div className="flex flex-col items-center gap-6 mt-6">
+            <div className="flex items-center gap-3 text-[0.65rem] md:text-xs uppercase tracking-[0.4em] text-lux-accent font-sans font-bold">
+              <span className="h-px w-14 bg-lux-accent" aria-hidden="true" />
+              Preferred partners
+            </div>
+            <div className="flex overflow-x-auto gap-5 pb-2" aria-label="Preferred partners">
+              {partnerLogos.map((logo) => (
+                <div
+                  key={logo.name}
+                  className="shrink-0 px-6 py-3 border border-lux-sand/70 rounded-lg bg-white/70 flex items-center justify-center flex-col gap-2 items-center"
+                  aria-label={logo.name}
+                >
+                  <img src={logo.src} alt={logo.name} className="h-20 w-auto opacity-60 rounded-lg" />
+                  <span>{logo.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

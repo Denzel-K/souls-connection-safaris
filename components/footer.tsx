@@ -64,9 +64,9 @@ export function Footer() {
   `)
 
   return (
-    <footer className="relative bg-[#0a0602ff] text-background pt-20 pb-24 overflow-hidden w-full">
+    <footer className="relative bg-[#0a0602ff] text-background pt-20 pb-12 overflow-hidden w-full">
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[420px] opacity-60"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[420px] opacity-40"
         style={{
           backgroundImage: `url("data:image/svg+xml,${patternSvg}")`,
           backgroundRepeat: "no-repeat",
@@ -77,7 +77,7 @@ export function Footer() {
       />
 
       <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[48px] border border-white/15 bg-white/5 px-6 sm:px-10 md:px-14 py-16 md:py-20 shadow-[0_50px_140px_rgba(0,0,0,0.6)]">
+        <div className="rounded-[12px] border border-white/15 bg-white/5 px-6 sm:px-10 md:px-14 py-16 md:py-20 shadow-[0_50px_140px_rgba(0,0,0,0.6)]">
           <div className="flex flex-col gap-12 xl:flex-row xl:items-stretch xl:justify-between">
             <div className="max-w-4xl space-x-4 flex flex-row items-center">
               <SafariLogo size={126} />
@@ -88,7 +88,8 @@ export function Footer() {
                 </p>
               </div>
             </div>
-            <div className="w-full rounded-[32px] border border-white/20 px-6 py-6 space-y-4 xl:max-w-md">
+
+            <div className="w-full rounded-[12px] border border-white/20 px-6 py-6 space-y-4 xl:max-w-md">
               <p className="font-serif text-xl">Approved & Regulated By</p>
               <div className="flex flex-wrap items-center gap-6">
                 {regulatoryPartners.map((partner) => (
@@ -104,7 +105,7 @@ export function Footer() {
               </div>
             </div>
             <div className="w-full xl:max-w-sm">
-              <div className="rounded-[32px] border border-white/25 bg-transparent px-6 py-6 space-y-4">
+              <div className="rounded-[12px] border border-white/25 bg-transparent px-6 py-6 space-y-4">
                 <p className="font-serif text-xl">Stay close to the firelight.</p>
                 <form className="flex flex-col gap-3 sm:flex-row">
                   <input
