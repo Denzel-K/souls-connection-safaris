@@ -34,7 +34,7 @@ export const packageTiers: PackageTier[] = [
     name: "Premium Safari",
     slug: "premium-safari",
     description: "Discover Africa's finest with curated premium experiences",
-    icon: "🌟",
+    icon: "sun",
     subcategories: [
       {
         id: "premium-signature",
@@ -182,7 +182,7 @@ export const packageTiers: PackageTier[] = [
     name: "Ultra Premium Safari",
     slug: "ultra-premium-safari",
     description: "The ultimate African experience with unparalleled luxury and exclusive access",
-    icon: "👑",
+    icon: "crown",
     subcategories: [
       {
         id: "ultra-signature",

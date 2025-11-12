@@ -54,8 +54,8 @@ const PlanTimelineCard = ({
       transition={{ duration: 0.6, ease: "easeOut", delay: prefersReducedMotion ? 0 : delay }}
       className={`rounded-[28px] border border-lux-sand/70 bg-white/95 p-8 shadow-[0_20px_60px_rgba(30,30,28,0.08)] backdrop-blur-sm flex flex-col gap-3 ${horizontalClass}`}
     >
-      <p className="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-lux-accent">{step.label}</p>
-      <p className="font-serif text-2xl text-lux-forest">{step.title}</p>
+      <p className="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-lux-accent font-semibold">{step.label}</p>
+      <p className="font-serif text-2xl text-lux-forest font-bold">{step.title}</p>
       <p className="text-sm text-lux-ink opacity-80 leading-relaxed">{step.copy}</p>
       <p className="text-xs text-lux-forest/70 mt-2">{step.micro}</p>
     </motion.article>

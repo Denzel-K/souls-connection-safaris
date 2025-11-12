@@ -1,12 +1,12 @@
 "use client"
 
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 
 import { ImageSlideshow } from "@/components/image-slideshow"
 
 const heroImages = [
-  "/Safari Lion Encounter.jpeg",
+  "/lake-tranquility.jpeg",
   "/lounge-view.jpeg",
   "/zebra-migration-across-plains.jpg",
   "/Weekend Getaway in the Wild.jpeg",
@@ -16,7 +16,7 @@ const heroImages = [
 const heroVariants = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-}
+} satisfies Variants
 
 export function HeroSection() {
   return (
@@ -42,7 +42,7 @@ export function HeroSection() {
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="/booking"
-                className="px-8 py-3 bg-brown text-background font-sans font-medium hover:bg-brown/90 transition-all duration-200 text-center inline-flex items-center justify-center"
+                className="px-8 py-3 bg-gold text-background font-sans font-medium hover:bg-gold/90 transition-all duration-200 text-center inline-flex items-center justify-center"
               >
                 Begin your journey
               </Link>

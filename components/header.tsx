@@ -55,9 +55,13 @@ export function Header() {
   const headerRef = useRef<HTMLElement>(null)
   const [headerHeight, setHeaderHeight] = useState(0)
   const pathname = usePathname()
-  const isHome = pathname === "/"
-  const navTextClass = isHome && !isScrolled ? "text-white hover:text-gold" : "text-foreground hover:text-brown"
-  const navIconClass = isHome && !isScrolled ? "text-white" : "text-foreground"
+  const isHeroRoute =
+    pathname === "/" ||
+    pathname?.startsWith("/about") ||
+    pathname?.startsWith("/experiences")
+  const useTransparentHeader = isHeroRoute && !isScrolled
+  const navTextClass = useTransparentHeader ? "text-white hover:text-gold" : "text-foreground hover:text-gold"
+  const navIconClass = useTransparentHeader ? "text-white" : "text-foreground"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -98,7 +102,9 @@ export function Header() {
       <header
         ref={headerRef}
         className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
-          isScrolled ? "bg-background/95 border-border shadow-lg backdrop-blur" : "bg-transparent border-transparent"
+          useTransparentHeader
+            ? "bg-transparent border-transparent"
+            : "bg-background/95 border-border shadow-lg backdrop-blur"
         }`}
       >
         <nav className="max-w-7xl mx-auto px-6 py-4 md:py-6 flex items-center justify-between">
@@ -142,14 +148,14 @@ export function Header() {
                         ) : subitem.isButton ? (
                           <Link
                             href={subitem.href}
-                            className="block px-4 py-3 mx-2 mb-1 text-center text-sm text-foreground bg-brown text-background hover:bg-brown/90 transition-colors font-medium rounded"
+                            className="block px-4 py-3 mx-2 mb-1 text-center text-sm text-foreground bg-gold text-background hover:bg-gold/90 transition-colors font-medium rounded"
                           >
                             {subitem.label}
                           </Link>
                         ) : (
                           <Link
                             href={subitem.href}
-                            className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-brown transition-colors"
+                            className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-gold transition-colors"
                           >
                             {subitem.label}
                           </Link>
@@ -166,7 +172,7 @@ export function Header() {
           <div className="hidden md:flex">
             <Link
               href="/booking"
-              className="px-6 py-2 bg-brown text-background font-sans text-sm font-medium hover:bg-brown/90 transition-all duration-200"
+              className="px-6 py-2 bg-gold text-background font-sans text-sm font-medium hover:bg-gold/90 transition-all duration-200"
             >
               Book Now
             </Link>
@@ -192,7 +198,7 @@ export function Header() {
                       <button
                         type="button"
                         onClick={() => toggleDropdown(item.label)}
-                        className="flex items-center justify-between w-full py-2 text-foreground hover:text-brown transition-colors"
+                        className="flex items-center justify-between w-full py-2 text-foreground hover:text-gold transition-colors"
                       >
                         <span className="font-sans text-sm">{item.label}</span>
                         <ChevronDown
@@ -211,7 +217,7 @@ export function Header() {
                               ) : subitem.isButton ? (
                                 <Link
                                   href={subitem.href}
-                                  className="block py-2 px-3 text-sm text-background bg-brown rounded font-medium hover:bg-brown/90 transition-colors"
+                                  className="block py-2 px-3 text-sm text-background bg-gold rounded font-medium hover:bg-gold/90 transition-colors"
                                   onClick={() => setMobileMenuOpen(false)}
                                 >
                                   {subitem.label}
@@ -219,7 +225,7 @@ export function Header() {
                               ) : (
                                 <Link
                                   href={subitem.href}
-                                  className="block py-2 text-sm text-muted-foreground hover:text-brown transition-colors"
+                                  className="block py-2 text-sm text-muted-foreground hover:text-gold transition-colors"
                                   onClick={() => setMobileMenuOpen(false)}
                                 >
                                   {subitem.label}
@@ -234,7 +240,7 @@ export function Header() {
                     item.href && (
                       <Link
                         href={item.href}
-                        className="block py-2 text-sm text-foreground hover:text-brown transition-colors"
+                        className="block py-2 text-sm text-foreground hover:text-gold transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.label}
@@ -245,7 +251,7 @@ export function Header() {
               ))}
               <Link
                 href="/booking"
-                className="block w-full py-3 bg-brown text-background text-center font-sans text-sm font-medium hover:bg-brown/90 transition-all duration-200 rounded"
+                className="block w-full py-3 bg-gold text-background text-center font-sans text-sm font-medium hover:bg-gold/90 transition-all duration-200 rounded"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Begin your journey

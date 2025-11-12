@@ -1,19 +1,15 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { packageTiers } from "@/lib/experiences-data"
 
-export default function ExperiencesPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
-  const [expandedSubcategory, setExpandedSubcategory] = useState<string | null>(null)
-  const resolvedParams = params as unknown as { slug: string }
-  const { slug } = resolvedParams
+const cardClasses =
+  "flex flex-col border border-border/80 bg-card overflow-hidden shadow-[0_20px_70px_rgba(20,20,15,0.12)] transition hover:-translate-y-2"
+
+export default function ExperiencesPage({ params }: { params: { slug: string } }) {
+  const { slug } = params
 
   const tier = packageTiers.find((t) => t.slug === slug)
 
@@ -39,10 +35,21 @@ export default function ExperiencesPage({
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 px-6 bg-gradient-to-br from-background to-green/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="font-serif text-5xl md:text-6xl text-foreground font-bold mb-6 text-balance">{tier.name}</h1>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">{tier.description}</p>
+      <section
+        className="relative isolate overflow-hidden"
+        style={{ marginTop: "calc(var(--header-height, 96px) * -1)" }}
+      >
+        <img
+          src={tier.slug === "ultra-premium-safari" ? "/ultra-premium-experiences.jpeg" : "/premium-experiences.jpeg"}
+          alt={`${tier.name} showcase`}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative px-6 py-32 md:py-48 min-h-[70vh] flex items-center">
+          <div className="max-w-4xl mx-auto text-center text-white space-y-6">
+            <h1 className="font-serif text-5xl md:text-6xl font-bold text-balance">{tier.name}</h1>
+            <p className="text-lg md:text-xl leading-relaxed text-white/85">{tier.description}</p>
+          </div>
         </div>
       </section>
 
@@ -50,7 +57,7 @@ export default function ExperiencesPage({
       <section className="py-16 md:py-24 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
           {tier.subcategories.map((subcategory, subIndex) => (
-            <div key={subcategory.id} className={`mb-20 ${subIndex > 0 ? "pt-12 border-t border-border" : ""}`}>
+            <div key={subcategory.id} id={subcategory.slug} className={`mb-20 ${subIndex > 0 ? "pt-12 border-t border-border" : ""}`}>
               {/* Subcategory Header */}
               <div className="mb-12">
                 <h2 className="font-serif text-4xl md:text-5xl text-foreground font-bold mb-4">{subcategory.name}</h2>
@@ -58,70 +65,51 @@ export default function ExperiencesPage({
               </div>
 
               {/* Experiences Grid */}
-              <div className="grid md:grid-cols-2 gap-12">
+              <div className="grid md:grid-cols-2 gap-8">
                 {subcategory.experiences.map((experience) => (
-                  <div key={experience.id} className="flex flex-col">
-                    {/* Experience Image */}
-                    <div className="mb-6 overflow-hidden rounded-lg bg-muted h-64 md:h-72">
-                      <img
-                        src={experience.image || "/placeholder.svg"}
-                        alt={experience.name}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
+                  <article key={experience.id} className={cardClasses}>
+                    <div className="relative h-64 overflow-hidden">
+                      <img src={experience.image || "/placeholder.svg"} alt={experience.name} className="h-full w-full object-cover transition duration-500 hover:scale-105" />
+                      <div className="absolute top-4 left-4 border border-background/60 bg-white/85 px-3 py-1 text-[0.65rem] uppercase tracking-[0.3em] text-foreground">
+                        {tier.name}
+                      </div>
+                      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background via-background/10 to-transparent" />
                     </div>
-
-                    {/* Experience Details */}
-                    <div className="flex flex-col flex-1">
-                      <div className="mb-4">
-                        <h3 className="font-serif text-2xl md:text-3xl text-foreground font-bold mb-2">
-                          {experience.name}
-                        </h3>
-                        <p className="text-gold font-sans text-sm font-medium mb-3">{experience.destination}</p>
+                    <div className="flex flex-1 flex-col gap-4 p-6">
+                      <div>
+                        <p className="text-[0.65rem] uppercase tracking-[0.4em] text-brown/70">{subcategory.name}</p>
+                        <h3 className="font-serif text-2xl text-foreground">{experience.name}</h3>
+                        <p className="text-sm text-muted-foreground">{experience.destination}</p>
                       </div>
-
-                      <p className="text-muted-foreground leading-relaxed mb-6 flex-1">{experience.description}</p>
-
-                      {/* Highlights */}
-                      <div className="mb-6">
-                        <div className="space-y-2">
-                          {experience.highlights.map((highlight, idx) => (
-                            <div key={idx} className="flex items-start gap-3">
-                              <span className="text-gold font-bold mt-1">•</span>
-                              <span className="text-sm text-foreground">{highlight}</span>
-                            </div>
-                          ))}
-                        </div>
+                      <p className="text-muted-foreground leading-relaxed flex-1">{experience.description}</p>
+                      <div className="flex flex-wrap gap-2 text-[0.75rem] text-foreground">
+                        <span className="border border-border px-3 py-1">{experience.duration}</span>
+                        <span className="border border-border px-3 py-1">{experience.price}</span>
                       </div>
-
-                      {/* Duration & Price */}
-                      <div className="flex items-end justify-between mb-6">
-                        <div>
-                          <p className="text-xs text-muted-foreground font-medium mb-1">Duration</p>
-                          <p className="font-serif text-lg text-foreground font-bold">{experience.duration}</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-xs text-muted-foreground font-medium mb-1">Starting Price</p>
-                          <p className="font-serif text-lg text-gold font-bold">{experience.price}</p>
-                        </div>
+                      <div className="space-y-2">
+                        {experience.highlights.slice(0, 3).map((highlight, idx) => (
+                          <div key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
+                            <span className="mt-1 inline-block h-1.5 w-1.5 bg-gold" />
+                            {highlight}
+                          </div>
+                        ))}
                       </div>
-
-                      {/* CTA Buttons */}
-                      <div className="flex gap-4">
+                      <div className="flex gap-3 pt-2">
                         <Link
                           href={`/itinerary/${experience.itineraryId}`}
-                          className="flex-1 px-4 py-3 border-2 border-gold text-gold font-sans text-sm font-medium hover:bg-gold hover:text-foreground transition-all duration-200 text-center"
+                          className="flex-1 border border-foreground px-4 py-2 text-sm uppercase tracking-[0.3em] text-foreground text-center hover:bg-foreground hover:text-background transition"
                         >
                           View Itinerary
                         </Link>
                         <Link
                           href="/booking"
-                          className="flex-1 px-4 py-3 bg-gold text-foreground font-sans text-sm font-medium hover:bg-gold/90 transition-all duration-200 text-center"
+                          className="flex-1 bg-gold px-4 py-2 text-sm font-semibold text-foreground text-center hover:bg-gold/90 transition"
                         >
-                          Book Now
+                          Reserve
                         </Link>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 ))}
               </div>
             </div>

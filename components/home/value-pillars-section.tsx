@@ -48,7 +48,7 @@ export function ValuePillarsSection() {
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <p className="font-serif text-2xl text-lux-forest">{reason.title}</p>
+                <p className="font-serif font-semibold text-2xl text-lux-forest">{reason.title}</p>
               </div>
               <p className="mt-4 text-sm text-lux-ink opacity-80">{reason.lead}</p>
               <ul className="mt-6 space-y-2 text-sm text-lux-ink opacity-80">

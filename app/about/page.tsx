@@ -45,16 +45,23 @@ export default function About() {
 
       <main className="flex-1">
         {/* Hero */}
-        <section className="relative isolate overflow-hidden">
+        <section
+          className="relative isolate overflow-hidden"
+          style={{ marginTop: "calc(var(--header-height, 96px) * -1)" }}
+        >
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/tanzania-serengeti-savanna-with-zebra-herd-and-mou.jpg')" }}
+            style={{ backgroundImage: "url('/about-hero.jpeg')" }}
             aria-hidden
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" aria-hidden />
-          <div className="relative max-w-4xl mx-auto px-6 py-28 md:py-40 text-center text-white space-y-4">
-            <h1 className="font-serif text-4xl md:text-6xl font-bold">You are the reason we exist.</h1>
-            <p className="text-lg md:text-2xl text-white/95">We design safaris so you can return with presence, not just pictures.</p>
+          <div className="relative px-6 py-36 md:py-52 min-h-[70vh] flex items-center">
+            <div className="max-w-4xl mx-auto text-center text-white space-y-4">
+              <h1 className="font-serif text-4xl md:text-6xl font-bold">You are the reason we exist.</h1>
+              <p className="text-lg md:text-2xl text-white/95">
+                We design safaris so you can return with presence, not just pictures.
+              </p>
+            </div>
           </div>
         </section>
 
