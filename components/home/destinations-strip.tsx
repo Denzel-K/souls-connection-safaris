@@ -2,41 +2,11 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-
-export const meaningfulDestinations = [
-  {
-    name: "Maasai Mara & Conservancies",
-    slug: "maasai-mara-conservancies",
-    description: "Open plains, golden light, and private conservancies where sightings feel unhurried and evenings end with silence and stars.",
-    image: "/kenya-safari-landscape-with-masai-giraffes-and-aca.jpg"
-  },
-  {
-    name: "Laikipia",
-    slug: "laikipia",
-    description: "Highland plateaus and intimate camps with a sense of living close to conservation work and local community stories.",
-    image: "/elephant-family-drinking-at-watering-hole.jpg"
-  },
-  {
-    name: "Samburu",
-    slug: "samburu",
-    description: "Distinctive landscapes and rare northern species set against a slow, elemental rhythm that encourages reflection.",
-    image: "/giraffe-herd-in-savanna-landscape.jpg"
-  },
-  {
-    name: "Serengeti & Surrounds",
-    slug: "serengeti-surrounds",
-    description: "Endless seasonal movement and careful timing that keeps you away from crowds and close to big-sky serenity.",
-    image: "/tanzania-serengeti-savanna-with-zebra-herd-and-mou.jpg"
-  },
-  {
-    name: "Indian Ocean Coast",
-    slug: "indian-ocean-coast",
-    description: "Quiet beaches and warm waters that bring your body and mind into stillness—ideal at the start or end of a journey.",
-    image: "/african-sunset-landscape.jpg"
-  }
-]
+import { destinations } from "@/lib/destinations-data"
 
 export function DestinationsStrip() {
+  const truncate = (text: string, max = 140) =>
+    text.length > max ? text.slice(0, max - 1).trimEnd() + "…" : text
   return (
     <section className="py-20 md:py-28 bg-lux-ink text-white">
       <div className="max-w-6xl mx-auto px-6">
@@ -49,11 +19,11 @@ export function DestinationsStrip() {
           </p>
         </div>
 
-        {/* Destinations Grid */}
+        {/* Destinations Grid (single source of truth) */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
-          {meaningfulDestinations.map((destination, index) => (
+          {destinations.map((destination, index) => (
             <motion.article
-              key={destination.name}
+              key={destination.id}
               className="group relative overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg hover:bg-white/8 transition-all duration-500"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +51,7 @@ export function DestinationsStrip() {
               {/* Content */}
               <div className="p-6 md:p-8">
                 <p className="font-body text-sm md:text-base text-white/85 leading-relaxed mb-4">
-                  {destination.description}
+                  {truncate(destination.shortDescription, 140)}
                 </p>
                 <Link 
                   href={`/destinations/${destination.slug}`}

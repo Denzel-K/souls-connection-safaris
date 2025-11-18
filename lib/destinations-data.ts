@@ -38,7 +38,7 @@ export const destinations: Destination[] = [
     shortDescription: "Highland plateaus and intimate camps with conservation work and community stories",
     description:
       "Highland plateaus and intimate camps with a sense of living close to conservation work and local community stories. Laikipia offers a different perspective on safari—one where conservation, community, and wildlife coexist in harmony across vast private ranches and conservancies.",
-    image: "/elephant-family-drinking-at-watering-hole.jpg",
+    image: "/laikipia.jpeg",
     highlights: [
       "Private ranch experiences with conservation focus",
       "Walking safaris and horseback riding",
@@ -95,7 +95,7 @@ export const destinations: Destination[] = [
     shortDescription: "Quiet beaches and warm waters bringing body and mind into stillness",
     description:
       "Quiet beaches and warm waters that bring your body and mind into stillness—ideal at the start or end of a journey. The East African coast offers pristine beaches, rich Swahili culture, and the perfect complement to safari adventures.",
-    image: "/african-sunset-landscape.jpg",
+    image: "/indian-ocean.jpeg",
     highlights: [
       "Pristine beaches with minimal crowds",
       "Swahili culture and historic stone towns",

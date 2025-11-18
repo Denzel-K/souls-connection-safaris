@@ -7,6 +7,8 @@ import { Footer } from "@/components/footer"
 import { destinations } from "@/lib/destinations-data"
 
 export default function DestinationsPage() {
+  const truncate = (text: string, max = 140) =>
+    text.length > max ? text.slice(0, max - 1).trimEnd() + "…" : text
   return (
     <div className="flex flex-col min-h-screen bg-lux-bone text-lux-ink">
       <Header />
@@ -67,7 +69,7 @@ export default function DestinationsPage() {
                 {/* Content */}
                 <div className="p-6 md:p-8">
                   <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
-                    {destination.shortDescription}
+                    {truncate(destination.shortDescription, 140)}
                   </p>
                   
                   {/* Wildlife tags */}
