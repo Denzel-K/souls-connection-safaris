@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 const journalEntries = [
   {
-    title: "A Day in the Mara",
+    title: "Why Meaningful Travel Needs Space",
     excerpt: "From dawn lion calls to lantern-lit suppers, follow the sensory arc of our signature Mara immersion.",
     href: "/journal/a-day-in-the-mara",
     issue: "Field Note 01",
@@ -13,7 +13,7 @@ const journalEntries = [
     readingTime: "4 min read",
   },
   {
-    title: "Designing Quiet Luxury in the Bush",
+    title: "Golden Hours in the Mara",
     excerpt: "How we pair tactile textures, slow dining, and intuitive hosting to keep the bush both wild and easeful.",
     href: "/journal/designing-quiet-luxury",
     issue: "Field Note 02",
@@ -21,11 +21,11 @@ const journalEntries = [
     readingTime: "6 min read",
   },
   {
-    title: "What 15 Guests Max Means",
+    title: "The Quiet Art of Hosting",
     excerpt: "A look at intimacy, wildlife access, and why limited numbers protect habitat.",
     href: "/journal/fifteen-guests-max",
     issue: "Field Note 03",
-    season: "Stewardship Perspective",
+    season: "Stewardship",
     readingTime: "3 min read",
   },
 ]
@@ -37,9 +37,9 @@ export function JournalSection() {
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent mb-3 font-semibold">Journal (Quarterly)</p>
-            <h2 className="font-serif text-4xl text-lux-forest">Quiet field notes</h2>
+            <h2 className="font-serif text-4xl text-lux-forest">Field notes on connection</h2>
           </div>
-          <p>Notes to help you stay connected</p>
+          <p>Reflections, stories, and quiet moments from the field.</p>
         </div>
         <div className="grid gap-8 md:grid-cols-3">
           {journalEntries.map((entry, index) => (

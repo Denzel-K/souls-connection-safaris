@@ -13,7 +13,7 @@ const founderMicroCreds = [
 export function FoundersSection() {
   return (
     <section className="px-6 py-24 bg-lux-shell" id="hosts">
-      <div className="max-w-6xl mx-auto grid gap-12 md:grid-cols-[0.7fr_0.3fr] items-center">
+      <div className="max-w-6xl mx-auto grid gap-12 md:grid-cols-[0.6fr_0.4fr] items-center">
         <motion.div
           className="relative"
           initial={{ opacity: 0, x: -40 }}
@@ -36,10 +36,9 @@ export function FoundersSection() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">Founders & Hosts</p>
-          <h2 className="font-serif text-4xl text-lux-forest">Guided by hosts who care.</h2>
+          <h2 className="font-serif text-4xl text-lux-forest">Hosts Who Design for Meaning.</h2>
           <p className="text-lg text-lux-ink opacity-80">
-            Founded by George Mburu and Wambui Mburu—hospitality-trained hosts who design journeys around how you want to
-            feel.
+            As PR and communication professionals, George and Wambui saw a gap in luxury safaris: guests were getting the sights, but not always the connection they were longing for. Their work begins with listening—understanding how you want to feel—then translating that into unhurried pacing, clear communication, and soulful experiences from arrival to farewell.
           </p>
           <div>
             <p className="font-sans text-xs uppercase tracking-[0.3em] text-lux-accent mb-3 font-semibold">

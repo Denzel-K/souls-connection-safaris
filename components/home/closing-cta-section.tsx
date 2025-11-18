@@ -14,9 +14,7 @@ export function ClosingCtaSection() {
       >
         <p className="font-serif text-4xl text-lux-forest">Come for the wildlife. Leave with connection.</p>
         <p className="text-lg text-lux-ink opacity-80">
-          Step into wide-open quiet, unrushed days, and host-led care that lets meaning surface naturally. Travel privately,
-          at your pace, with places chosen for soul and substance. Return rested, re-aligned, and more connected—to
-          yourself, to each other, and to the wild.
+          Your journey begins with a simple conversation about how you want to feel.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
           <Link href="/booking" className="px-8 py-4 rounded-full bg-lux-forest text-white text-sm tracking-[0.3em]">

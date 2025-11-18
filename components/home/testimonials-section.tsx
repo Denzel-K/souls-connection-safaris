@@ -28,8 +28,8 @@ export function TestimonialsSection() {
       <div className="max-w-6xl mx-auto space-y-10">
         <div className="text-center space-y-3">
           <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">Quiet Echoes</p>
-          <h2 className="font-serif text-4xl text-lux-forest">What guests feel after our safaris</h2>
-          <p className="text-lux-ink opacity-80">In their words—moments of stillness, connection, and renewal.</p>
+          <h2 className="font-serif text-4xl text-lux-forest">What Connection Feels Like</h2>
+          <p className="text-lux-ink opacity-80">Real reflections from guests who traveled with intention.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {testimonials.map((testimonial, index) => (

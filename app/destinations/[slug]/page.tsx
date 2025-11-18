@@ -24,19 +24,22 @@ export default function DestinationPage({ params }: { params: Promise<{ slug: st
       <Header />
 
       {/* Hero Section */}
-      <section className="relative w-full h-96 md:h-[500px] overflow-hidden">
+      <section
+        className="relative w-full h-96 md:h-[500px] overflow-hidden"
+        style={{ marginTop: "calc(var(--header-height, 96px) * -1)" }}
+      >
         <img
           src={destination.image || "/placeholder.svg"}
           alt={destination.name}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/55" />
         <div className="absolute inset-0 flex flex-col justify-end z-10 px-6 py-12">
           <div className="max-w-4xl mx-auto w-full">
-            <Link href="/" className="text-brown hover:text-brown/80 text-sm font-sans mb-4 inline-block">
+            <Link href="/" className="text-white/80 hover:text-white inline-block text-sm font-sans mb-4">
               ← Back to Home
             </Link>
-            <h1 className="font-serif text-5xl md:text-6xl text-background font-bold text-balance">
+            <h1 className="font-serif text-5xl md:text-6xl text-white font-bold text-balance">
               {destination.name}
             </h1>
           </div>
@@ -98,43 +101,6 @@ export default function DestinationPage({ params }: { params: Promise<{ slug: st
           </div>
         </div>
       </section>
-
-      {/* Related Experiences Section */}
-      {relatedExperiences.length > 0 && (
-        <section className="py-20 md:py-32 px-6 bg-brown/5">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-serif text-4xl md:text-5xl text-foreground font-bold mb-12 text-center text-balance">
-              Safaris in {destination.name}
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {relatedExperiences.map((exp) => (
-                <div
-                  key={exp.id}
-                  className="p-8 border border-border rounded-lg bg-card/50 hover:border-brown/50 transition-all"
-                >
-                  <h3 className="font-serif text-2xl text-foreground font-bold mb-3">{exp.name}</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">{exp.description}</p>
-                  <div className="space-y-2 mb-6">
-                    <p className="text-sm text-muted-foreground">
-                      <span className="font-sans font-bold text-brown">Duration:</span> {exp.duration}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      <span className="font-sans font-bold text-brown">Price:</span> {exp.price}
-                    </p>
-                  </div>
-                  <Link
-                    href={`/itinerary/${exp.itineraryId}`}
-                    className="inline-block px-6 py-3 bg-brown text-background font-sans font-medium hover:bg-brown/90 transition-all duration-200"
-                  >
-                    View Itinerary →
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* CTA Section */}
       <section className="py-20 md:py-32 px-6 bg-background">

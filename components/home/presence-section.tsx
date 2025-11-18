@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react"
 
 export function PresenceSection() {
   return (
-    <section className="px-6 py-20 md:py-32 lg:py-40 bg-lux-bone" id="presence">
+    <section className="px-6 py-20 md:py-32 lg:py-40 bg-lux-shell" id="presence">
       <div className="max-w-5xl mx-auto">
         {/* Band Title */}
         <motion.div
@@ -27,7 +27,7 @@ export function PresenceSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-lux-ink mb-3 md:mb-4 leading-tight text-center"
+          className="font-serif text-4xl md:text-5xl font-bold text-lux-ink mb-3 md:mb-4 leading-tight text-center"
         >
           Connection can't be scheduled to the minute.
         </motion.h2>

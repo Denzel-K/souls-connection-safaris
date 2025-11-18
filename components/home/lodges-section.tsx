@@ -80,11 +80,10 @@ export function LodgesSection() {
     <section className="px-6 py-32 bg-gradient-to-b from-white via-lux-bone/60 to-white" id="lodges">
       <div className="max-w-6xl mx-auto space-y-14">
         <div className="text-center space-y-6">
-          <p className="font-sans text-xs uppercase tracking-[0.45em] text-lux-accent font-semibold">Lodges & Stays</p>
-          <h2 className="font-serif text-3xl md:text-5xl text-lux-forest leading-tight">Soulful spaces, framed in light.</h2>
+          <p className="font-sans text-xs uppercase tracking-[0.45em] text-lux-accent font-semibold">Soulful Stays</p>
+          <h2 className="font-serif text-3xl md:text-5xl text-lux-forest leading-tight">Spaces framed for stillness.</h2>
           <p className="font-serif text-lg md:text-2xl text-lux-ink/85 max-w-3xl mx-auto leading-relaxed">
-            A hand-curated circle of lodges where linen, timber, and horizon lines feel effortless—and every suite is
-            staged for unhurried ritual.
+            Atays chosen for atmosphere, privacy, and a deep sense of place. Each lodge supports rest, connection, and unhurried presence.
           </p>
         </div>
 

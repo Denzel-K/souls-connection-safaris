@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { ChevronDown, Menu, X } from "lucide-react"
 import { packageTiers } from "@/lib/experiences-data"
 import { destinations } from "@/lib/destinations-data"
+import { journeys } from "@/lib/journeys-data"
 
 type NavigationSubItem = {
   label: string
@@ -20,6 +21,10 @@ type NavigationItem = {
 }
 
 const navigationItems: NavigationItem[] = [
+  {
+    label: "Journeys",
+    href: "/journeys",
+  },
   {
     label: "Experiences",
     submenu: [
@@ -48,26 +53,38 @@ const navigationItems: NavigationItem[] = [
   },
 ]
 
-export function Header() {
+export function Header({
+  transparentTextColor = "white",
+}: {
+  transparentTextColor?: "white" | "black"
+}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [isScrolled, setIsScrolled] = useState(false)
   const headerRef = useRef<HTMLElement>(null)
   const [headerHeight, setHeaderHeight] = useState(0)
   const pathname = usePathname()
+  
   const isHeroRoute =
     pathname === "/" ||
     pathname?.startsWith("/about") ||
-    pathname?.startsWith("/experiences")
+    pathname?.startsWith("/experiences") ||
+    pathname?.startsWith("/journeys") ||
+    pathname?.startsWith("/destinations")
+  
   const useTransparentHeader = isHeroRoute && !isScrolled
-  const navTextClass = useTransparentHeader ? "text-white hover:text-gold" : "text-foreground hover:text-gold"
-  const navIconClass = useTransparentHeader ? "text-white" : "text-foreground"
+  const transparentTextClass =
+    transparentTextColor === "black" ? "text-foreground hover:text-gold" : "text-white hover:text-gold"
+  const transparentIconClass = transparentTextColor === "black" ? "text-foreground" : "text-white"
+  const navTextClass = useTransparentHeader ? transparentTextClass : "text-foreground hover:text-gold"
+  const navIconClass = useTransparentHeader ? transparentIconClass : "text-foreground"
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40)
     }
 
+    // Check immediately on mount
     handleScroll()
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)

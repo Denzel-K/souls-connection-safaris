@@ -130,7 +130,8 @@ export function Footer() {
               title="Explore"
               links={[
                 { label: "Destinations", href: "#" },
-                { label: "Experiences", href: "#" },
+                { label: "Journeys", href: "/journeys" },
+                { label: "Experiences", href: "/experiences" },
                 { label: "Gallery", href: "/gallery" },
                 { label: "Journal", href: "#" },
               ]}

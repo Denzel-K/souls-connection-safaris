@@ -12,14 +12,14 @@ const planSteps = [
   },
   {
     label: "02 / Your Plan",
-    title: "Receive your bespoke plan (two clear options)",
-    copy: "A polished proposal within 48 hours: two distinct routes, side-by-side—so choosing is effortless.",
+    title: "Receive your bespoke plan",
+    copy: "Receive a clear, written plan with Premium and Ultra options matched to your pace, comfort, and preferences..",
     micro: "Our process is proven and personal.",
   },
   {
-    label: "03 / Travel",
+    label: "03 / Travel at your pace",
     title: "Travel at your pace",
-    copy: "Host-led care, private vehicles, and space to linger when moments matter.",
+    copy: "Hosts and guides keep days flexible, unhurried, and tuned to energy levels, with room for quiet as well as adventure.",
     micro: "Clarity and ease drive conversions—clear steps, clear CTAs.",
   },
 ]
@@ -55,8 +55,8 @@ const PlanTimelineCard = ({
       className={`rounded-[28px] border border-lux-sand/70 bg-white/95 p-8 shadow-[0_20px_60px_rgba(30,30,28,0.08)] backdrop-blur-sm flex flex-col gap-3 ${horizontalClass}`}
     >
       <p className="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-lux-accent font-semibold">{step.label}</p>
-      <p className="font-serif text-2xl text-lux-forest font-bold">{step.title}</p>
-      <p className="text-sm text-lux-ink opacity-80 leading-relaxed">{step.copy}</p>
+      <p className="font-serif text-2xl md:text-3xl text-lux-forest font-bold">{step.title}</p>
+      <p className="text-sm md:text-base text-lux-ink opacity-80 leading-relaxed">{step.copy}</p>
       <p className="text-xs text-lux-forest/70 mt-2">{step.micro}</p>
     </motion.article>
   )
@@ -270,7 +270,8 @@ export function HowItWorksSection() {
       <div className="max-w-6xl mx-auto space-y-10">
         <div className="text-center space-y-4">
           <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">The Plan</p>
-          <h2 className="font-serif text-5xl text-lux-forest">How it works</h2>
+          <h2 className="font-serif text-5xl text-lux-forest">Your Path to Connection</h2>
+          <p>A clear, calm process from first conversation to final farewell.</p>
         </div>
         <PlanTimeline steps={planSteps} />
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-center">
