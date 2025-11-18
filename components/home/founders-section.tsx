@@ -48,7 +48,7 @@ export function FoundersSection() {
               {founderMicroCreds.map((cred) => (
                 <span
                   key={cred}
-                  className="inline-flex items-center gap-2 rounded-full border border-lux-stone px-4 py-2 text-sm text-lux-forest"
+                  className="inline-flex items-center gap-2 border border-lux-stone px-4 py-2 text-sm text-lux-forest"
                 >
                   <CheckCircle2 className="w-4 h-4 text-lux-accent" />
                   {cred}
@@ -58,8 +58,8 @@ export function FoundersSection() {
           </div>
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link
-              href="/booking"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-lux-forest text-white"
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-lux-forest text-white"
             >
               Talk to a Host
             </Link>

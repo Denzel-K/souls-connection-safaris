@@ -152,7 +152,7 @@ export function Header({
                 )}
 
                 {item.submenu && (
-                  <div className="absolute left-0 mt-0 w-56 bg-card border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+                  <div className="absolute left-0 mt-0 w-56 bg-card border border-border shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
                     {item.submenu.map((subitem, idx) => (
                       <div key={`${subitem.label}-${idx}`}>
                         {subitem.label === "divider" ? (

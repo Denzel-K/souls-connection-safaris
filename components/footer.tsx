@@ -77,7 +77,7 @@ export function Footer() {
       />
 
       <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[12px] border border-white/15 bg-white/5 px-6 sm:px-10 md:px-14 py-16 md:py-20 shadow-[0_50px_140px_rgba(0,0,0,0.6)]">
+        <div className="border border-white/15 bg-white/5 px-6 sm:px-10 md:px-14 py-16 md:py-20 shadow-[0_50px_140px_rgba(0,0,0,0.6)] rounded-[10px]">
           <div className="flex flex-col gap-12 xl:flex-row xl:items-stretch xl:justify-between">
             <div className="max-w-4xl space-x-4 flex flex-row items-center">
               <SafariLogo size={126} />
@@ -89,7 +89,7 @@ export function Footer() {
               </div>
             </div>
 
-            <div className="w-full rounded-[12px] border border-white/20 px-6 py-6 space-y-4 xl:max-w-md">
+            <div className="w-full border border-white/20 px-6 py-6 space-y-4 xl:max-w-md rounded-[10px]">
               <p className="font-niconne text-xl">Approved & Regulated By</p>
               <div className="flex flex-wrap items-center gap-6">
                 {regulatoryPartners.map((partner) => (
@@ -97,7 +97,7 @@ export function Footer() {
                     <img
                       src={partner.logo}
                       alt={partner.alt}
-                      className="h-16 w-auto rounded-lg object-contain"
+                      className="h-16 w-auto object-contain"
                     />
                     <p className="text-xs text-white/80">{partner.name}</p>
                   </div>
@@ -105,17 +105,17 @@ export function Footer() {
               </div>
             </div>
             <div className="w-full xl:max-w-sm">
-              <div className="rounded-[12px] border border-white/25 bg-transparent px-6 py-6 space-y-4">
+              <div className="border border-white/25 bg-transparent px-6 py-6 space-y-4 rounded-[10px]">
                 <p className="font-niconne text-xl">Stay close to the firelight.</p>
                 <form className="flex flex-col gap-3 sm:flex-row">
                   <input
                     type="email"
                     placeholder="Email address"
-                    className="flex-1 rounded-full border border-white/25 bg-transparent px-5 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-gold/60"
+                    className="flex-1 border border-white/25 bg-transparent px-5 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-gold/60"
                   />
                   <button
                     type="submit"
-                    className="rounded-full bg-gold px-6 py-3 text-sm font-semibold text-foreground hover:bg-gold/90 transition"
+                    className="bg-gold px-6 py-3 text-sm font-semibold text-foreground hover:bg-gold/90 transition"
                   >
                     Subscribe
                   </button>
@@ -287,7 +287,7 @@ export function Footer() {
                 <a
                   key={label}
                   href={href}
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 text-white/70 hover:border-gold hover:text-gold transition"
+                  className="inline-flex h-12 w-12 items-center rounded-full justify-center border border-white/20 text-white/70 hover:border-gold hover:text-gold transition"
                 >
                   <Icon className="w-5 h-5" />
                 </a>

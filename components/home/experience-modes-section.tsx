@@ -16,7 +16,7 @@ const experienceModes = [
       "Tailored moments & privacy",
       "Ideal for couples, families, multi-gen",
     ],
-    cta: { label: "Reserve Private Dates →", href: "/booking" },
+    cta: { label: "Reserve Private Dates →", href: "/booking?mode=private" },
     image: "/couple-on-holiday.jpeg",
   },
   {
