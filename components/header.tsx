@@ -66,12 +66,13 @@ export function Header({
     pathname?.startsWith("/journeys") ||
     pathname?.startsWith("/destinations")
   
-  const useTransparentHeader = isHeroRoute && !isScrolled
+  // While mobile menu is open, force solid header (white bg, dark text)
+  const headerTransparent = isHeroRoute && !isScrolled && !mobileMenuOpen
   const transparentTextClass =
     transparentTextColor === "black" ? "text-foreground hover:text-gold" : "text-white hover:text-gold"
   const transparentIconClass = transparentTextColor === "black" ? "text-foreground" : "text-white"
-  const navTextClass = useTransparentHeader ? transparentTextClass : "text-foreground hover:text-gold"
-  const navIconClass = useTransparentHeader ? transparentIconClass : "text-foreground"
+  const navTextClass = headerTransparent ? transparentTextClass : "text-foreground hover:text-gold"
+  const navIconClass = headerTransparent ? transparentIconClass : "text-foreground"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -113,7 +114,7 @@ export function Header({
       <header
         ref={headerRef}
         className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
-          useTransparentHeader
+          headerTransparent
             ? "bg-transparent border-transparent"
             : "bg-background/95 border-border shadow-lg backdrop-blur"
         }`}
@@ -200,7 +201,7 @@ export function Header({
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-card border-t border-border">
+          <div className={`md:hidden transition-colors bg-card border-t border-border backdrop-blur`}>
             <nav className="px-6 py-4 space-y-4">
               {navigationItems.map((item) => (
                 <div key={item.label}>
@@ -209,13 +210,11 @@ export function Header({
                       <button
                         type="button"
                         onClick={() => toggleDropdown(item.label)}
-                        className="flex items-center justify-between w-full py-2 text-foreground hover:text-gold transition-colors"
+                        className={`flex items-center justify-between w-full py-2 text-foreground hover:text-gold transition-colors`}
                       >
                         <span className="font-sans text-sm">{item.label}</span>
                         <ChevronDown
-                          className={`w-4 h-4 transition-transform ${
-                            openDropdown === item.label ? "rotate-180" : ""
-                          }`}
+                          className={`w-4 h-4 transition-transform ${openDropdown === item.label ? "rotate-180" : ""} text-foreground`}
                         />
                       </button>
 
@@ -224,7 +223,7 @@ export function Header({
                           {item.submenu.map((subitem, idx) => (
                             <div key={`${subitem.label}-${idx}`}>
                               {subitem.label === "divider" ? (
-                                <div className="h-px bg-border my-2" />
+                                <div className={`h-px my-2 bg-border`} />
                               ) : subitem.isButton ? (
                                 <Link
                                   href={subitem.href}
@@ -236,7 +235,7 @@ export function Header({
                               ) : (
                                 <Link
                                   href={subitem.href}
-                                  className="block py-2 text-sm text-muted-foreground hover:text-gold transition-colors"
+                                  className={`block py-2 text-sm text-muted-foreground hover:text-gold transition-colors`}
                                   onClick={() => setMobileMenuOpen(false)}
                                 >
                                   {subitem.label}
@@ -251,7 +250,7 @@ export function Header({
                     item.href && (
                       <Link
                         href={item.href}
-                        className="block py-2 text-sm text-foreground hover:text-gold transition-colors"
+                        className={`block py-2 text-sm text-foreground hover:text-gold transition-colors`}
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.label}
