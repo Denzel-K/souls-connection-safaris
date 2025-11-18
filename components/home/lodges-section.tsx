@@ -168,18 +168,21 @@ export function LodgesSection() {
             <span className="h-px w-14 bg-lux-accent" aria-hidden="true" />
             Our partners
           </div>
-          <div className="flex overflow-x-auto gap-5 pb-2" aria-label="Preferred partners">
-            {partnerLogos.map((logo) => (
-              <motion.div
-                key={logo.name}
-                className="shrink-0 px-6 py-3 border border-lux-sand/70 rounded-lg bg-white/70 flex items-center justify-center flex-col gap-2"
-                aria-label={logo.name}
-                whileHover={{ y: -4, boxShadow: "0px 12px 35px rgba(0,0,0,0.08)" }}
-              >
-                <img src={logo.src} alt={logo.name} className="h-20 w-auto opacity-60 rounded-lg" />
-                <span>{logo.name}</span>
-              </motion.div>
-            ))}
+          {/* Full-bleed horizontal scroller on mobile to avoid viewport clipping */}
+          <div className="w-full -mx-6 md:mx-0" aria-label="Preferred partners">
+            <div className="flex overflow-x-auto gap-5 pb-2 snap-x snap-mandatory scroll-px-6 px-6" aria-live="polite">
+              {partnerLogos.map((logo) => (
+                <motion.div
+                  key={logo.name}
+                  className="shrink-0 min-w-[140px] px-6 py-3 border border-lux-sand/70 rounded-lg bg-white/70 flex items-center justify-center flex-col gap-2 snap-start"
+                  aria-label={logo.name}
+                  whileHover={{ y: -4, boxShadow: "0px 12px 35px rgba(0,0,0,0.08)" }}
+                >
+                  <img src={logo.src} alt={logo.name} className="h-20 w-auto opacity-60 rounded-lg" />
+                  <span>{logo.name}</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
