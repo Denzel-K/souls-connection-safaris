@@ -59,11 +59,11 @@ export function NewHeroSection() {
               <motion.h1
                 custom={2}
                 variants={item}
-                className="font-serif text-2xl sm:text-5xl leading-tight text-white md:text-6xl md:text-lux-forest"
+                className="font-serif text-3xl sm:text-5xl leading-tight text-white md:text-6xl md:text-lux-forest"
               >
                 Safaris for Meaning & Connection.
               </motion.h1>
-              <motion.p custom={3} variants={item} className="text-lg md:text-xl text-white/90 md:text-lux-ink/85">
+              <motion.p custom={3} variants={item} className="text-lg font-sans md:text-xl text-white/90 md:text-lux-ink/85">
                 Host-led. Unhurried. Quietly luxurious.
               </motion.p>
               <motion.p custom={4} variants={item} className="text-base text-white/85 md:text-lux-ink/75">
