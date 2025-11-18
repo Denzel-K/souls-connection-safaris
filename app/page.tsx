@@ -12,7 +12,7 @@ import { ImpactSection } from "@/components/home/impact-section"
 import { InclusionsSection } from "@/components/home/inclusions-section"
 import { JournalSection } from "@/components/home/journal-section"
 import { LodgesSection } from "@/components/home/lodges-section"
-import { PaceSection } from "@/components/home/pace-section"
+import { PresenceSection } from "@/components/home/presence-section"
 import { SignatureJourneysSection } from "@/components/home/signature-journeys-section"
 import { TestimonialsSection } from "@/components/home/testimonials-section"
 import { ValuePillarsSection } from "@/components/home/value-pillars-section"
@@ -22,7 +22,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-lux-bone text-lux-ink">
       <Header />
       <HeroSection />
-      <PaceSection />
+      <PresenceSection />
       <ValuePillarsSection />
       <SignatureJourneysSection />
       <DestinationsStrip />

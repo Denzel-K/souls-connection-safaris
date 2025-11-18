@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { ArrowUpRight } from "lucide-react"
 
 const whyUsReasons = [
   {
@@ -27,8 +28,8 @@ export function ValuePillarsSection() {
       <div className="mx-auto max-w-6xl space-y-12">
         <div className="text-center space-y-4">
           <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">Why us?</p>
-          <h2 className="font-serif text-4xl text-lux-forest">Our three value pillars</h2>
-          <p className="text-lg text-lux-ink opacity-80">Human hosts, effortless pacing, and integrity in every detail.</p>
+          <h2 className="font-serif text-4xl lg:text-5xl text-lux-forest">Our pillars of connection</h2>
+          <p className="text-lg text-lux-ink opacity-80">Every journey is shaped around three simple truths about how meaningful travel should feel.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {whyUsReasons.map((reason, index) => (
@@ -51,29 +52,23 @@ export function ValuePillarsSection() {
                 <p className="font-serif font-semibold text-2xl text-lux-forest">{reason.title}</p>
               </div>
               <p className="mt-4 text-sm text-lux-ink opacity-80">{reason.lead}</p>
-              <ul className="mt-6 space-y-2 text-sm text-lux-ink opacity-80">
-                {reason.highlights.map((point) => (
-                  <li key={point} className="flex items-start gap-3">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-brown" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
+              
             </motion.article>
           ))}
         </div>
         <div className="flex flex-col items-center gap-3 md:flex-row md:justify-center">
           <Link
-            href="/booking"
-            className="rounded-full bg-lux-forest px-6 py-3 font-sans text-sm uppercase tracking-[0.3em] text-white"
+            href="#path"
+            className="inline-flex items-center gap-2 text-base md:text-lg lg:text-xl font-serif text-lux-forest hover:text-lux-accent transition-colors duration-300 group"
           >
-            Plan My Journey
-          </Link>
-          <Link
-            href="#signature-journeys"
-            className="font-sans text-sm uppercase tracking-[0.3em] text-lux-forest border-b border-lux-accent"
-          >
-            Explore signature journeys
+            Explore journeys of connection
+            <motion.span
+              className="inline-block"
+              whileHover={{ x: 2, y: -2 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
+            </motion.span>
           </Link>
         </div>
       </div>
