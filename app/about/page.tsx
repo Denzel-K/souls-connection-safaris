@@ -96,6 +96,57 @@ export default function About() {
           </div>
         </section>
 
+        {/* Our Story (combined from Founders' Story) */}
+        <section className="px-6 py-16 md:py-24 bg-background" aria-labelledby="our-story-heading">
+          <div className="max-w-6xl mx-auto grid gap-12 lg:grid-cols-[1.1fr,0.9fr] items-start">
+            <div className="space-y-6">
+              <h2 id="our-story-heading" className="font-serif text-4xl md:text-5xl font-bold leading-tight">
+                The right journeys start with a conversation.
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                You came looking for a change that goes deeper than scenery. We built Souls Connection Safaris to guide that
+                change—by listening first, shaping with intention, and holding space for what matters most.
+              </p>
+              <div className="space-y-5">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  You know the feeling when a moment is stunning, yet a quiet part of you still longs for something deeper?
+                  That feeling nudged us to stop building itineraries and start guiding journeys that return presence.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Our backgrounds span communications, hospitality training, and years of leading guests through East
+                  Africa. Even flawless plans can feel empty when care starts with logistics instead of listening.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  We are parents of three and co-founders in life and in work. Parenthood taught us to notice the tiny cues
+                  that reveal what someone needs. That attentiveness became the foundation of Souls Connection Safaris.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Today every journey begins with presence: a conversation, a pause, an invitation to say what you haven’t
+                  put into words. Only then do we curate the lodges, routes, and rituals that will move you.
+                </p>
+              </div>
+              <blockquote className="border-l-4 border-gold/40 pl-6 font-serif text-2xl text-foreground">
+                “The right journeys start with a conversation. This one starts with you.”
+              </blockquote>
+            </div>
+            <div className="space-y-8">
+              <div
+                className="min-h-[320px] rounded-3xl bg-cover bg-center shadow-xl"
+                style={{ backgroundImage: "url('/giraffe-herd-in-savanna-landscape.jpg')" }}
+                aria-hidden
+              />
+              <div className="rounded-3xl border border-border/60 bg-card p-8 shadow-lg space-y-4">
+                <p className="font-sans text-xs tracking-[0.3em] uppercase text-gold">Our promise</p>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="leading-relaxed">• Guides trained to anticipate quietly.</li>
+                  <li className="leading-relaxed">• Private drivers and pilots who move with discretion.</li>
+                  <li className="leading-relaxed">• Lodge partners who protect your privacy and honor your pace.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Founders */}
         <section className="px-6 py-16 md:py-24 bg-background" aria-labelledby="guides-heading">
           <div className="max-w-6xl mx-auto space-y-8">
@@ -215,13 +266,13 @@ export default function About() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-3 bg-foreground text-background font-semibold rounded-md uppercase tracking-wide"
+                href="/booking"
+                className="inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground font-semibold rounded-md uppercase tracking-wide"
               >
-                Begin Your Journey
+                Start My Journey
               </Link>
-              <Link href="mailto:hello@soulsconnectionsafari.com" className="text-gold font-semibold">
-                Speak with George & Teresia
+              <Link href="/sample-itinerary.pdf" className="text-gold font-semibold">
+                See Sample Itinerary
               </Link>
             </div>
           </div>

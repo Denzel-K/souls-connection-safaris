@@ -63,7 +63,7 @@ export function FoundersSection() {
             >
               Talk to a Host
             </Link>
-            <Link href="/founders-story" className="inline-flex items-center gap-2 text-lux-forest border-b border-lux-accent">
+            <Link href="/about" className="inline-flex items-center gap-2 text-lux-forest border-b border-lux-accent">
               Meet Your Hosts →
             </Link>
           </div>

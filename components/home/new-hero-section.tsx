@@ -98,7 +98,8 @@ export function NewHeroSection() {
         {/* Right image column (hidden on mobile, shown on md+) */}
         <div className="relative hidden md:block">
           <img
-            src="/african-safari-lions-at-sunset.jpg"
+            // src="/father-n-son-on-safari.jpeg"
+            src="/couple-watching-sunset.jpeg"
             alt="Safari landscape at golden hour"
             className="absolute inset-0 h-full w-full object-cover"
           />

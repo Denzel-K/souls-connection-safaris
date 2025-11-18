@@ -26,30 +26,24 @@ const navigationItems: NavigationItem[] = [
     href: "/journeys",
   },
   {
-    label: "Experiences",
-    submenu: [
-      ...packageTiers.map((tier) => ({
-        label: tier.name,
-        href: `/experiences/${tier.slug}`,
-      })),
-      { label: "divider", href: "" },
-      { label: "All Experiences", href: "/experiences", isButton: true },
-    ],
+    label: "Ways to travel",
+    href: "/#experience-modes",
   },
   {
-    label: "Destinations",
-    submenu: destinations.map((dest) => ({
-      label: dest.name,
-      href: `/destinations/${dest.slug}`,
-    })),
+    label: "Soulful stays",
+    href: "/#lodges",
   },
   {
     label: "About",
     href: "/about",
   },
   {
-    label: "Founders' Story",
-    href: "/founders-story",
+    label: "Field notes",
+    href: "/#journal",
+  },
+  {
+    label: "FAQs",
+    href: "/#faqs",
   },
 ]
 
@@ -191,7 +185,7 @@ export function Header({
               href="/booking"
               className="px-6 py-2 bg-gold text-background font-sans text-sm font-medium hover:bg-gold/90 transition-all duration-200"
             >
-              Book Now
+              Start my journey
             </Link>
           </div>
 
@@ -271,7 +265,7 @@ export function Header({
                 className="block w-full py-3 bg-gold text-background text-center font-sans text-sm font-medium hover:bg-gold/90 transition-all duration-200 rounded"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Begin your journey
+                Start my journey
               </Link>
             </nav>
           </div>

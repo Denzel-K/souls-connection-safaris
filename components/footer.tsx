@@ -126,34 +126,61 @@ export function Footer() {
           </div>
 
           <div className="mt-14 grid gap-10 lg:grid-cols-4">
+            {/* Column 1 — Journeys */}
+            <FooterColumn
+              title="Journeys"
+              links={[
+                { label: "Journeys for Connection", href: "/journeys" },
+                { label: "Essence (Premium)", href: "/journeys" },
+                { label: "Deep Connection (Ultra)", href: "/journeys" },
+                { label: "Private Connection (Private)", href: "/#experience-modes" },
+                { label: "Intimate Connections (Small Groups)", href: "/#experience-modes" },
+                { label: "Bespoke Meaning (Custom)", href: "/booking" },
+              ]}
+            />
+
+            {/* Column 2 — Explore */}
             <FooterColumn
               title="Explore"
               links={[
-                { label: "Destinations", href: "#" },
-                { label: "Journeys", href: "/journeys" },
-                { label: "Experiences", href: "/experiences" },
-                { label: "Gallery", href: "/gallery" },
-                { label: "Journal", href: "#" },
-              ]}
-            />
-            <FooterColumn
-              title="Company"
-              links={[
+                { label: "Soulful Stays", href: "/#lodges" },
+                { label: "Field Notes on Connection", href: "/#journal" },
+                { label: "FAQs", href: "/#faqs" },
+                { label: "What’s Included", href: "/#inclusions" },
+                { label: "Impact with Purpose", href: "#" },
+                { label: "Hosts Who Design for Meaning", href: "/#hosts" },
                 { label: "About Us", href: "/about" },
                 { label: "Contact", href: "#" },
-                { label: "Press", href: "#" },
-                { label: "Careers", href: "#" },
               ]}
             />
-            <FooterColumn
-              title="Experiences"
-              links={[
-                { label: "Private Safaris", href: "#" },
-                { label: "Family Retreats", href: "#" },
-                { label: "Conservation Journeys", href: "#" },
-                { label: "Honeymoon Escapes", href: "#" },
-              ]}
-            />
+
+            {/* Column 3 — Plan Your Journey */}
+            <div>
+              <h4 className="font-serif text-lg mb-5">Plan Your Journey</h4>
+              <ul className="space-y-3 text-sm text-white/75">
+                <li>
+                  <Link href="/booking" className="hover:text-gold transition-colors">
+                    Start My Journey
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/sample-itinerary.pdf" className="hover:text-gold transition-colors">
+                    See Sample Itinerary
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/booking" className="hover:text-gold transition-colors">
+                    Get My Plan
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-gold transition-colors">
+                    Consult Form
+                  </Link>
+                </li>
+              </ul>
+              <p className="mt-4 text-xs text-white/60">“Receive quiet insights & soulful safari notes.”</p>
+            </div>
             <div>
               <h4 className="font-serif text-lg mb-5">Get In Touch</h4>
               <ul className="space-y-4 text-sm text-white/75">
