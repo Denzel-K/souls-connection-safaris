@@ -22,7 +22,7 @@ const paceHighlights = [
 export function PaceSection() {
   return (
     <section className="px-6 py-24 bg-lux-bone" id="pace">
-      <p className="font-serif text-4xl font-semibold text-lux-ink max-w-3xl mx-auto text-center mb-6">
+      <p className="font-niconne text-4xl font-semibold text-lux-ink max-w-3xl mx-auto text-center mb-6">
         Connection can’t be scheduled to the minute. You deserve space, presence, and a host who knows when to slow
         down.
       </p>
@@ -46,7 +46,7 @@ export function PaceSection() {
                 >
                   <span className="text-sm font-semibold tracking-[0.3em] text-lux-accent mt-1">•</span>
                   <div>
-                    <p className="font-serif text-xl text-lux-forest font-bold">{item.title}</p>
+                    <p className="font-niconne text-xl text-lux-forest font-bold">{item.title}</p>
                     <p className="text-sm text-lux-ink opacity-80">{item.description}</p>
                   </div>
                 </motion.div>

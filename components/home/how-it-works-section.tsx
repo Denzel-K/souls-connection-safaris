@@ -17,7 +17,7 @@ const planSteps = [
     micro: "Our process is proven and personal.",
   },
   {
-    label: "03 / Travel at your pace",
+    label: "03 / Travel",
     title: "Travel at your pace",
     copy: "Hosts and guides keep days flexible, unhurried, and tuned to energy levels, with room for quiet as well as adventure.",
     micro: "Clarity and ease drive conversions—clear steps, clear CTAs.",
@@ -54,8 +54,8 @@ const PlanTimelineCard = ({
       transition={{ duration: 0.6, ease: "easeOut", delay: prefersReducedMotion ? 0 : delay }}
       className={`rounded-[28px] border border-lux-sand/70 bg-white/95 p-8 shadow-[0_20px_60px_rgba(30,30,28,0.08)] backdrop-blur-sm flex flex-col gap-3 ${horizontalClass}`}
     >
-      <p className="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-lux-accent font-semibold">{step.label}</p>
-      <p className="font-serif text-2xl md:text-3xl text-lux-forest font-bold">{step.title}</p>
+      <p className="font-sans text-[0.75rem] uppercase tracking-[0.3em] text-lux-accent font-bold">{step.label}</p>
+      <p className="font-niconne text-2xl md:text-3xl text-lux-forest font-bold">{step.title}</p>
       <p className="text-sm md:text-base text-lux-ink opacity-80 leading-relaxed">{step.copy}</p>
       <p className="text-xs text-lux-forest/70 mt-2">{step.micro}</p>
     </motion.article>
@@ -270,7 +270,7 @@ export function HowItWorksSection() {
       <div className="max-w-6xl mx-auto space-y-10">
         <div className="text-center space-y-4">
           <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">The Plan</p>
-          <h2 className="font-serif text-5xl text-lux-forest">Your Path to Connection</h2>
+          <h2 className="font-niconne text-5xl text-lux-forest">Your Path to Connection</h2>
           <p>A clear, calm process from first conversation to final farewell.</p>
         </div>
         <PlanTimeline steps={planSteps} />

@@ -36,7 +36,7 @@ export function FoundersSection() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">Founders & Hosts</p>
-          <h2 className="font-serif text-4xl text-lux-forest">Hosts Who Design for Meaning.</h2>
+          <h2 className="font-niconne text-4xl text-lux-forest">Hosts Who Design for Meaning.</h2>
           <p className="text-lg text-lux-ink opacity-80">
             As PR and communication professionals, George and Wambui saw a gap in luxury safaris: guests were getting the sights, but not always the connection they were longing for. Their work begins with listening—understanding how you want to feel—then translating that into unhurried pacing, clear communication, and soulful experiences from arrival to farewell.
           </p>

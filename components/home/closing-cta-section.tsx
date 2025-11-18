@@ -12,7 +12,7 @@ export function ClosingCtaSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
       >
-        <p className="font-serif text-4xl text-lux-forest">Come for the wildlife. Leave with connection.</p>
+        <p className="font-niconne text-4xl text-lux-forest">Come for the wildlife. Leave with connection.</p>
         <p className="text-lg text-lux-ink opacity-80">
           Your journey begins with a simple conversation about how you want to feel.
         </p>

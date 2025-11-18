@@ -92,7 +92,7 @@ export default function Booking() {
       <section className="px-6 py-20 text-center">
         <div className="mx-auto max-w-4xl space-y-6">
           <p className="text-xs uppercase tracking-[0.4em] text-lux-accent">Plan my journey</p>
-          <h1 className="font-serif text-5xl text-lux-forest">Start My Journey</h1>
+          <h1 className="font-niconne text-5xl text-lux-forest">Start My Journey</h1>
           <p className="text-lg text-lux-ink opacity-80">
             Tell us how you want to feel. Your hosts will craft two clear options within 48 hours—private or small group,
             always at your pace.
@@ -113,7 +113,7 @@ export default function Booking() {
             {status === "success" ? (
               <div className="space-y-6 text-center">
                 <p className="text-xs uppercase tracking-[0.4em] text-lux-accent">Plan request received</p>
-                <h2 className="font-serif text-4xl text-lux-forest">Your hosts are on it.</h2>
+                <h2 className="font-niconne text-4xl text-lux-forest">Your hosts are on it.</h2>
                 <p className="text-lg text-lux-ink opacity-80">
                   A host will review and email a first plan to {submittedEmail} within 24–48 hours.
                 </p>
@@ -138,7 +138,7 @@ export default function Booking() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <p className="text-xs uppercase tracking-[0.4em] text-lux-accent">Consult form</p>
-                  <h2 className="font-serif text-4xl text-lux-forest mt-2">Tell us how you want to feel.</h2>
+                  <h2 className="font-niconne text-4xl text-lux-forest mt-2">Tell us how you want to feel.</h2>
                   <p className="text-lg text-lux-ink opacity-80">Your hosts will design around that.</p>
                 </div>
                 <div className="grid gap-4 md:grid-cols-2">

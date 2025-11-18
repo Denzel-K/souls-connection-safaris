@@ -27,7 +27,7 @@ export default function DestinationsPage() {
         <div className="relative z-10 px-6 py-32 md:py-40">
           <div className="max-w-5xl mx-auto text-center text-white space-y-6">
             <p className="font-sans text-sm tracking-[0.5em] text-white/70">DESTINATIONS</p>
-            <h1 className="font-serif text-5xl md:text-7xl font-bold text-balance">Places that Hold Meaning</h1>
+            <h1 className="font-niconne text-5xl md:text-7xl font-bold text-balance">Places that Hold Meaning</h1>
             <p className="text-lg max-w-3xl mx-auto leading-relaxed text-white/85">
               Regions and conservancies chosen for space, atmosphere, and story—not only for the number of sightings.
             </p>
@@ -60,7 +60,7 @@ export default function DestinationsPage() {
                   
                   {/* Title overlay on image */}
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="font-serif text-xl md:text-2xl text-white font-bold leading-tight drop-shadow-lg">
+                    <h3 className="font-niconne text-xl md:text-2xl text-white font-bold leading-tight drop-shadow-lg">
                       {destination.name}
                     </h3>
                   </div>
@@ -111,7 +111,7 @@ export default function DestinationsPage() {
       {/* CTA Section */}
       <section className="py-20 md:py-28 px-6 bg-lux-shell">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-4xl md:text-5xl text-lux-forest font-bold mb-6 text-balance">
+          <h2 className="font-niconne text-4xl md:text-5xl text-lux-forest font-bold mb-6 text-balance">
             Ready to Explore These Meaningful Places?
           </h2>
           <p className="text-lg text-lux-ink/80 mb-8 leading-relaxed max-w-2xl mx-auto">

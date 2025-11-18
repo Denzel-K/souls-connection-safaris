@@ -107,7 +107,7 @@ export function InclusionsSection() {
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="text-center space-y-3">
           <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">What's Included</p>
-          <h2 className="font-serif text-4xl text-lux-forest">Essence vs Deep Connection</h2>
+          <h2 className="font-niconne text-4xl text-lux-forest">Essence vs Deep Connection</h2>
           <p className="text-lux-ink/70 max-w-3xl mx-auto">Two inclusion sets, both grounded in care—choose the level of hosting and access that fits your presence.</p>
         </div>
         <div className="flex flex-col gap-8 md:flex-row md:items-start">
@@ -136,7 +136,7 @@ export function InclusionsSection() {
                     <div className="flex items-start justify-between gap-6">
                       <div className="space-y-3">
                         <p className="text-[12px] font-sans font-bold uppercase tracking-[0.45em] text-lux-accent">{col.eyebrow}</p>
-                        <p className="font-serif text-3xl text-lux-forest leading-tight">{col.title}</p>
+                        <p className="font-niconne text-3xl text-lux-forest leading-tight">{col.title}</p>
                         <p className="text-sm md:text-base text-lux-ink/70">{col.subline}</p>
                       </div>
                       <span

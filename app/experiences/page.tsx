@@ -49,7 +49,7 @@ export default function ExperiencesPage() {
         <div className="relative px-6 py-32 md:py-52 min-h-[70vh] flex items-center">
           <div className="max-w-6xl mx-auto text-center text-white space-y-8">
             <p className="font-sans text-sm tracking-[0.5em] text-white/70">ALL EXPERIENCES</p>
-            <h1 className="font-serif text-5xl md:text-7xl font-bold text-balance">
+            <h1 className="font-niconne text-5xl md:text-7xl font-bold text-balance">
               Discover All Safari Experiences
             </h1>
             <p className="text-lg max-w-3xl mx-auto leading-relaxed text-white/85">
@@ -73,7 +73,7 @@ export default function ExperiencesPage() {
                   </span>
                   <div>
                     <p className="font-sans text-xs tracking-[0.4em] text-brown font-semibold uppercase">{tier.name}</p>
-                    <h2 className="font-serif text-4xl md:text-5xl text-foreground">{tier.description}</h2>
+                    <h2 className="font-niconne text-4xl md:text-5xl text-foreground">{tier.description}</h2>
                   </div>
                 </div>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
@@ -91,7 +91,7 @@ export default function ExperiencesPage() {
                   >
                     <div className="flex items-center justify-between gap-4 mb-6">
                       <div>
-                        <h3 className="font-serif text-3xl text-foreground">{subcat.name}</h3>
+                        <h3 className="font-niconne text-3xl text-foreground">{subcat.name}</h3>
                       </div>
                      
                     </div>
@@ -152,7 +152,7 @@ export default function ExperiencesPage() {
       <section className="py-20 md:py-32 px-6 bg-brown/5">
         <div className="max-w-4xl mx-auto text-center">
           <p className="font-sans text-sm tracking-widest text-brown mb-4">OUR COMMITMENT</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground font-bold mb-8 text-balance">
+          <h2 className="font-niconne text-4xl md:text-5xl text-foreground font-bold mb-8 text-balance">
             Why Choose Souls Connection
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -162,7 +162,7 @@ export default function ExperiencesPage() {
               { title: "Personalized Care", desc: "Custom itineraries tailored to your interests" },
             ].map((item, i) => (
               <div key={i}>
-                <h3 className="font-serif text-2xl text-foreground font-bold mb-3">{item.title}</h3>
+                <h3 className="font-niconne text-2xl text-foreground font-bold mb-3">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
             ))}

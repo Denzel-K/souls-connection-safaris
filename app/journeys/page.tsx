@@ -26,7 +26,7 @@ export default function JourneysPage() {
         <div className="relative px-6 py-32 md:py-52 min-h-[70vh] flex items-center">
           <div className="max-w-5xl mx-auto text-center text-white space-y-6">
             <p className="font-sans text-sm tracking-[0.5em] text-white/70">JOURNEYS OF CONNECTION</p>
-            <h1 className="font-serif text-5xl md:text-7xl font-bold text-balance">Five Signature Journeys</h1>
+            <h1 className="font-niconne text-5xl md:text-7xl font-bold text-balance">Five Signature Journeys</h1>
             <p className="text-lg max-w-3xl mx-auto leading-relaxed text-white/85">
               Five thoughtfully designed safaris for meaning, connection, and quiet restoration.
             </p>
@@ -64,7 +64,7 @@ function JourneyBlock({ journey: j }: { journey: Journey }) {
 
       <div className="flex flex-col gap-8 md:gap-10 lg:flex-row lg:items-start lg:justify-between">
         <div className="max-w-3xl">
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground font-bold mb-2">{j.title}</h2>
+          <h2 className="font-niconne text-4xl md:text-5xl text-foreground font-bold mb-2">{j.title}</h2>
           <p className="font-body text-lg text-muted-foreground leading-relaxed mb-4">{j.subtitle}</p>
           <div className="font-sans text-sm tracking-wide text-foreground/90 mb-1">
             {j.meta.split(" · ").slice(2).join(" · ")}
@@ -136,7 +136,7 @@ function ItineraryView({
             <div className="absolute -start-1.5 mt-2 h-3 w-3 rounded-full bg-gold border border-background" />
             <div className="flex flex-col gap-1">
               <div className="font-sans text-[0.7rem] uppercase tracking-[0.25em] text-foreground/70">{d.day}</div>
-              <div className="font-serif text-xl text-foreground">{d.title}</div>
+              <div className="font-niconne text-xl text-foreground">{d.title}</div>
               <div className="font-body text-sm text-muted-foreground max-w-3xl">{d.description}</div>
             </div>
           </li>

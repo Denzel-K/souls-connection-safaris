@@ -10,7 +10,7 @@ export function JourneysOfConnectionSection() {
         <div className="flex flex-col gap-3 md:flex-row items-center md:justify-between">
           <div>
             <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent mb-3 font-semibold">Journeys of Connection</p>
-            <h2 className="font-serif text-5xl md:text-6xl text-lux-forest">Five signature journeys</h2>
+            <h2 className="font-niconne text-5xl md:text-6xl text-lux-forest">Five signature journeys</h2>
             <p className="font-body text-lg md:text-xl text-lux-ink/80 max-w-2xl mt-3">Five thoughtfully designed safaris for meaning, connection, and quiet restoration.</p>
           </div>
           <div className="pt-2">
@@ -39,7 +39,7 @@ export function JourneysOfConnectionSection() {
               {/* Content area */}
               <div className="flex flex-col flex-1 p-6">
                 <div className="flex-1">
-                  <h3 className="font-serif text-2xl md:text-3xl text-lux-forest mb-3 font-bold leading-none whitespace-nowrap overflow-hidden text-ellipsis">{j.title}</h3>
+                  <h3 className="font-niconne text-2xl md:text-3xl text-lux-forest mb-3 font-bold leading-none whitespace-nowrap overflow-hidden text-ellipsis">{j.title}</h3>
                   <p className="font-body text-sm md:text-base text-lux-ink/85 mb-5 leading-relaxed">{j.subtitle}</p>
                   
                   {/* Enhanced meta section */}

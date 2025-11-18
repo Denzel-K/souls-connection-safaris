@@ -28,7 +28,7 @@ export function ValuePillarsSection() {
       <div className="mx-auto max-w-6xl space-y-12">
         <div className="text-center space-y-4">
           <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">Why us?</p>
-          <h2 className="font-serif text-4xl lg:text-5xl text-lux-forest">Our pillars of connection</h2>
+          <h2 className="font-niconne text-4xl lg:text-5xl text-lux-forest">Our pillars of connection</h2>
           <p className="text-lg text-lux-ink opacity-80">Every journey is shaped around three simple truths about how meaningful travel should feel.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
@@ -49,9 +49,9 @@ export function ValuePillarsSection() {
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <p className="font-serif font-semibold text-2xl text-lux-forest">{reason.title}</p>
+                <p className="font-niconne font-semibold text-2xl sm:text-3xl text-lux-forest">{reason.title}</p>
               </div>
-              <p className="mt-4 text-sm text-lux-ink opacity-80">{reason.lead}</p>
+              <p className="mt-4 text-sm sm:text-base md:text-lg text-lux-ink opacity-80">{reason.lead}</p>
               
             </motion.article>
           ))}
@@ -59,7 +59,7 @@ export function ValuePillarsSection() {
         <div className="flex flex-col items-center gap-3 md:flex-row md:justify-center">
           <Link
             href="#path"
-            className="inline-flex items-center gap-2 text-base md:text-lg lg:text-xl font-serif text-lux-forest hover:text-lux-accent transition-colors duration-300 group"
+            className="inline-flex items-center gap-2 text-base md:text-lg lg:text-xl font-niconne text-lux-forest hover:text-lux-accent transition-colors duration-300 group"
           >
             Explore journeys of connection
             <motion.span

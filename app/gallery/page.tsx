@@ -45,7 +45,7 @@ export default function GalleryPage() {
       <section className="py-20 md:py-32 px-6 bg-gradient-to-b from-gold/10 to-background">
         <div className="max-w-6xl mx-auto text-center">
           <p className="font-sans text-sm tracking-widest text-gold mb-4">VISUAL JOURNEY</p>
-          <h1 className="font-serif text-5xl md:text-7xl text-foreground font-bold mb-6 text-balance">
+          <h1 className="font-niconne text-5xl md:text-7xl text-foreground font-bold mb-6 text-balance">
             Safari Gallery
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -70,7 +70,7 @@ export default function GalleryPage() {
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
                 </div>
                 <div className="p-4">
-                  <h3 className="font-serif text-lg text-foreground font-bold">{image.title}</h3>
+                  <h3 className="font-niconne text-lg text-foreground font-bold">{image.title}</h3>
                   <p className="text-sm text-muted-foreground mt-1">{image.alt}</p>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default function GalleryPage() {
       {/* CTA Section */}
       <section className="py-20 md:py-32 px-6 bg-green/5">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground font-bold mb-6 text-balance">
+          <h2 className="font-niconne text-4xl md:text-5xl text-foreground font-bold mb-6 text-balance">
             Ready to Create Your Own Gallery?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">

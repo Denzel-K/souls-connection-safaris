@@ -27,7 +27,7 @@ export function PresenceSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          className="font-serif text-4xl md:text-5xl font-bold text-lux-ink mb-3 md:mb-4 leading-tight text-center"
+          className="font-niconne text-4xl md:text-5xl lg:text-6xl text-lux-ink mb-3 md:mb-4 leading-tight text-center"
         >
           Connection can't be scheduled to the minute.
         </motion.h2>
@@ -38,7 +38,7 @@ export function PresenceSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="font-serif text-lg md:text-xl lg:text-2xl text-lux-ink/70 mb-8 md:mb-12 lg:mb-16 max-w-3xl font-light leading-relaxed text-center mx-auto"
+          className="font-serif italic text-lg md:text-2xl lg:text-3xl text-lux-ink/70 mb-8 md:mb-12 lg:mb-16 max-w-3xl font-light leading-relaxed text-center mx-auto"
         >
           Overplanned itineraries, ticking off sightings, and crowded viewpoints can leave days feeling blurred and rushed. Time in Africa deserves unhurried space for conversation, quiet, and shared awe.
         </motion.p>
@@ -61,7 +61,7 @@ export function PresenceSection() {
           >
             <Link
               href="#path"
-              className="inline-flex items-center gap-2 text-base md:text-lg lg:text-xl font-serif text-lux-forest hover:text-lux-accent transition-colors duration-300 group"
+              className="inline-flex items-center gap-2 text-base md:text-lg lg:text-2xl font-niconne text-lux-forest hover:text-lux-accent transition-colors duration-300 group"
             >
               See your path to connection
               <motion.span

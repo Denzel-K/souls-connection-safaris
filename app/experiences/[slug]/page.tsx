@@ -19,7 +19,7 @@ export default function ExperiencesPage({ params }: { params: { slug: string } }
         <Header />
         <div className="flex-1 flex items-center justify-center">
           <div className="text-center">
-            <h1 className="font-serif text-4xl text-foreground mb-4">Experience Not Found</h1>
+            <h1 className="font-niconne text-4xl text-foreground mb-4">Experience Not Found</h1>
             <Link href="/" className="text-gold hover:text-gold/80">
               Return to Home
             </Link>
@@ -47,7 +47,7 @@ export default function ExperiencesPage({ params }: { params: { slug: string } }
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative px-6 py-32 md:py-48 min-h-[70vh] flex items-center">
           <div className="max-w-4xl mx-auto text-center text-white space-y-6">
-            <h1 className="font-serif text-5xl md:text-6xl font-bold text-balance">{tier.name}</h1>
+            <h1 className="font-niconne text-5xl md:text-6xl font-bold text-balance">{tier.name}</h1>
             <p className="text-lg md:text-xl leading-relaxed text-white/85">{tier.description}</p>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function ExperiencesPage({ params }: { params: { slug: string } }
             <div key={subcategory.id} id={subcategory.slug} className={`mb-20 ${subIndex > 0 ? "pt-12 border-t border-border" : ""}`}>
               {/* Subcategory Header */}
               <div className="mb-12">
-                <h2 className="font-serif text-4xl md:text-5xl text-foreground font-bold mb-4">{subcategory.name}</h2>
+                <h2 className="font-niconne text-4xl md:text-5xl text-foreground font-bold mb-4">{subcategory.name}</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">{subcategory.description}</p>
               </div>
 
@@ -78,7 +78,7 @@ export default function ExperiencesPage({ params }: { params: { slug: string } }
                     <div className="flex flex-1 flex-col gap-4 p-6">
                       <div>
                         <p className="text-[0.65rem] uppercase tracking-[0.4em] text-brown/70">{subcategory.name}</p>
-                        <h3 className="font-serif text-2xl text-foreground">{experience.name}</h3>
+                        <h3 className="font-niconne text-2xl text-foreground">{experience.name}</h3>
                         <p className="text-sm text-muted-foreground">{experience.destination}</p>
                       </div>
                       <p className="text-muted-foreground leading-relaxed flex-1">{experience.description}</p>
@@ -120,7 +120,7 @@ export default function ExperiencesPage({ params }: { params: { slug: string } }
       {/* CTA Section */}
       <section className="py-16 md:py-24 px-6 bg-green/5">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground font-bold mb-6">Ready to Begin?</h2>
+          <h2 className="font-niconne text-4xl md:text-5xl text-foreground font-bold mb-6">Ready to Begin?</h2>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
             Contact our safari specialists to book your {tier.name.toLowerCase()} experience and start your African
             journey.

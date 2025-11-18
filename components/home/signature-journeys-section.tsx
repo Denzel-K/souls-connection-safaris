@@ -25,7 +25,7 @@ export function SignatureJourneysSection() {
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent mb-3 font-semibold">Signature Journeys</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-lux-forest">Host-led safaris</h2>
+            <h2 className="font-niconne text-4xl md:text-5xl text-lux-forest">Host-led safaris</h2>
             <p className="text-lg text-lux-ink opacity-80">
               Premium and ultra-premium itineraries pulled directly from our experiences library.
             </p>
@@ -53,7 +53,7 @@ export function SignatureJourneysSection() {
                 <p className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-lux-accent">
                   {journey.subcategoryName}
                 </p>
-                <p className="font-serif text-xl sm:text-2xl text-lux-forest leading-tight font-bold">{journey.name}</p>
+                <p className="font-niconne text-xl sm:text-2xl text-lux-forest leading-tight font-bold">{journey.name}</p>
                 <p className="text-sm text-lux-ink opacity-80 flex-1 mt-2">{journey.description}</p>
                 <div className="flex flex-wrap gap-1.5 text-[0.7rem] text-lux-forest mt-2">
                   <span className="rounded-full border border-lux-sand px-2.5 py-0.5">{journey.duration}</span>

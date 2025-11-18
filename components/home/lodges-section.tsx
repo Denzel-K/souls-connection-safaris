@@ -81,9 +81,9 @@ export function LodgesSection() {
       <div className="max-w-6xl mx-auto space-y-14">
         <div className="text-center space-y-6">
           <p className="font-sans text-xs uppercase tracking-[0.45em] text-lux-accent font-semibold">Soulful Stays</p>
-          <h2 className="font-serif text-3xl md:text-5xl text-lux-forest leading-tight">Spaces framed for stillness.</h2>
-          <p className="font-serif text-lg md:text-2xl text-lux-ink/85 max-w-3xl mx-auto leading-relaxed">
-            Atays chosen for atmosphere, privacy, and a deep sense of place. Each lodge supports rest, connection, and unhurried presence.
+          <h2 className="font-niconne text-3xl md:text-5xl text-lux-forest leading-tight">Spaces framed for stillness.</h2>
+          <p className="font-niconne text-lg md:text-3xl text-lux-ink/85 max-w-3xl mx-auto leading-relaxed">
+            Stays chosen for atmosphere, privacy, and a deep sense of place. Each lodge supports rest, connection, and unhurried presence.
           </p>
         </div>
 
@@ -109,7 +109,7 @@ export function LodgesSection() {
                       <img src={lodge.image} alt={`${lodge.title} lodge`} className="absolute inset-0 h-full w-full object-cover" />
                       <div className="absolute inset-x-0 bottom-0">
                         <div className="bg-gradient-to-t from-[#F8F3ED] via-[#F8F3ED]/95 to-transparent px-10 pt-20 pb-12 text-lux-ink/90">
-                          <h3 className="font-serif text-4xl md:text-5xl text-lux-forest mb-4">{lodge.title}</h3>
+                          <h3 className="font-niconne text-4xl md:text-5xl text-lux-forest mb-4">{lodge.title}</h3>
                           <p className="text-base md:text-lg text-lux-ink/80 max-w-xl leading-relaxed mb-6">{lodge.line}</p>
                           <div className="flex flex-row items-center justify-between w-full">
                             <p className="font-sans text-xs uppercase font-bold tracking-[0.4em] text-lux-accent">

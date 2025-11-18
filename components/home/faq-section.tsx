@@ -41,7 +41,7 @@ export function FAQSection() {
     <section className="px-6 py-24 bg-white" id="faqs">
       <div className="max-w-4xl mx-auto space-y-8">
         <div className="text-center space-y-3">
-          <h2 className="font-serif text-4xl md:text-5xl text-lux-forest">FAQs.</h2>
+          <h2 className="font-niconne text-4xl md:text-5xl text-lux-forest">FAQs.</h2>
           <p className="text-base md:text-lg text-lux-ink/80">Clear answers for calm planning.</p>
         </div>
 

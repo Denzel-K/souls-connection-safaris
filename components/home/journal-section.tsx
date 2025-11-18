@@ -7,7 +7,7 @@ const journalEntries = [
   {
     title: "Why Meaningful Travel Needs Space",
     excerpt: "From dawn lion calls to lantern-lit suppers, follow the sensory arc of our signature Mara immersion.",
-    href: "/journal/a-day-in-the-mara",
+    href: "/field-notes/why-meaningful-travel-needs-space",
     issue: "Field Note 01",
     season: "Mara Edition",
     readingTime: "4 min read",
@@ -15,7 +15,7 @@ const journalEntries = [
   {
     title: "Golden Hours in the Mara",
     excerpt: "How we pair tactile textures, slow dining, and intuitive hosting to keep the bush both wild and easeful.",
-    href: "/journal/designing-quiet-luxury",
+    href: "/field-notes/golden-hours-in-the-mara",
     issue: "Field Note 02",
     season: "Design Issue",
     readingTime: "6 min read",
@@ -23,7 +23,7 @@ const journalEntries = [
   {
     title: "The Quiet Art of Hosting",
     excerpt: "A look at intimacy, wildlife access, and why limited numbers protect habitat.",
-    href: "/journal/fifteen-guests-max",
+    href: "/field-notes/the-quiet-art-of-hosting",
     issue: "Field Note 03",
     season: "Stewardship",
     readingTime: "3 min read",
@@ -37,9 +37,20 @@ export function JournalSection() {
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent mb-3 font-semibold">Journal (Quarterly)</p>
-            <h2 className="font-serif text-4xl text-lux-forest">Field notes on connection</h2>
+            <h2 className="font-niconne text-4xl text-lux-forest">Field notes on connection</h2>
           </div>
-          <p>Reflections, stories, and quiet moments from the field.</p>
+          <div className="flex flex-col items-end gap-3">
+            <p>Reflections, stories, and quiet moments from the field.</p>
+            <Link
+              href="/field-notes"
+              className="inline-flex items-center gap-2 text-sm font-medium text-lux-forest hover:text-lux-accent transition-colors"
+            >
+              View all field notes
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
         </div>
         <div className="grid gap-8 md:grid-cols-3">
           {journalEntries.map((entry, index) => (
@@ -64,7 +75,7 @@ export function JournalSection() {
                 <span className="tracking-[0.3em]">{entry.readingTime}</span>
               </div>
               <div className="flex flex-1 flex-col space-y-4 pt-6">
-                <p className="font-serif text-3xl font-semibold leading-tight text-lux-forest">{entry.title}</p>
+                <p className="font-niconne text-3xl font-semibold leading-tight text-lux-forest">{entry.title}</p>
                 <p className="text-lux-ink/70 text-sm">{entry.excerpt}</p>
               </div>
               <div className="mt-8 flex items-center justify-between border-t border-lux-sand/70 pt-5">

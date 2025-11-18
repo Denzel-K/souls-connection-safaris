@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Roboto_Mono, Cormorant_Garamond, Rosarivo } from "next/font/google"
+import { Inter, Roboto_Mono, Cormorant_Garamond, Rosarivo, Niconne } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
@@ -12,12 +12,16 @@ const _cormorantGaramond = Cormorant_Garamond({
   variable: "--font-serif-base",
 })
 const _rosarivo = Rosarivo({ subsets: ["latin"], weight: "400", variable: "--font-body-base" })
+const _niconne = Niconne({ 
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-niconne-base" 
+}) 
 
 export const metadata: Metadata = {
   title: "Souls Connection Safaris - Luxury Safari Experiences",
   description:
     "Experience authentic African safari adventures with Souls Connection Safaris. Luxury wildlife encounters and unforgettable journeys.",
-  generator: "v0.app",
   icons: {
     icon: "/soulsconnectionsafarilogo.png",
     shortcut: "/soulsconnectionsafarilogo.png",
@@ -33,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${_sans.variable} ${_mono.variable} ${_cormorantGaramond.variable} ${_rosarivo.variable}`}
+      className={`${_sans.variable} ${_mono.variable} ${_cormorantGaramond.variable} ${_rosarivo.variable} ${_niconne.variable}`}
     >
       <body className="antialiased">
         {children}

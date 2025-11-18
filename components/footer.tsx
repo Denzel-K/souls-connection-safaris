@@ -82,7 +82,7 @@ export function Footer() {
             <div className="max-w-4xl space-x-4 flex flex-row items-center">
               <SafariLogo size={126} />
               <div>
-                <h3 className="font-serif text-xl md:text-2xl">Souls Connection Safaris</h3>
+                <h3 className="font-niconne text-xl md:text-2xl">Souls Connection Safaris</h3>
                 <p className="text-white/70 text-sm leading-relaxed mt-3">
                   Crafting bespoke experiences that renew the spirit and restore connection.
                 </p>
@@ -90,7 +90,7 @@ export function Footer() {
             </div>
 
             <div className="w-full rounded-[12px] border border-white/20 px-6 py-6 space-y-4 xl:max-w-md">
-              <p className="font-serif text-xl">Approved & Regulated By</p>
+              <p className="font-niconne text-xl">Approved & Regulated By</p>
               <div className="flex flex-wrap items-center gap-6">
                 {regulatoryPartners.map((partner) => (
                   <div key={partner.name} className="flex flex-col items-center text-center gap-2">
@@ -106,7 +106,7 @@ export function Footer() {
             </div>
             <div className="w-full xl:max-w-sm">
               <div className="rounded-[12px] border border-white/25 bg-transparent px-6 py-6 space-y-4">
-                <p className="font-serif text-xl">Stay close to the firelight.</p>
+                <p className="font-niconne text-xl">Stay close to the firelight.</p>
                 <form className="flex flex-col gap-3 sm:flex-row">
                   <input
                     type="email"
@@ -156,7 +156,7 @@ export function Footer() {
 
             {/* Column 3 — Plan Your Journey */}
             <div>
-              <h4 className="font-serif text-lg mb-5">Plan Your Journey</h4>
+              <h4 className="font-niconne text-lg mb-5">Plan Your Journey</h4>
               <ul className="space-y-3 text-sm text-white/75">
                 <li>
                   <Link href="/booking" className="hover:text-gold transition-colors">
@@ -182,7 +182,7 @@ export function Footer() {
               <p className="mt-4 text-xs text-white/60">“Receive quiet insights & soulful safari notes.”</p>
             </div>
             <div>
-              <h4 className="font-serif text-lg mb-5">Get In Touch</h4>
+              <h4 className="font-niconne text-lg mb-5">Get In Touch</h4>
               <ul className="space-y-4 text-sm text-white/75">
                 <li className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-gold mt-0.5 flex-shrink-0" />
@@ -208,7 +208,7 @@ export function Footer() {
             <div className="rounded-[32px] border border-white/15 bg-white/5 p-6">
               <div className="flex items-center justify-between mb-5">
                 <div>
-                  <p className="font-serif text-2xl">Gallery Glimpses</p>
+                  <p className="font-niconne text-2xl">Gallery Glimpses</p>
                   <p className="text-white/60 text-sm">This week&apos;s visual diary</p>
                 </div>
                 <Link
@@ -240,7 +240,7 @@ export function Footer() {
             <div className="rounded-[32px] border border-white/15 bg-white/5 p-6">
               <div className="flex items-center justify-between mb-5">
                 <div>
-                  <p className="font-serif text-2xl">Guest Reflections</p>
+                  <p className="font-niconne text-2xl">Guest Reflections</p>
                   <p className="text-white/60 text-sm">A whisper from recent travelers</p>
                 </div>
                 <Link
@@ -260,7 +260,7 @@ export function Footer() {
                         ))}
                       </div>
                       <p className="text-sm text-white/85 mb-3">{review.text}</p>
-                      <p className="font-serif text-white">{review.name}</p>
+                      <p className="font-niconne text-white">{review.name}</p>
                       <p className="text-xs text-white/60">{review.tour}</p>
                     </div>
                   ))}
@@ -313,7 +313,7 @@ export function Footer() {
 function FooterColumn({ title, links }: FooterColumnProps) {
   return (
     <div>
-      <h4 className="font-serif text-lg mb-5">{title}</h4>
+      <h4 className="font-niconne text-lg mb-5">{title}</h4>
       <ul className="space-y-3 text-sm text-white/75">
         {links.map((link) => (
           <li key={link.label}>

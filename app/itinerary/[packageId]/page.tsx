@@ -24,7 +24,7 @@ export default function ItineraryPage({
         <Header />
         <div className="flex-1 flex items-center justify-center">
           <div className="text-center">
-            <h1 className="font-serif text-4xl text-foreground mb-4">Itinerary Not Found</h1>
+            <h1 className="font-niconne text-4xl text-foreground mb-4">Itinerary Not Found</h1>
             <Link href="/" className="text-brown hover:text-brown/80">
               Return to Home
             </Link>
@@ -51,18 +51,18 @@ export default function ItineraryPage({
               ← Back to Home
             </Link>
             <div className="space-y-4">
-              <h1 className="font-serif text-5xl md:text-6xl text-foreground font-bold text-balance">
+              <h1 className="font-niconne text-5xl md:text-6xl text-foreground font-bold text-balance">
                 {itinerary.title}
               </h1>
               <p className="text-lg text-foreground/70 font-body max-w-2xl">{itinerary.overview}</p>
               <div className="flex flex-wrap gap-6 pt-4">
                 <div>
                   <p className="font-sans text-xs tracking-widest text-brown mb-1">DURATION</p>
-                  <p className="font-serif text-2xl text-foreground font-bold">{itinerary.duration}</p>
+                  <p className="font-niconne text-2xl text-foreground font-bold">{itinerary.duration}</p>
                 </div>
                 <div>
                   <p className="font-sans text-xs tracking-widest text-brown mb-1">DESTINATION</p>
-                  <p className="font-serif text-2xl text-foreground font-bold">{itinerary.destination}</p>
+                  <p className="font-niconne text-2xl text-foreground font-bold">{itinerary.destination}</p>
                 </div>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function ItineraryPage({
                     <div className="flex-1 text-left">
                       <div className="flex items-baseline gap-3 mb-2">
                         <span className="font-sans text-xs tracking-widest text-brown font-bold">{dayItem.day}</span>
-                        <h3 className="font-serif text-xl md:text-2xl text-foreground font-bold">{dayItem.title}</h3>
+                        <h3 className="font-niconne text-xl md:text-2xl text-foreground font-bold">{dayItem.title}</h3>
                       </div>
                       <p className="text-foreground/70 font-body">{dayItem.description}</p>
                     </div>

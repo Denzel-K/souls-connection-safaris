@@ -64,7 +64,7 @@ export default function ReviewsPage() {
       <section className="py-20 md:py-32 px-6 bg-gradient-to-b from-green/10 to-background">
         <div className="max-w-6xl mx-auto text-center">
           <p className="font-sans text-sm tracking-widest text-brown mb-4">GUEST TESTIMONIALS</p>
-          <h1 className="font-serif text-5xl md:text-7xl text-foreground font-bold mb-6 text-balance">
+          <h1 className="font-niconne text-5xl md:text-7xl text-foreground font-bold mb-6 text-balance">
             What Our Travelers Say
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -94,7 +94,7 @@ export default function ReviewsPage() {
 
                 {/* Author Info */}
                 <div className="border-t border-border/50 pt-4">
-                  <p className="font-serif text-lg text-foreground font-semibold">{review.name}</p>
+                  <p className="font-niconne text-lg text-foreground font-semibold">{review.name}</p>
                   <p className="text-sm text-brown font-medium">{review.location}</p>
                   <div className="flex justify-between items-center mt-3">
                     <span className="text-xs text-muted-foreground">{review.date}</span>
@@ -118,7 +118,7 @@ export default function ReviewsPage() {
               { number: "15+", label: "Years Experience" },
             ].map((stat, i) => (
               <div key={i}>
-                <p className="font-serif text-4xl md:text-5xl text-brown font-bold mb-2">{stat.number}</p>
+                <p className="font-niconne text-4xl md:text-5xl text-brown font-bold mb-2">{stat.number}</p>
                 <p className="text-muted-foreground font-medium">{stat.label}</p>
               </div>
             ))}
@@ -129,7 +129,7 @@ export default function ReviewsPage() {
       {/* CTA Section */}
       <section className="py-20 md:py-32 px-6 bg-green/5">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground font-bold mb-6 text-balance">
+          <h2 className="font-niconne text-4xl md:text-5xl text-foreground font-bold mb-6 text-balance">
             Join Our Community of Adventurers
           </h2>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">

@@ -57,7 +57,7 @@ export default function About() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" aria-hidden />
           <div className="relative px-6 py-36 md:py-52 min-h-[70vh] flex items-center">
             <div className="max-w-4xl mx-auto text-center text-white space-y-4">
-              <h1 className="font-serif text-4xl md:text-6xl font-bold">You are the reason we exist.</h1>
+              <h1 className="font-niconne text-4xl md:text-6xl font-bold">You are the reason we exist.</h1>
               <p className="text-lg md:text-2xl text-white/95">
                 We design safaris so you can return with presence, not just pictures.
               </p>
@@ -85,7 +85,7 @@ export default function About() {
             />
             <div>
               <p className="font-sans text-xs tracking-[0.3em] uppercase text-gold">Our origin</p>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold mt-4">
+              <h2 className="font-niconne text-3xl md:text-4xl font-bold mt-4">
                 We created Souls Connection Safaris when travel lost its humanity.
               </h2>
               <p className="text-lg text-muted-foreground mt-4">
@@ -100,7 +100,7 @@ export default function About() {
         <section className="px-6 py-16 md:py-24 bg-background" aria-labelledby="our-story-heading">
           <div className="max-w-6xl mx-auto grid gap-12 lg:grid-cols-[1.1fr,0.9fr] items-start">
             <div className="space-y-6">
-              <h2 id="our-story-heading" className="font-serif text-4xl md:text-5xl font-bold leading-tight">
+              <h2 id="our-story-heading" className="font-niconne text-4xl md:text-5xl font-bold leading-tight">
                 The right journeys start with a conversation.
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -125,7 +125,7 @@ export default function About() {
                   put into words. Only then do we curate the lodges, routes, and rituals that will move you.
                 </p>
               </div>
-              <blockquote className="border-l-4 border-gold/40 pl-6 font-serif text-2xl text-foreground">
+              <blockquote className="border-l-4 border-gold/40 pl-6 font-niconne text-2xl text-foreground">
                 “The right journeys start with a conversation. This one starts with you.”
               </blockquote>
             </div>
@@ -152,7 +152,7 @@ export default function About() {
           <div className="max-w-6xl mx-auto space-y-8">
             <div>
               <p className="font-sans text-xs tracking-[0.3em] uppercase text-gold">Guides who know the land</p>
-              <h2 id="guides-heading" className="font-serif text-4xl font-semibold mt-3">
+              <h2 id="guides-heading" className="font-niconne text-4xl font-semibold mt-3">
                 Guides who know the land — and what the soul needs.
               </h2>
             </div>
@@ -191,7 +191,7 @@ export default function About() {
             <p className="font-sans text-xs tracking-[0.3em] uppercase text-gold">
               A trained team, present at every moment
             </p>
-            <h3 id="team-heading" className="font-serif text-3xl md:text-4xl font-semibold">
+            <h3 id="team-heading" className="font-niconne text-3xl md:text-4xl font-semibold">
               Quiet professionals who deliver under our guidance
             </h3>
             <p className="text-muted-foreground max-w-4xl">
@@ -220,7 +220,7 @@ export default function About() {
         {/* Signature moment */}
         <section className="px-6 py-16 md:py-24 bg-background" aria-labelledby="signature-heading">
           <div className="max-w-5xl mx-auto space-y-5">
-            <h3 id="signature-heading" className="font-serif text-3xl md:text-4xl font-semibold">
+            <h3 id="signature-heading" className="font-niconne text-3xl md:text-4xl font-semibold">
               The Signature Moment
             </h3>
             <p className="text-lg text-muted-foreground">
@@ -228,7 +228,7 @@ export default function About() {
               From that moment your journey is shaped not to impress, but to restore: the right pace, the right encounters,
               the exact silence or conversation you need.
             </p>
-            <blockquote className="border-l-4 border-gold/40 pl-6 font-serif text-2xl text-foreground">
+            <blockquote className="border-l-4 border-gold/40 pl-6 font-niconne text-2xl text-foreground">
               “They didn’t arrange a trip — they guided a return.” — A.R., USA
             </blockquote>
           </div>
@@ -260,7 +260,7 @@ export default function About() {
         {/* Final CTA */}
         <section className="px-6 py-16 md:py-24 bg-background">
           <div className="max-w-4xl mx-auto text-center space-y-4">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold">Begin a journey that remembers you.</h2>
+            <h2 className="font-niconne text-3xl md:text-4xl font-semibold">Begin a journey that remembers you.</h2>
             <p className="text-muted-foreground">
               If you want presence, meaningful moments, and a legacy in the making, let’s design it together.
             </p>

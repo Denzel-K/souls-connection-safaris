@@ -95,6 +95,7 @@
   --font-serif: var(--font-serif-base), system-ui, serif;
   --font-mono: var(--font-mono-base), "Courier New", monospace;
   --font-body: var(--font-body-base), system-ui, serif;
+  --font-niconne: var(--font-niconne-base), system-ui, serif;
 
   /* Define all colors with proper naming for Tailwind utility generation */
   --color-background: var(--background);

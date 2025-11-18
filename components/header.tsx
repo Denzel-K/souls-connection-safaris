@@ -39,7 +39,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     label: "Field notes",
-    href: "/#journal",
+    href: "/field-notes",
   },
   {
     label: "FAQs",
@@ -123,7 +123,7 @@ export function Header({
           {/* Logo */}
           <Link
             href="/"
-            className={`font-serif text-lg md:text-2xl font-bold transition-colors whitespace-nowrap ${navTextClass}`}
+            className={`font-niconne text-lg md:text-2xl font-bold transition-colors whitespace-nowrap ${navTextClass}`}
           >
             Souls Connection Safaris
           </Link>

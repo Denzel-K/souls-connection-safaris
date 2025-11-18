@@ -14,7 +14,7 @@ export function ImpactSection() {
           viewport={{ once: true, amount: 0.4 }}
         >
           <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">Impact & Community</p>
-          <h2 className="font-serif text-5xl text-lux-forest">Connection with Purpose.</h2>
+          <h2 className="font-niconne text-5xl text-lux-forest">Connection with Purpose.</h2>
           <p className="text-lux-ink/80 text-lg">Travel that protects wild places and uplifts communities.</p>
         </motion.div>
 

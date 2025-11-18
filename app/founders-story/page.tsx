@@ -48,7 +48,7 @@ export default function FoundersStoryPage() {
               />
               <div className="space-y-3">
                 <p className="font-sans text-xs tracking-[0.35em] uppercase text-gold">Founders&apos; story</p>
-                <h1 className="font-serif text-4xl md:text-5xl font-bold leading-tight">
+                <h1 className="font-niconne text-4xl md:text-5xl font-bold leading-tight">
                   The right journeys start with a conversation.
                 </h1>
                 <p className="text-lg text-muted-foreground">
@@ -68,7 +68,7 @@ export default function FoundersStoryPage() {
                       <UserRound className="w-7 h-7" />
                     </div>
                     <div className="name-n-title">
-                      <div className="font-serif text-2xl font-semibold leading-tight">{founder.name}</div>
+                      <div className="font-niconne text-2xl font-semibold leading-tight">{founder.name}</div>
                       <div className="text-gold text-sm font-medium tracking-wide uppercase">{founder.role}</div>
                     </div>
                   </div>
@@ -89,7 +89,7 @@ export default function FoundersStoryPage() {
                 </p>
               ))}
               <div className="border-l-4 border-gold/40 pl-6">
-                <p className="font-serif text-2xl text-foreground leading-relaxed">
+                <p className="font-niconne text-2xl text-foreground leading-relaxed">
                   “The right journeys start with a conversation. This one starts with you.”
                 </p>
               </div>
@@ -147,7 +147,7 @@ export default function FoundersStoryPage() {
         <section className="px-6 py-16 md:py-24 bg-background">
           <div className="max-w-5xl mx-auto text-center space-y-6">
             <p className="font-sans text-xs tracking-[0.3em] uppercase text-gold">Next steps</p>
-            <h2 className="font-serif text-4xl font-bold text-balance">Tell us what has been stirring in you.</h2>
+            <h2 className="font-niconne text-4xl font-bold text-balance">Tell us what has been stirring in you.</h2>
             <p className="text-lg text-muted-foreground">
               We will listen, respond with care, and then design with intention. Your story matters to us before a single
               plan is made.

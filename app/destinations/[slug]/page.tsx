@@ -39,7 +39,7 @@ export default function DestinationPage({ params }: { params: Promise<{ slug: st
             <Link href="/" className="text-white/80 hover:text-white inline-block text-sm font-sans mb-4">
               ← Back to Home
             </Link>
-            <h1 className="font-serif text-5xl md:text-6xl text-white font-bold text-balance">
+            <h1 className="font-niconne text-5xl md:text-6xl text-white font-bold text-balance">
               {destination.name}
             </h1>
           </div>
@@ -54,7 +54,7 @@ export default function DestinationPage({ params }: { params: Promise<{ slug: st
           <div className="grid md:grid-cols-2 gap-12 mb-20">
             {/* Highlights */}
             <div>
-              <h2 className="font-serif text-3xl text-foreground font-bold mb-6">Why Visit {destination.name}</h2>
+              <h2 className="font-niconne text-3xl text-foreground font-bold mb-6">Why Visit {destination.name}</h2>
               <ul className="space-y-3">
                 {destination.highlights.map((highlight, i) => (
                   <li key={i} className="flex items-start gap-3">
@@ -68,12 +68,12 @@ export default function DestinationPage({ params }: { params: Promise<{ slug: st
             {/* Best Time & Wildlife */}
             <div className="space-y-8">
               <div>
-                <h3 className="font-serif text-2xl text-foreground font-bold mb-4">Best Time to Visit</h3>
+                <h3 className="font-niconne text-2xl text-foreground font-bold mb-4">Best Time to Visit</h3>
                 <p className="text-muted-foreground leading-relaxed">{destination.bestTime}</p>
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl text-foreground font-bold mb-4">Wildlife to Expect</h3>
+                <h3 className="font-niconne text-2xl text-foreground font-bold mb-4">Wildlife to Expect</h3>
                 <div className="flex flex-wrap gap-2">
                   {destination.wildlife.map((animal, i) => (
                     <span
@@ -90,11 +90,11 @@ export default function DestinationPage({ params }: { params: Promise<{ slug: st
 
           {/* Activities */}
           <div className="py-12 border-y border-border">
-            <h2 className="font-serif text-3xl text-foreground font-bold mb-8">Activities & Experiences</h2>
+            <h2 className="font-niconne text-3xl text-foreground font-bold mb-8">Activities & Experiences</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {destination.activities.map((activity, i) => (
                 <div key={i} className="p-6 bg-brown/5 rounded-lg border border-border/50">
-                  <p className="font-serif text-lg text-foreground font-semibold">{activity}</p>
+                  <p className="font-niconne text-lg text-foreground font-semibold">{activity}</p>
                 </div>
               ))}
             </div>
@@ -105,7 +105,7 @@ export default function DestinationPage({ params }: { params: Promise<{ slug: st
       {/* CTA Section */}
       <section className="py-20 md:py-32 px-6 bg-background">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground font-bold mb-6 text-balance">
+          <h2 className="font-niconne text-4xl md:text-5xl text-foreground font-bold mb-6 text-balance">
             Ready to Explore {destination.name}?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">

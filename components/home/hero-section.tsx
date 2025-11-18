@@ -32,7 +32,7 @@ export function HeroSection() {
           animate="visible"
           variants={heroVariants}
         >
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-background font-bold text-balance">
+          <h1 className="font-niconne text-4xl md:text-6xl lg:text-7xl text-background font-bold text-balance">
             Come home to yourself.
           </h1>
           <p className="font-sans text-lg md:text-xl text-background/95 leading-relaxed">

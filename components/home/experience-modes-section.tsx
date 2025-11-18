@@ -42,7 +42,7 @@ export function ExperienceModesSection() {
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="text-center space-y-3">
           <p className="font-sans font-semibold text-xs uppercase tracking-[0.4em] text-lux-accent">Private vs Small Group Modes</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-lux-forest">Choose Your Connection.</h2>
+          <h2 className="font-niconne text-4xl md:text-5xl text-lux-forest">Choose Your Connection.</h2>
           <p className="text-base md:text-lg text-lux-ink opacity-80">Two ways to travel—each designed for meaning, comfort, and unhurried presence.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
@@ -57,8 +57,8 @@ export function ExperienceModesSection() {
             >
               <img src={mode.image} alt={mode.title} className="h-58 w-full object-cover rounded-[18px]" loading="lazy" />
               <div className="p-6 space-y-3 flex-1 flex flex-col">
-                <p className="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-lux-accent">{mode.eyebrow}</p>
-                <p className="font-serif text-2xl text-lux-forest font-bold">{mode.title}</p>
+                <p className="font-sans text-[0.75rem] uppercase tracking-[0.3em] text-lux-accent font-bold">{mode.eyebrow}</p>
+                <p className="font-niconne text-2xl md:text-3xl text-lux-forest font-bold">{mode.title}</p>
                 <p className="text-base text-lux-ink opacity-80">{mode.subline}</p>
                 {mode.description && (
                   <p className="text-sm md:text-base text-lux-ink opacity-80 leading-relaxed">{mode.description}</p>

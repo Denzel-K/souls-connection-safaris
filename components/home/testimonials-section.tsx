@@ -28,7 +28,7 @@ export function TestimonialsSection() {
       <div className="max-w-6xl mx-auto space-y-10">
         <div className="text-center space-y-3">
           <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">Quiet Echoes</p>
-          <h2 className="font-serif text-4xl text-lux-forest">What Connection Feels Like</h2>
+          <h2 className="font-niconne text-4xl text-lux-forest">What Connection Feels Like</h2>
           <p className="text-lux-ink opacity-80">Real reflections from guests who traveled with intention.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
@@ -47,7 +47,7 @@ export function TestimonialsSection() {
               />
               <Quote className="relative mb-6 h-10 w-10 text-lux-accent" />
               <p className="relative text-xs uppercase tracking-[0.55em] text-lux-shell/60">Guest reflection</p>
-              <p className="relative font-serif text-3xl leading-tight text-white">{testimonial.feeling}</p>
+              <p className="relative font-niconne text-3xl leading-tight text-white">{testimonial.feeling}</p>
               <p className="relative mt-6 text-lg italic text-lux-shell/80">“{testimonial.quote}”</p>
               <p className="relative mt-8 text-sm uppercase tracking-[0.2em] text-lux-shell/80 font-sans">{testimonial.guest}</p>
             </motion.article>
