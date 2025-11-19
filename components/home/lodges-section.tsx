@@ -81,7 +81,7 @@ export function LodgesSection() {
       <div className="max-w-6xl mx-auto space-y-14">
         <div className="text-center space-y-6">
           <p className="font-sans text-xs uppercase tracking-[0.45em] text-lux-accent font-semibold">Soulful Stays</p>
-          <h2 className="font-niconne text-3xl md:text-5xl text-lux-forest leading-tight">Spaces framed for stillness.</h2>
+          <h2 className="font-niconne text-3xl md:text-5xl text-lux-forest leading-tight font-light">Spaces framed for stillness.</h2>
           <p className="font-niconne text-lg md:text-3xl text-lux-ink/85 max-w-3xl mx-auto leading-relaxed">
             Stays chosen for atmosphere, privacy, and a deep sense of place. Each lodge supports rest, connection, and unhurried presence.
           </p>
