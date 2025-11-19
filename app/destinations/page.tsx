@@ -27,7 +27,7 @@ export default function DestinationsPage() {
         <div className="relative z-10 px-6 py-32 md:py-40">
           <div className="max-w-5xl mx-auto text-center text-white space-y-6">
             <p className="font-sans text-sm tracking-[0.5em] text-white/70">DESTINATIONS</p>
-            <h1 className="font-niconne text-5xl md:text-7xl font-bold text-balance">Places that Hold Meaning</h1>
+            <h1 className="font-niconne text-5xl md:text-7xl font-bold text-balance font-light">Places that Hold Meaning</h1>
             <p className="text-lg max-w-3xl mx-auto leading-relaxed text-white/85">
               Regions and conservancies chosen for space, atmosphere, and story—not only for the number of sightings.
             </p>

@@ -26,7 +26,7 @@ export default function JourneysPage() {
         <div className="relative px-6 py-32 md:py-52 min-h-[70vh] flex items-center">
           <div className="max-w-5xl mx-auto text-center text-white space-y-6">
             <p className="font-sans text-sm tracking-[0.5em] text-white/70">JOURNEYS OF CONNECTION</p>
-            <h1 className="font-niconne text-5xl md:text-7xl font-bold text-balance">Five Signature Journeys</h1>
+            <h1 className="font-niconne text-5xl md:text-7xl font-bold text-balance font-light">Five Signature Journeys</h1>
             <p className="text-lg max-w-3xl mx-auto leading-relaxed text-white/85">
               Five thoughtfully designed safaris for meaning, connection, and quiet restoration.
             </p>

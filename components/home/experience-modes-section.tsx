@@ -42,7 +42,7 @@ export function ExperienceModesSection() {
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="text-center space-y-3">
           <p className="font-sans font-semibold text-xs uppercase tracking-[0.4em] text-lux-accent">Private vs Small Group Modes</p>
-          <h2 className="font-niconne text-4xl md:text-5xl text-lux-forest">Choose Your Connection.</h2>
+          <h2 className="font-niconne text-4xl md:text-5xl text-lux-forest font-light">Choose Your Connection.</h2>
           <p className="text-base md:text-lg text-lux-ink opacity-80">Two ways to travel—each designed for meaning, comfort, and unhurried presence.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-2">

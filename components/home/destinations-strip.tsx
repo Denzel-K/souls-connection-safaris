@@ -13,7 +13,7 @@ export function DestinationsStrip() {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent mb-4 font-semibold">Destinations</p>
-          <h2 className="font-niconne text-4xl md:text-5xl text-white mb-6 font-bold">Places that Hold Meaning</h2>
+          <h2 className="font-niconne text-4xl md:text-5xl text-white mb-6 font-light">Places that Hold Meaning</h2>
           <p className="font-body text-lg md:text-xl text-white/85 max-w-3xl mx-auto leading-relaxed">
             Regions and conservancies chosen for space, atmosphere, and story—not only for the number of sightings.
           </p>

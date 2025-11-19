@@ -45,7 +45,7 @@ export function NewHeroSection() {
       {/* Desktop layout: 2 cols, image right */}
       <div className="relative grid min-h-screen grid-rows-[1fr] md:grid-cols-2">
         {/* Top gradient on left column (desktop) to support header contrast */}
-        <div className="pointer-events-none absolute left-0 top-0 hidden h-64 w-1/2 bg-gradient-to-b from-black/60 via-black/30 to-transparent md:block z-0" />
+        <div className="pointer-events-none absolute left-0 top-0 hidden h-48 w-1/2 bg-gradient-to-b from-black/50 via-black/20 to-transparent md:block z-0" />
         {/* Left content column */}
         <motion.div
           variants={container}
@@ -59,11 +59,11 @@ export function NewHeroSection() {
               <motion.h1
                 custom={2}
                 variants={item}
-                className="font-niconne text-3xl sm:text-5xl leading-tight text-white md:text-6xl md:text-lux-forest"
+                className="font-niconne text-3xl sm:text-5xl leading-tight text-white md:text-lux-forest font-light"
               >
                 Safaris for Meaning & Connection.
               </motion.h1>
-              <motion.p custom={3} variants={item} className="text-lg font-sans md:text-xl text-white/90 md:text-lux-ink/85">
+              <motion.p custom={3} variants={item} className="text-base font-semibold font-sans text-white/90 md:text-lux-ink/85">
                 Host-led. Unhurried. Quietly luxurious.
               </motion.p>
               <motion.p custom={4} variants={item} className="text-base text-white/85 md:text-lux-ink/75">
@@ -72,20 +72,20 @@ export function NewHeroSection() {
               <motion.p
                 custom={1}
                 variants={item}
-                className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.35em] bg-black/40 text-white backdrop-blur md:bg-gray-300 md:text-secondary-foreground font-sans"
+                className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.15em] bg-black/40 text-white backdrop-blur md:bg-gray-200 md:text-secondary-foreground font-sans"
               >
                 Proposal in 72 hours.
               </motion.p>
-              <motion.div custom={5} variants={item} className="flex flex-col gap-3 pt-2 sm:flex-row">
+              <motion.div custom={5} variants={item} className="flex flex-col gap-3 pt-6 sm:flex-row">
                 <Link
                   href="/booking"
-                  className="inline-flex items-center justify-center rounded-full px-8 py-4 text-sm tracking-[0.3em] bg-gold text-white"
+                  className="inline-flex items-center justify-center rounded-full px-8 py-2 text-sm tracking-[0.3em] bg-gold text-white font-serif font-semibold hover:bg-gold/90"
                 >
                   Start My Journey
                 </Link>
                 <Link
                   href="/sample-itinerary.pdf"
-                  className="inline-flex items-center justify-center rounded-full border px-8 py-4 text-sm tracking-[0.2em] border-white text-white md:border-primary md:text-primary"
+                  className="inline-flex items-center justify-center rounded-full border px-8 py-2 text-sm tracking-[0.2em] border-white text-white md:border-primary md:text-primary font-serif font-semibold hover:bg-lux-forest/20"
                 >
                   See Sample Itinerary
                 </Link>

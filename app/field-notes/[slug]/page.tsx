@@ -163,17 +163,17 @@ export default function FieldNotePage({ params }: FieldNotePageProps) {
             <ReactMarkdown
               components={{
                 h1: ({ children }) => (
-                  <h1 className="font-niconne text-3xl md:text-4xl text-lux-forest mb-8 leading-tight">
+                  <h1 className="font-niconne font-light text-3xl md:text-4xl text-lux-forest mb-8 leading-tight">
                     {children}
                   </h1>
                 ),
                 h2: ({ children }) => (
-                  <h2 className="font-niconne text-2xl md:text-3xl text-lux-forest mb-6 mt-12 leading-tight">
+                  <h2 className="font-niconne font-light text-2xl md:text-3xl text-lux-forest mb-6 mt-12 leading-tight">
                     {children}
                   </h2>
                 ),
                 h3: ({ children }) => (
-                  <h3 className="font-niconne text-xl md:text-2xl text-lux-forest mb-4 mt-8 leading-tight">
+                  <h3 className="font-niconne font-light text-xl md:text-2xl text-lux-forest mb-4 mt-8 leading-tight">
                     {children}
                   </h3>
                 ),

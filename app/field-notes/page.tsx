@@ -58,7 +58,7 @@ export default function FieldNotesPage() {
             <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">
               Journal (Quarterly)
             </p>
-            <h1 className="font-niconne text-4xl text-lux-forest">
+            <h1 className="font-niconne text-4xl text-lux-forest font-light">
               Field notes on connection
             </h1>
             <p className="text-lux-ink/70 max-w-2xl">
@@ -93,7 +93,7 @@ export default function FieldNotesPage() {
                   <span className="tracking-[0.3em]">{note.readingTime}</span>
                 </div>
                 <div className="flex flex-1 flex-col space-y-4 pt-6">
-                  <p className="font-niconne text-3xl font-semibold leading-tight text-lux-forest">{note.title}</p>
+                  <p className="font-niconne text-3xl leading-tight text-lux-forest font-light">{note.title}</p>
                   <p className="text-lux-ink/70 text-sm">{note.excerpt}</p>
                 </div>
                 <div className="mt-8 flex items-center justify-between border-t border-lux-sand/70 pt-5">

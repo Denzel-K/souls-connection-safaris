@@ -270,7 +270,7 @@ export function HowItWorksSection() {
       <div className="max-w-6xl mx-auto space-y-10">
         <div className="text-center space-y-4">
           <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent font-semibold">The Plan</p>
-          <h2 className="font-niconne text-5xl text-lux-forest">Your Path to Connection</h2>
+          <h2 className="font-niconne text-5xl text-lux-forest font-light">Your Path to Connection</h2>
           <p>A clear, calm process from first conversation to final farewell.</p>
         </div>
         <PlanTimeline steps={planSteps} />

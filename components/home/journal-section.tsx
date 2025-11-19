@@ -75,7 +75,7 @@ export function JournalSection() {
                 <span className="tracking-[0.3em]">{entry.readingTime}</span>
               </div>
               <div className="flex flex-1 flex-col space-y-4 pt-6">
-                <p className="font-niconne text-3xl font-semibold leading-tight text-lux-forest">{entry.title}</p>
+                <p className="font-niconne text-3xl eading-tight text-lux-forest font-light">{entry.title}</p>
                 <p className="text-lux-ink/70 text-sm">{entry.excerpt}</p>
               </div>
               <div className="mt-8 flex items-center justify-between border-t border-lux-sand/70 pt-5">
