@@ -43,10 +43,9 @@ export default function DestinationsPage() {
               <motion.article
                 key={destination.id}
                 className="group relative overflow-hidden bg-card border border-border rounded-lg shadow-[0_25px_85px_rgba(20,20,15,0.12)] hover:shadow-[0_35px_100px_rgba(20,20,15,0.18)] transition-all duration-500"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ delay: index * 0.1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: index * 0.05 }}
               >
                 {/* Image */}
                 <div className="relative h-56 md:h-64 overflow-hidden">
@@ -74,7 +73,7 @@ export default function DestinationsPage() {
                   
                   {/* Wildlife tags */}
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {destination.wildlife.slice(0, 4).map((animal, i) => (
+                    {destination.wildlife.slice(0, 4).map((animal: string, i: number) => (
                       <span
                         key={i}
                         className="px-3 py-1 bg-lux-cream text-lux-forest rounded-full text-xs font-medium border border-lux-sand"
