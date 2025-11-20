@@ -32,41 +32,48 @@ export function NewHeroSection() {
       className="relative isolate"
       style={{ marginTop: "calc(var(--header-height, 96px) * -1)" }}
     >
-      {/* Mobile: full-screen background image */}
-      <div className="md:hidden absolute inset-0">
+      {/* Top gradient for header contrast */}
+        <div className="pointer-events-none absolute left-0 top-0 h-64 w-[100%] bg-gradient-to-b from-black/60 via-black/15 to-transparent z-100" />
+      {/* Full-width background image for all screen sizes */}
+      <div className="absolute inset-0">
         <img
-          src="/couple-watching-sunset.jpeg"
-          alt="Safari landscape at golden hour"
+          src="/mountain.jpeg"
+          alt="Safari landscape with giraffes at golden hour"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
+        {/* Mobile overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90 md:hidden" />
+        {/* Desktop overlay - subtle dark overlay for text contrast */}
+        <div className="absolute inset-0 bg-black/20 hidden md:block" />
       </div>
 
-      {/* Desktop layout: 2 cols, image right */}
-      <div className="relative grid min-h-screen grid-rows-[1fr] md:grid-cols-2">
-        {/* Top gradient on left column (desktop) to support header contrast */}
-        <div className="pointer-events-none absolute left-0 top-0 hidden h-48 w-1/2 bg-gradient-to-b from-black/50 via-black/20 to-transparent md:block z-0" />
-        {/* Left content column */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="visible"
-          className="relative z-10 flex items-center"
-        >
-          <div className="w-full px-6 py-28 md:py-0 md:pl-10 lg:pl-16">
+      {/* Content container */}
+      <div className="relative min-h-screen flex items-center">
+        
+        
+        {/* Left content panel with gradient overlay */}
+        <div className="relative z-10 w-full md:w-2/3 min-h-screen flex flex-col justify-center">
+          {/* White to transparent gradient overlay on left panel */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/45 to-transparent hidden md:block" />
+          
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            className="relative z-20 px-6 py-28 md:py-0 md:pl-10 lg:pl-16 xl:pl-32"
+          >
             <div className="max-w-2xl space-y-5 text-left">
-              
               <motion.h1
                 custom={2}
                 variants={item}
-                className="font-niconne text-3xl sm:text-5xl leading-tight text-white md:text-lux-forest font-light"
+                className="font-niconne font-medium text-[32px] sm:text-5xl xl:text-6xl leading-tight text-white md:text-lux-forest"
               >
                 Safaris for Meaning & Connection.
               </motion.h1>
-              <motion.p custom={3} variants={item} className="text-base font-semibold font-sans text-white/90 md:text-lux-ink/85">
+              <motion.p custom={3} variants={item} className="text-xl md:text-2xl font-niconne text-white/90 md:text-lux-ink/65">
                 Host-led. Unhurried. Quietly luxurious.
               </motion.p>
-              <motion.p custom={4} variants={item} className="text-base text-white/85 md:text-lux-ink/75">
+              <motion.p custom={4} variants={item} className="text-base md:text-lg text-white/85 md:text-lux-ink/75">
                 Journeys created for travelers who value presence over pressure.
               </motion.p>
               <motion.p
@@ -76,33 +83,23 @@ export function NewHeroSection() {
               >
                 Proposal in 72 hours.
               </motion.p>
-              <motion.div custom={5} variants={item} className="flex flex-col gap-3 pt-6 sm:flex-row">
+              <motion.div custom={5} variants={item} className="flex flex-col gap-3 mt-6 sm:flex-row">
                 <Link
                   href="/booking"
-                  className="inline-flex items-center justify-center rounded-full px-8 py-2 text-sm tracking-[0.3em] bg-gold text-white font-serif font-semibold hover:bg-gold/90"
+                  className="inline-flex items-center justify-center rounded-full px-8 py-2 text-sm tracking-[0.3em] bg-gold text-white md:hover:text-black font-semibold"
                 >
                   Start My Journey
                 </Link>
                 <Link
                   href="/sample-itinerary.pdf"
-                  className="inline-flex items-center justify-center rounded-full border px-8 py-2 text-sm tracking-[0.2em] border-white text-white md:border-primary md:text-primary font-serif font-semibold hover:bg-lux-forest/20"
+                  className="inline-flex items-center justify-center rounded-full border px-8 py-2 text-sm tracking-[0.2em] border-white text-white md:border-primary md:text-primary md:hover:text-white md:hover:bg-lux-forest/40 font-semibold"
                 >
                   See Sample Itinerary
                 </Link>
 
               </motion.div>
             </div>
-          </div>
-        </motion.div>
-
-        {/* Right image column (hidden on mobile, shown on md+) */}
-        <div className="relative hidden md:block">
-          <img
-            src="/couple-watching-sunset.jpeg"
-            alt="Safari landscape at golden hour"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-l from-black/10 via-transparent to-transparent" />
+          </motion.div>
         </div>
       </div>
     </section>
