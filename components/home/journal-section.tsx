@@ -34,13 +34,12 @@ export function JournalSection() {
   return (
     <section className="px-6 py-24 bg-lux-cream" id="journal">
       <div className="max-w-6xl mx-auto space-y-10">
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-row gap-4 justify-between items-center">
           <div>
             <p className="font-sans text-xs uppercase tracking-[0.4em] text-lux-accent mb-3 font-semibold">Journal (Quarterly)</p>
             <h2 className="font-niconne text-4xl text-lux-forest">Field notes on connection</h2>
           </div>
-          <div className="flex flex-col items-end gap-3">
-            <p>Reflections, stories, and quiet moments from the field.</p>
+          <div className="flex">
             <Link
               href="/field-notes"
               className="inline-flex items-center gap-2 text-sm font-medium text-lux-forest hover:text-lux-accent transition-colors"

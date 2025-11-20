@@ -119,7 +119,7 @@ export function InclusionsSection() {
             return (
               <motion.div
                 key={panel.id}
-                className="relative w-full md:flex-1 overflow-hidden rounded-[46px] border p-[1.5px] backdrop-blur-xl border-lux-forest/15 bg-gradient-to-br from-white/95 via-lux-shell to-lux-cream"
+                className="relative w-full md:flex-1 overflow-hidden border p-[1.5px] backdrop-blur-xl border-lux-forest/15 bg-gradient-to-br from-white/95 via-lux-shell to-lux-cream"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}

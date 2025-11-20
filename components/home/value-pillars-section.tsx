@@ -58,8 +58,8 @@ export function ValuePillarsSection() {
         </div>
         <div className="flex flex-col items-center gap-3 md:flex-row md:justify-center">
           <Link
-            href="#path"
-            className="inline-flex items-center gap-2 text-base md:text-lg lg:text-xl font-niconne text-lux-forest hover:text-lux-accent transition-colors duration-300 group"
+            href="/journeys"
+            className="inline-flex items-center gap-2 text-lg md:text-xl lg:text-2xl font-niconne text-lux-forest hover:text-lux-accent transition-colors duration-300 group"
           >
             Explore journeys of connection
             <motion.span

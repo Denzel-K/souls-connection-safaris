@@ -73,10 +73,10 @@ export function DestinationsStrip() {
         {/* CTA */}
         <div className="text-center">
           <Link 
-            href="/journeys" 
+            href="/destinations" 
             className="inline-flex items-center gap-3 px-8 py-4 bg-gold/10 backdrop-blur-sm border border-gold/30 text-gold font-sans text-sm uppercase tracking-[0.3em] hover:bg-gold/20 hover:border-gold/50 transition-all duration-300 rounded-full"
           >
-            Explore Journeys for Connection
+            Explore Destinations
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
