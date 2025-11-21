@@ -54,7 +54,7 @@ export function TestimonialsSection() {
           ))}
         </div>
         <div className="text-right">
-          <Link href="/stories" className="text-sm text-lux-forest border-b border-lux-accent w-fit inline-flex">
+          <Link href="/reviews" className="text-sm text-lux-forest border-b border-lux-accent w-fit inline-flex">
             Read More Guest Stories →
           </Link>
         </div>

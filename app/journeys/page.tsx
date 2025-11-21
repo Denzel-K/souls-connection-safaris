@@ -64,7 +64,7 @@ function JourneyBlock({ journey: j }: { journey: Journey }) {
 
       <div className="flex flex-col gap-8 md:gap-10 lg:flex-row lg:items-start lg:justify-between">
         <div className="max-w-3xl">
-          <h2 className="font-niconne text-4xl md:text-5xl text-foreground font-bold mb-2">{j.title}</h2>
+          <h2 className="font-niconne font-light text-4xl md:text-5xl text-foreground font-bold mb-2">{j.title}</h2>
           <p className="font-body text-lg text-muted-foreground leading-relaxed mb-4">{j.subtitle}</p>
           <div className="font-sans text-sm tracking-wide text-foreground/90 mb-1">
             {j.meta.split(" · ").slice(2).join(" · ")}
